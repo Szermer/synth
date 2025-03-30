@@ -1,0 +1,309 @@
+{
+  "emotional_states": {
+    "health_aware_avoider": {
+      "neutral": 151,
+      "anxious": 151,
+      "engaged": 276,
+      "attentive": 9,
+      "stable": 19,
+      "concerned": 10,
+      "reflective": 106,
+      "motivated": 106
+    },
+    "structured_system_seeker": {
+      "neutral": 126,
+      "engaged": 265,
+      "concerned": 5,
+      "stable": 13,
+      "attentive": 8
+    },
+    "balanced_life_integrator": {
+      "neutral": 101,
+      "engaged": 242,
+      "attentive": 6,
+      "stable": 13,
+      "concerned": 7,
+      "reflective": 27,
+      "motivated": 27
+    },
+    "healthcare_professional": {
+      "neutral": 76,
+      "engaged": 160,
+      "concerned": 5,
+      "stable": 8,
+      "attentive": 3
+    },
+    "overlooked_risk_group": {
+      "neutral": 51,
+      "engaged": 146,
+      "concerned": 2,
+      "stable": 2,
+      "reflective": 42,
+      "motivated": 42
+    }
+  },
+  "completion_rates": {
+    "health_aware_avoider": {
+      "initial_registration": {
+        "completed": 151,
+        "total": 151
+      },
+      "risk_assessment": {
+        "completed": 151,
+        "total": 151
+      },
+      "prevention_plan": {
+        "completed": 0,
+        "total": 151
+      },
+      "event_trigger": {
+        "completed": 19,
+        "total": 19
+      },
+      "support_plan": {
+        "completed": 19,
+        "total": 19
+      },
+      "follow_up": {
+        "completed": 0,
+        "total": 19
+      },
+      "risk_awareness": {
+        "completed": 106,
+        "total": 106
+      },
+      "barrier_identification": {
+        "completed": 106,
+        "total": 106
+      },
+      "action_planning": {
+        "completed": 0,
+        "total": 106
+      }
+    },
+    "structured_system_seeker": {
+      "initial_registration": {
+        "completed": 126,
+        "total": 126
+      },
+      "risk_assessment": {
+        "completed": 126,
+        "total": 126
+      },
+      "prevention_plan": {
+        "completed": 0,
+        "total": 126
+      },
+      "event_trigger": {
+        "completed": 13,
+        "total": 13
+      },
+      "support_plan": {
+        "completed": 13,
+        "total": 13
+      },
+      "follow_up": {
+        "completed": 0,
+        "total": 13
+      }
+    },
+    "balanced_life_integrator": {
+      "initial_registration": {
+        "completed": 101,
+        "total": 101
+      },
+      "risk_assessment": {
+        "completed": 101,
+        "total": 101
+      },
+      "prevention_plan": {
+        "completed": 0,
+        "total": 101
+      },
+      "event_trigger": {
+        "completed": 13,
+        "total": 13
+      },
+      "support_plan": {
+        "completed": 13,
+        "total": 13
+      },
+      "follow_up": {
+        "completed": 0,
+        "total": 13
+      },
+      "risk_awareness": {
+        "completed": 27,
+        "total": 27
+      },
+      "barrier_identification": {
+        "completed": 27,
+        "total": 27
+      },
+      "action_planning": {
+        "completed": 0,
+        "total": 27
+      }
+    },
+    "healthcare_professional": {
+      "initial_registration": {
+        "completed": 76,
+        "total": 76
+      },
+      "risk_assessment": {
+        "completed": 76,
+        "total": 76
+      },
+      "prevention_plan": {
+        "completed": 0,
+        "total": 76
+      },
+      "event_trigger": {
+        "completed": 8,
+        "total": 8
+      },
+      "support_plan": {
+        "completed": 8,
+        "total": 8
+      },
+      "follow_up": {
+        "completed": 0,
+        "total": 8
+      }
+    },
+    "overlooked_risk_group": {
+      "initial_registration": {
+        "completed": 51,
+        "total": 51
+      },
+      "risk_assessment": {
+        "completed": 51,
+        "total": 51
+      },
+      "prevention_plan": {
+        "completed": 0,
+        "total": 51
+      },
+      "event_trigger": {
+        "completed": 2,
+        "total": 2
+      },
+      "support_plan": {
+        "completed": 2,
+        "total": 2
+      },
+      "follow_up": {
+        "completed": 0,
+        "total": 2
+      },
+      "risk_awareness": {
+        "completed": 42,
+        "total": 42
+      },
+      "barrier_identification": {
+        "completed": 42,
+        "total": 42
+      },
+      "action_planning": {
+        "completed": 0,
+        "total": 42
+      }
+    }
+  },
+  "journey_durations": {
+    "health_aware_avoider": {
+      "min_days": -4,
+      "max_days": 88,
+      "avg_days": 26.018115942028984,
+      "total_journeys": 276
+    },
+    "structured_system_seeker": {
+      "min_days": -3,
+      "max_days": 81,
+      "avg_days": 17.48201438848921,
+      "total_journeys": 139
+    },
+    "balanced_life_integrator": {
+      "min_days": -2,
+      "max_days": 89,
+      "avg_days": 22.19148936170213,
+      "total_journeys": 141
+    },
+    "healthcare_professional": {
+      "min_days": -1,
+      "max_days": 72,
+      "avg_days": 18.226190476190474,
+      "total_journeys": 84
+    },
+    "overlooked_risk_group": {
+      "min_days": -4,
+      "max_days": 87,
+      "avg_days": 27.263157894736842,
+      "total_journeys": 95
+    }
+  },
+  "expected_outcomes": {
+    "health_aware_avoider": {
+      "risk_assessment_completion": 151,
+      "prevention_plan_creation": 151,
+      "support_plan_creation": 19,
+      "prevention_plan_update": 19,
+      "risk_awareness_completion": 106,
+      "barrier_identification": 106
+    },
+    "structured_system_seeker": {
+      "risk_assessment_completion": 126,
+      "prevention_plan_creation": 126,
+      "screening_scheduling": 126,
+      "support_plan_creation": 13,
+      "prevention_plan_update": 13,
+      "follow_up_completion": 13
+    },
+    "balanced_life_integrator": {
+      "risk_assessment_completion": 101,
+      "prevention_plan_creation": 101,
+      "support_plan_creation": 13,
+      "prevention_plan_update": 13,
+      "risk_awareness_completion": 27,
+      "barrier_identification": 27
+    },
+    "healthcare_professional": {
+      "risk_assessment_completion": 76,
+      "prevention_plan_creation": 76,
+      "screening_scheduling": 76,
+      "support_plan_creation": 8,
+      "prevention_plan_update": 8,
+      "follow_up_completion": 8
+    },
+    "overlooked_risk_group": {
+      "risk_assessment_completion": 51,
+      "prevention_plan_creation": 51,
+      "support_plan_creation": 2,
+      "prevention_plan_update": 2,
+      "risk_awareness_completion": 42,
+      "barrier_identification": 42
+    }
+  },
+  "risk_levels": {
+    "health_aware_avoider": {
+      "low": 188,
+      "moderate": 88
+    },
+    "structured_system_seeker": {
+      "low": 107,
+      "moderate": 32
+    },
+    "balanced_life_integrator": {
+      "moderate": 38,
+      "low": 103
+    },
+    "healthcare_professional": {
+      "low": 64,
+      "moderate": 20
+    },
+    "overlooked_risk_group": {
+      "low": 58,
+      "moderate": 37
+    }
+  }
+}

@@ -1,0 +1,3192 @@
+[
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Lisa Jackson",
+      "age": 28,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "irregular",
+        "last_screening": "2020-11-29T00:02:17.032748",
+        "completion_rate": 0.2417568498684521
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2024-05-24T00:02:17.032750",
+      "impact": "moderate",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-05-24T00:02:17.032750",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-05-28T00:02:17.032750",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-08-17T00:02:17.032750",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Amanda Stewart",
+      "age": 32,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "irregular",
+        "last_screening": "2019-11-07T00:02:17.032789",
+        "completion_rate": 0.25444224259771353
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2024-08-28T00:02:17.032795",
+      "impact": "high",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-08-28T00:02:17.032795",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-09-10T00:02:17.032795",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-10-08T00:02:17.032795",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Amy James",
+      "age": 29,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-10-14T00:02:17.032869",
+      "impact": "moderate",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-10-14T00:02:17.032869",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-10-22T00:02:17.032869",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-01-01T00:02:17.032869",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Kathryn White",
+      "age": 29,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2025-02-17T00:02:17.032921",
+      "impact": "high",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-02-17T00:02:17.032921",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-02-25T00:02:17.032921",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-04-03T00:02:17.032921",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Elizabeth Brown",
+      "age": 32,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-06-08T00:02:17.032972",
+      "impact": "moderate",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-06-08T00:02:17.032972",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-13T00:02:17.032972",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-08-17T00:02:17.032972",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Leah Hall",
+      "age": 29,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2024-12-31T00:02:17.033051",
+      "impact": "high",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-12-31T00:02:17.033051",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-01-14T00:02:17.033051",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-03-07T00:02:17.033051",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Andrea Welch",
+      "age": 27,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-12-02T00:02:17.033060",
+      "impact": "high",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-12-02T00:02:17.033060",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-12-06T00:02:17.033060",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-01-31T00:02:17.033060",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Brandi Walls",
+      "age": 45,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-10-10T00:02:17.033084",
+      "impact": "moderate",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-10-10T00:02:17.033084",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-10-14T00:02:17.033084",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-01-01T00:02:17.033084",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Sarah Martin",
+      "age": 33,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "relationship_changes",
+      "date": "2024-05-03T00:02:17.033169",
+      "impact": "moderate",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-05-03T00:02:17.033169",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-05-04T00:02:17.033169",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-06-17T00:02:17.033169",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Nicole Brown",
+      "age": 44,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "relationship_changes",
+      "date": "2024-11-22T00:02:17.033210",
+      "impact": "moderate",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-11-22T00:02:17.033210",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-11-26T00:02:17.033210",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-12-27T00:02:17.033210",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Barbara Zamora",
+      "age": 34,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2024-05-25T00:02:17.033240",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-05-25T00:02:17.033240",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-05-28T00:02:17.033240",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-08-01T00:02:17.033240",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Linda Harvey",
+      "age": 40,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2024-07-25T00:02:17.033247",
+      "impact": "moderate",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-07-25T00:02:17.033247",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-08-02T00:02:17.033247",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-09-09T00:02:17.033247",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Sarah Davis",
+      "age": 26,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "irregular",
+        "last_screening": "2023-06-29T00:02:17.033372",
+        "completion_rate": 0.27796072506839725
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2025-01-16T00:02:17.033376",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-01-16T00:02:17.033376",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-01-27T00:02:17.033376",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-03-03T00:02:17.033376",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Destiny Smith",
+      "age": 39,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2025-01-17T00:02:17.033381",
+      "impact": "high",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-01-17T00:02:17.033381",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-01-31T00:02:17.033381",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-03-21T00:02:17.033381",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Brittany Anderson",
+      "age": 33,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "irregular",
+        "last_screening": "2021-07-17T00:02:17.033421",
+        "completion_rate": 0.35303325303557276
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2025-01-24T00:02:17.033423",
+      "impact": "high",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-01-24T00:02:17.033423",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-01-26T00:02:17.033423",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-04-19T00:02:17.033423",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Jennifer Oliver",
+      "age": 43,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2025-03-18T00:02:17.033458",
+      "impact": "moderate",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-03-18T00:02:17.033458",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-03-29T00:02:17.033458",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-05-11T00:02:17.033458",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Teresa Byrd",
+      "age": 44,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "irregular",
+        "last_screening": "2021-04-30T00:02:17.033692",
+        "completion_rate": 0.35259872091309563
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-10-27T00:02:17.033695",
+      "impact": "high",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-10-27T00:02:17.033695",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-11-03T00:02:17.033695",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-12-30T00:02:17.033695",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Frances Cardenas",
+      "age": 25,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "irregular",
+        "last_screening": "2020-08-18T00:02:17.033751",
+        "completion_rate": 0.2712165393955144
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2024-05-27T00:02:17.033755",
+      "impact": "moderate",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-05-27T00:02:17.033755",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-04T00:02:17.033755",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-07-30T00:02:17.033755",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Allison Sanchez",
+      "age": 32,
+      "persona_type": "health_aware_avoider",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "job_changes",
+      "date": "2024-05-27T00:02:17.033769",
+      "impact": "high",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-05-27T00:02:17.033769",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-02T00:02:17.033769",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-08-23T00:02:17.033769",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Jennifer Clark",
+      "age": 33,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2024-11-05T00:02:17.033935",
+        "completion_rate": 0.878492928269253
+      }
+    },
+    "trigger_event": {
+      "type": "family_changes",
+      "date": "2024-05-29T00:02:17.033940",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-05-29T00:02:17.033940",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-05T00:02:17.033940",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-07-26T00:02:17.033940",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Connie Robinson",
+      "age": 46,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-06-02T00:02:17.033990",
+        "completion_rate": 0.8088560981139612
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2025-02-26T00:02:17.033992",
+      "impact": "moderate",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-02-26T00:02:17.033992",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-02-27T00:02:17.033992",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-04-19T00:02:17.033992",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Traci Rodriguez",
+      "age": 35,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2025-01-06T00:02:17.034243",
+        "completion_rate": 0.7433462964001234
+      }
+    },
+    "trigger_event": {
+      "type": "career_changes",
+      "date": "2024-05-30T00:02:17.034249",
+      "impact": "moderate",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-05-30T00:02:17.034249",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-06T00:02:17.034249",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-07-23T00:02:17.034249",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Melissa Burton",
+      "age": 46,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-07-27T00:02:17.034270",
+        "completion_rate": 0.7439603646049675
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-10-08T00:02:17.034276",
+      "impact": "moderate",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-10-08T00:02:17.034276",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-10-10T00:02:17.034276",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-12-08T00:02:17.034276",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Karen Graham",
+      "age": 47,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2023-10-15T00:02:17.034351",
+        "completion_rate": 0.8177100432439395
+      }
+    },
+    "trigger_event": {
+      "type": "career_changes",
+      "date": "2025-01-01T00:02:17.034353",
+      "impact": "moderate",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-01-01T00:02:17.034353",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-01-12T00:02:17.034353",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-03-13T00:02:17.034353",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Alyssa Rosales",
+      "age": 39,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2023-09-09T00:02:17.034388",
+        "completion_rate": 0.7750271081919321
+      }
+    },
+    "trigger_event": {
+      "type": "family_changes",
+      "date": "2024-06-11T00:02:17.034392",
+      "impact": "high",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-06-11T00:02:17.034392",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-13T00:02:17.034392",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-07-11T00:02:17.034392",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Alexandra Vaughan",
+      "age": 50,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2024-12-17T00:02:17.034413",
+        "completion_rate": 0.7767258685328964
+      }
+    },
+    "trigger_event": {
+      "type": "family_changes",
+      "date": "2024-10-20T00:02:17.034415",
+      "impact": "moderate",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-10-20T00:02:17.034415",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-10-29T00:02:17.034415",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-12-05T00:02:17.034415",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Kara Schmidt",
+      "age": 42,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2023-10-10T00:02:17.034462",
+        "completion_rate": 0.8618491038276678
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-08-03T00:02:17.034467",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-08-03T00:02:17.034467",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-08-04T00:02:17.034467",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-09-29T00:02:17.034467",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Nichole Rivera",
+      "age": 40,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2023-05-13T00:02:17.034473",
+        "completion_rate": 0.8542749382373429
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-08-30T00:02:17.034475",
+      "impact": "high",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-08-30T00:02:17.034475",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-09-09T00:02:17.034475",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-10-21T00:02:17.034475",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Alexis Ferguson",
+      "age": 48,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2024-02-15T00:02:17.034537",
+        "completion_rate": 0.7488950624504029
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-08-16T00:02:17.034543",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-08-16T00:02:17.034543",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-08-30T00:02:17.034543",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-09-26T00:02:17.034543",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Jennifer Jones",
+      "age": 45,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2023-08-28T00:02:17.034588",
+        "completion_rate": 0.7990363760931267
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-04-05T00:02:17.034590",
+      "impact": "moderate",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-04-05T00:02:17.034590",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-04-16T00:02:17.034590",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-06-25T00:02:17.034590",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Rachel Weber",
+      "age": 33,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2023-07-08T00:02:17.034690",
+        "completion_rate": 0.8480251968971566
+      }
+    },
+    "trigger_event": {
+      "type": "relocations",
+      "date": "2024-10-28T00:02:17.034695",
+      "impact": "moderate",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-10-28T00:02:17.034695",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-11-01T00:02:17.034695",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-12-11T00:02:17.034695",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Samantha Campbell",
+      "age": 37,
+      "persona_type": "structured_system_seeker",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-05-08T00:02:17.035016",
+        "completion_rate": 0.8037671049713122
+      }
+    },
+    "trigger_event": {
+      "type": "career_changes",
+      "date": "2024-06-16T00:02:17.035018",
+      "impact": "moderate",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-06-16T00:02:17.035018",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-17T00:02:17.035018",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-07-20T00:02:17.035018",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Julie Costa",
+      "age": 41,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "relationship_changes",
+      "date": "2025-03-01T00:02:17.035146",
+      "impact": "moderate",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-03-01T00:02:17.035146",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-03-07T00:02:17.035146",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-03-31T00:02:17.035146",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Paul Hamilton",
+      "age": 40,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "irregular",
+        "last_screening": "2022-11-10T00:02:17.035204",
+        "completion_rate": 0.7131698849087456
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-11-27T00:02:17.035208",
+      "impact": "high",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-11-27T00:02:17.035208",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-12-02T00:02:17.035208",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-02-12T00:02:17.035208",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Shelby Harvey",
+      "age": 28,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2022-08-01T00:02:17.035257",
+        "completion_rate": 0.6919071055123253
+      }
+    },
+    "trigger_event": {
+      "type": "relationship_changes",
+      "date": "2024-12-26T00:02:17.035260",
+      "impact": "moderate",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-12-26T00:02:17.035260",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-01-05T00:02:17.035260",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-03-14T00:02:17.035260",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Kathleen Strong",
+      "age": 46,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2025-02-21T00:02:17.035367",
+      "impact": "high",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-02-21T00:02:17.035367",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-03-02T00:02:17.035367",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-05-03T00:02:17.035367",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Kimberly Mata",
+      "age": 47,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2022-04-02T00:02:17.035434",
+        "completion_rate": 0.7047276677907257
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2025-01-19T00:02:17.035437",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-01-19T00:02:17.035437",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-01-21T00:02:17.035437",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-03-14T00:02:17.035437",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Shannon Ramsey",
+      "age": 35,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "irregular",
+        "last_screening": "2024-08-29T00:02:17.035474",
+        "completion_rate": 0.7846178501611057
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2025-01-05T00:02:17.035477",
+      "impact": "moderate",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-01-05T00:02:17.035477",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-01-16T00:02:17.035477",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-03-13T00:02:17.035477",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Susan Turner",
+      "age": 45,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "relationship_changes",
+      "date": "2024-03-31T00:02:17.035542",
+      "impact": "moderate",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-03-31T00:02:17.035542",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-04-04T00:02:17.035542",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-05-10T00:02:17.035542",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Cindy Kane",
+      "age": 35,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2024-05-21T00:02:17.035678",
+        "completion_rate": 0.6578035061827717
+      }
+    },
+    "trigger_event": {
+      "type": "relationship_changes",
+      "date": "2024-07-13T00:02:17.035680",
+      "impact": "moderate",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-07-13T00:02:17.035680",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-07-24T00:02:17.035680",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-10-10T00:02:17.035680",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Amy Harmon",
+      "age": 36,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "irregular",
+        "last_screening": "2023-09-21T00:02:17.035731",
+        "completion_rate": 0.5005110180438053
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-06-06T00:02:17.035735",
+      "impact": "high",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-06-06T00:02:17.035735",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-19T00:02:17.035735",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-08-13T00:02:17.035735",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Nichole Alvarez",
+      "age": 41,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "irregular",
+        "last_screening": "2025-01-20T00:02:17.035743",
+        "completion_rate": 0.5548113432885337
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-06-08T00:02:17.035746",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-06-08T00:02:17.035746",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-15T00:02:17.035746",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-08-17T00:02:17.035746",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Kayla Rodriguez",
+      "age": 34,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2025-02-17T00:02:17.035753",
+        "completion_rate": 0.718875377525369
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-04-08T00:02:17.035755",
+      "impact": "high",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-04-08T00:02:17.035755",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-04-19T00:02:17.035755",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-06-09T00:02:17.035755",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Wendy Schmidt",
+      "age": 32,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "biennial",
+        "last_screening": "2022-10-22T00:02:17.035824",
+        "completion_rate": 0.5222764005676263
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-10-05T00:02:17.035826",
+      "impact": "high",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-10-05T00:02:17.035826",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-10-07T00:02:17.035826",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-12-07T00:02:17.035826",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Robin Hawkins",
+      "age": 41,
+      "persona_type": "balanced_life_integrator",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-04-27T00:02:17.035894",
+        "completion_rate": 0.7758409751088275
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-05-29T00:02:17.035897",
+      "impact": "moderate",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-05-29T00:02:17.035897",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-11T00:02:17.035897",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-08-10T00:02:17.035897",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Denise Stanley",
+      "age": 40,
+      "persona_type": "healthcare_professional",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-10-17T00:02:17.036071",
+        "completion_rate": 0.8982436491135022
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-06-10T00:02:17.036073",
+      "impact": "high",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-06-10T00:02:17.036073",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-06-17T00:02:17.036073",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-08-07T00:02:17.036073",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Breanna Scott",
+      "age": 31,
+      "persona_type": "healthcare_professional",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-06-11T00:02:17.036127",
+        "completion_rate": 0.9041233409305528
+      }
+    },
+    "trigger_event": {
+      "type": "specialization_changes",
+      "date": "2024-04-19T00:02:17.036130",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-04-19T00:02:17.036130",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-04-22T00:02:17.036130",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-06-05T00:02:17.036130",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Aimee Burgess",
+      "age": 37,
+      "persona_type": "healthcare_professional",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-06-17T00:02:17.036138",
+        "completion_rate": 0.9525123969240712
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2025-02-22T00:02:17.036145",
+      "impact": "moderate",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-02-22T00:02:17.036145",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-03-04T00:02:17.036145",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-05-01T00:02:17.036145",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Dana Chapman",
+      "age": 41,
+      "persona_type": "healthcare_professional",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-08-27T00:02:17.036223",
+        "completion_rate": 0.8394116181926936
+      }
+    },
+    "trigger_event": {
+      "type": "specialization_changes",
+      "date": "2025-03-02T00:02:17.036225",
+      "impact": "moderate",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-03-02T00:02:17.036225",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-03-03T00:02:17.036225",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-05-13T00:02:17.036225",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Jacqueline Campbell",
+      "age": 29,
+      "persona_type": "healthcare_professional",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-06-03T00:02:17.036441",
+        "completion_rate": 0.9285778015874556
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-04-17T00:02:17.036445",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-04-17T00:02:17.036445",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-04-26T00:02:17.036445",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-05-19T00:02:17.036445",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Mary Escobar",
+      "age": 37,
+      "persona_type": "healthcare_professional",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-05-29T00:02:17.036483",
+        "completion_rate": 0.9029242265755631
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-04-21T00:02:17.036485",
+      "impact": "moderate",
+      "status": "in_progress"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-04-21T00:02:17.036485",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "attentive",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-04-23T00:02:17.036485",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-06-27T00:02:17.036485",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Nancy Jennings",
+      "age": 42,
+      "persona_type": "healthcare_professional",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-06-16T00:02:17.036539",
+        "completion_rate": 0.8109827228080272
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-11-19T00:02:17.036544",
+      "impact": "high",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-11-19T00:02:17.036544",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-12-03T00:02:17.036544",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-12-20T00:02:17.036544",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Heidi White",
+      "age": 42,
+      "persona_type": "healthcare_professional",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": true,
+        "frequency": "annual",
+        "last_screening": "2024-12-13T00:02:17.036557",
+        "completion_rate": 0.8966130640639834
+      }
+    },
+    "trigger_event": {
+      "type": "career_advancement",
+      "date": "2024-09-19T00:02:17.036561",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-09-19T00:02:17.036561",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-09-30T00:02:17.036561",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-11-26T00:02:17.036561",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": true
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Susan Hernandez",
+      "age": 50,
+      "persona_type": "overlooked_risk_group",
+      "risk_level": "low",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "healthcare_access_changes",
+      "date": "2024-10-17T00:02:17.036723",
+      "impact": "high",
+      "status": "completed"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2024-10-17T00:02:17.036723",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2024-10-22T00:02:17.036723",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2024-12-10T00:02:17.036723",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  },
+  {
+    "scenario_type": "life_transition",
+    "user": {
+      "name": "Kelly Romero",
+      "age": 42,
+      "persona_type": "overlooked_risk_group",
+      "risk_level": "moderate",
+      "screening_history": {
+        "has_history": false,
+        "frequency": "never",
+        "last_screening": null,
+        "completion_rate": 0.0
+      }
+    },
+    "trigger_event": {
+      "type": "retirement_planning",
+      "date": "2025-01-22T00:02:17.036879",
+      "impact": "high",
+      "status": "planned"
+    },
+    "journey": [
+      {
+        "step": "event_trigger",
+        "timestamp": "2025-01-22T00:02:17.036879",
+        "actions": [
+          "receive_transition_notification",
+          "view_impact_assessment"
+        ],
+        "emotional_state": "concerned",
+        "completion_status": "completed"
+      },
+      {
+        "step": "support_plan",
+        "timestamp": "2025-01-28T00:02:17.036879",
+        "actions": [
+          "review_support_options",
+          "select_support_services"
+        ],
+        "emotional_state": "engaged",
+        "completion_status": "completed"
+      },
+      {
+        "step": "follow_up",
+        "timestamp": "2025-03-25T00:02:17.036879",
+        "actions": [
+          "complete_follow_up_assessment",
+          "update_prevention_plan"
+        ],
+        "emotional_state": "stable",
+        "completion_status": "planned"
+      }
+    ],
+    "expected_outcomes": {
+      "support_plan_creation": true,
+      "prevention_plan_update": true,
+      "follow_up_completion": false
+    }
+  }
+]

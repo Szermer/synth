@@ -1,0 +1,448 @@
+{
+  "structural_integrity": {
+    "missing_fields": [],
+    "invalid_types": [],
+    "nested_structure_issues": []
+  },
+  "demographic_consistency": {
+    "age_distribution": {
+      "health_aware_avoider": {
+        "count": 151,
+        "min_age": 25,
+        "max_age": 45,
+        "avg_age": 34.9271523178808,
+        "out_of_range": 0
+      },
+      "structured_system_seeker": {
+        "count": 126,
+        "min_age": 30,
+        "max_age": 50,
+        "avg_age": 40.07142857142857,
+        "out_of_range": 0
+      },
+      "balanced_life_integrator": {
+        "count": 101,
+        "min_age": 28,
+        "max_age": 48,
+        "avg_age": 36.78217821782178,
+        "out_of_range": 0
+      },
+      "healthcare_professional": {
+        "count": 76,
+        "min_age": 25,
+        "max_age": 45,
+        "avg_age": 36.473684210526315,
+        "out_of_range": 0
+      },
+      "overlooked_risk_group": {
+        "count": 51,
+        "min_age": 30,
+        "max_age": 50,
+        "avg_age": 41.0,
+        "out_of_range": 0
+      }
+    },
+    "education_distribution": {
+      "health_aware_avoider": {
+        "expected": {
+          "bachelor": 0.5,
+          "master": 0.3,
+          "high_school": 0.2
+        },
+        "actual": {
+          "bachelor": 78,
+          "high_school": 27,
+          "master": 46
+        }
+      },
+      "structured_system_seeker": {
+        "expected": {
+          "bachelor": 0.4,
+          "master": 0.5,
+          "phd": 0.1
+        },
+        "actual": {
+          "bachelor": 38,
+          "master": 77,
+          "phd": 11
+        }
+      },
+      "balanced_life_integrator": {
+        "expected": {
+          "bachelor": 0.6,
+          "master": 0.3,
+          "high_school": 0.1
+        },
+        "actual": {
+          "master": 22,
+          "high_school": 7,
+          "bachelor": 72
+        }
+      },
+      "healthcare_professional": {
+        "expected": {
+          "master": 0.4,
+          "phd": 0.4,
+          "bachelor": 0.2
+        },
+        "actual": {
+          "master": 29,
+          "phd": 35,
+          "bachelor": 12
+        }
+      },
+      "overlooked_risk_group": {
+        "expected": {
+          "high_school": 0.5,
+          "bachelor": 0.3,
+          "master": 0.2
+        },
+        "actual": {
+          "bachelor": 16,
+          "high_school": 29,
+          "master": 6
+        }
+      }
+    },
+    "risk_level_distribution": {
+      "health_aware_avoider": {
+        "low": 104,
+        "moderate": 47
+      },
+      "structured_system_seeker": {
+        "low": 100,
+        "moderate": 26
+      },
+      "balanced_life_integrator": {
+        "moderate": 30,
+        "low": 71
+      },
+      "healthcare_professional": {
+        "low": 59,
+        "moderate": 17
+      },
+      "overlooked_risk_group": {
+        "low": 32,
+        "moderate": 19
+      }
+    }
+  },
+  "behavioral_patterns": {
+    "screening_patterns": {
+      "health_aware_avoider": {
+        "has_history_rate": 0.2980132450331126,
+        "frequency_distribution": {
+          "never": 106,
+          "irregular": 45
+        },
+        "avg_completion_rate": 0.08113911166073888
+      },
+      "structured_system_seeker": {
+        "has_history_rate": 1.0,
+        "frequency_distribution": {
+          "annual": 52,
+          "biennial": 74
+        },
+        "avg_completion_rate": 0.7955752006921872
+      },
+      "balanced_life_integrator": {
+        "has_history_rate": 0.7326732673267327,
+        "frequency_distribution": {
+          "never": 27,
+          "biennial": 29,
+          "annual": 26,
+          "irregular": 19
+        },
+        "avg_completion_rate": 0.4716744850527935
+      },
+      "healthcare_professional": {
+        "has_history_rate": 1.0,
+        "frequency_distribution": {
+          "annual": 76
+        },
+        "avg_completion_rate": 0.898201088154019
+      },
+      "overlooked_risk_group": {
+        "has_history_rate": 0.17647058823529413,
+        "frequency_distribution": {
+          "irregular": 9,
+          "never": 42
+        },
+        "avg_completion_rate": 0.03933729083538249
+      }
+    },
+    "life_event_patterns": {
+      "health_aware_avoider": {
+        "event_types": {
+          "job_changes": 116,
+          "relocations": 107,
+          "relationship_changes": 98
+        },
+        "impacts": {
+          "moderate": 108,
+          "low": 101,
+          "high": 112
+        },
+        "statuses": {
+          "completed": 114,
+          "in_progress": 120,
+          "planned": 87
+        }
+      },
+      "structured_system_seeker": {
+        "event_types": {
+          "relocations": 91,
+          "career_changes": 79,
+          "family_changes": 82
+        },
+        "impacts": {
+          "low": 88,
+          "high": 79,
+          "moderate": 85
+        },
+        "statuses": {
+          "in_progress": 86,
+          "completed": 87,
+          "planned": 79
+        }
+      },
+      "balanced_life_integrator": {
+        "event_types": {
+          "relationship_changes": 91,
+          "career_advancement": 103
+        },
+        "impacts": {
+          "high": 71,
+          "moderate": 68,
+          "low": 55
+        },
+        "statuses": {
+          "in_progress": 57,
+          "completed": 71,
+          "planned": 66
+        }
+      },
+      "healthcare_professional": {
+        "event_types": {
+          "career_advancement": 76,
+          "specialization_changes": 81
+        },
+        "impacts": {
+          "high": 57,
+          "low": 41,
+          "moderate": 59
+        },
+        "statuses": {
+          "planned": 55,
+          "in_progress": 46,
+          "completed": 56
+        }
+      },
+      "overlooked_risk_group": {
+        "event_types": {
+          "retirement_planning": 57,
+          "healthcare_access_changes": 48
+        },
+        "impacts": {
+          "low": 39,
+          "high": 43,
+          "moderate": 23
+        },
+        "statuses": {
+          "completed": 40,
+          "planned": 30,
+          "in_progress": 35
+        }
+      }
+    },
+    "prevention_approaches": {
+      "health_aware_avoider": {
+        "symptom_triggered": 151
+      },
+      "structured_system_seeker": {
+        "systematic_tracking": 126
+      },
+      "balanced_life_integrator": {
+        "lifestyle_focused": 101
+      },
+      "healthcare_professional": {
+        "data_driven": 76
+      },
+      "overlooked_risk_group": {
+        "protocol_seeking": 51
+      }
+    }
+  },
+  "narrative_authenticity": {
+    "narrative_consistency": {
+      "health_aware_avoider": {
+        "anxiety": 45,
+        "avoid": 60,
+        "aware": 60
+      },
+      "structured_system_seeker": {
+        "system": 75,
+        "track": 78,
+        "organized": 46,
+        "plan": 42
+      },
+      "balanced_life_integrator": {
+        "balance": 68,
+        "wellness": 33,
+        "lifestyle": 35
+      },
+      "healthcare_professional": {
+        "professional": 60,
+        "expertise": 32,
+        "research": 22,
+        "evidence": 24
+      },
+      "overlooked_risk_group": {
+        "specific": 39,
+        "unique": 19,
+        "guidance": 27,
+        "tailored": 11
+      }
+    },
+    "pain_point_alignment": {
+      "health_aware_avoider": {
+        "expected": [
+          "vague_risk_info",
+          "emotional_barriers",
+          "care_relationship_difficulty",
+          "system_complexity"
+        ],
+        "actual": {
+          "emotional_barriers": 151,
+          "system_complexity": 151,
+          "vague_risk_info": 151,
+          "care_relationship_difficulty": 151
+        }
+      },
+      "structured_system_seeker": {
+        "expected": [
+          "geographic_consistency",
+          "fragmented_tracking",
+          "time_constraints",
+          "routine_disruption"
+        ],
+        "actual": {
+          "routine_disruption": 126,
+          "fragmented_tracking": 126,
+          "time_constraints": 126,
+          "geographic_consistency": 126
+        }
+      },
+      "balanced_life_integrator": {
+        "expected": [
+          "preference_disrespect",
+          "intrusive_technology",
+          "metrics_overwhelm",
+          "holistic_provider_finding"
+        ],
+        "actual": {
+          "intrusive_technology": 101,
+          "metrics_overwhelm": 101,
+          "preference_disrespect": 101,
+          "holistic_provider_finding": 101
+        }
+      },
+      "healthcare_professional": {
+        "expected": [
+          "professional_pressure",
+          "data_overload",
+          "system_limitations",
+          "research_clinical_gap"
+        ],
+        "actual": {
+          "research_clinical_gap": 76,
+          "system_limitations": 76,
+          "data_overload": 76,
+          "professional_pressure": 76
+        }
+      },
+      "overlooked_risk_group": {
+        "expected": [
+          "social_stigma",
+          "provider_dismissal",
+          "demographic_guidance_lack",
+          "standard_prevention_mismatch"
+        ],
+        "actual": {
+          "standard_prevention_mismatch": 51,
+          "provider_dismissal": 51,
+          "social_stigma": 51,
+          "demographic_guidance_lack": 51
+        }
+      }
+    },
+    "motivation_alignment": {
+      "health_aware_avoider": {
+        "expected": [
+          "anxiety_reduction",
+          "simplicity",
+          "convenience"
+        ],
+        "actual": {
+          "anxiety_reduction": 151,
+          "simplicity": 151,
+          "convenience": 151
+        }
+      },
+      "structured_system_seeker": {
+        "expected": [
+          "milestone_achievement",
+          "organization",
+          "efficiency"
+        ],
+        "actual": {
+          "organization": 126,
+          "efficiency": 126,
+          "milestone_achievement": 126
+        }
+      },
+      "balanced_life_integrator": {
+        "expected": [
+          "holistic_wellness",
+          "quality_of_life",
+          "lifestyle_integration"
+        ],
+        "actual": {
+          "quality_of_life": 101,
+          "lifestyle_integration": 101,
+          "holistic_wellness": 101
+        }
+      },
+      "healthcare_professional": {
+        "expected": [
+          "clinical_expertise",
+          "influencing_others",
+          "evidence_based_practice"
+        ],
+        "actual": {
+          "evidence_based_practice": 76,
+          "influencing_others": 76,
+          "clinical_expertise": 76
+        }
+      },
+      "overlooked_risk_group": {
+        "expected": [
+          "inclusivity",
+          "clear_guidance",
+          "recognition"
+        ],
+        "actual": {
+          "recognition": 51,
+          "inclusivity": 51,
+          "clear_guidance": 51
+        }
+      }
+    }
+  },
+  "edge_cases": {
+    "unusual_age_combinations": [],
+    "inconsistent_screening": [],
+    "unusual_event_patterns": [],
+    "narrative_anomalies": []
+  }
+}

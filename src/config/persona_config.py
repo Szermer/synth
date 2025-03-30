@@ -32,8 +32,8 @@ RACE_ETHNICITY_RISKS = {
 # Persona templates with their characteristics
 PERSONA_TEMPLATES: Dict[str, Dict] = {
     "health_aware_avoider": {
-        "age_range": (25, 45),  # Younger focus, starting from 25
-        "gender_distribution": {"female": 0.95, "male": 0.05},  # 95% female, 5% male
+        "age_range": (25, 45),
+        "gender_distribution": {"female": 0.95, "male": 0.05},
         "education_distribution": {
             "bachelor": 0.5,
             "master": 0.3,
@@ -55,9 +55,26 @@ PERSONA_TEMPLATES: Dict[str, Dict] = {
             "hormonal_factors",
             "lifestyle"
         ],
+        "pain_points": [
+            "emotional_barriers",
+            "system_complexity",
+            "vague_risk_info",
+            "care_relationship_difficulty"
+        ],
+        "primary_motivations": [
+            "anxiety_reduction",
+            "simplicity",
+            "convenience"
+        ],
+        "prevention_approach": "symptom_triggered",
+        "family_history_anxiety": (0.7, 1.0),
+        "life_transitions": {
+            "frequency": "high",
+            "types": ["job_changes", "relocations", "relationship_changes"]
+        }
     },
     "structured_system_seeker": {
-        "age_range": (30, 50),  # Younger focus, starting from 30
+        "age_range": (30, 50),
         "gender_distribution": {"female": 0.98, "male": 0.02},
         "education_distribution": {
             "bachelor": 0.4,
@@ -75,9 +92,26 @@ PERSONA_TEMPLATES: Dict[str, Dict] = {
             "genetic_factors",
             "screening_history"
         ],
+        "pain_points": [
+            "routine_disruption",
+            "fragmented_tracking",
+            "time_constraints",
+            "geographic_consistency"
+        ],
+        "primary_motivations": [
+            "organization",
+            "efficiency",
+            "milestone_achievement"
+        ],
+        "prevention_approach": "systematic_tracking",
+        "family_history_anxiety": (0.4, 0.7),
+        "life_transitions": {
+            "frequency": "very_high",
+            "types": ["relocations", "career_changes", "family_changes"]
+        }
     },
     "balanced_life_integrator": {
-        "age_range": (28, 48),  # Younger focus, starting from 28
+        "age_range": (28, 48),
         "gender_distribution": {"female": 0.97, "male": 0.03},
         "education_distribution": {
             "bachelor": 0.6,
@@ -95,9 +129,26 @@ PERSONA_TEMPLATES: Dict[str, Dict] = {
             "lifestyle",
             "environmental_factors"
         ],
+        "pain_points": [
+            "intrusive_technology",
+            "metrics_overwhelm",
+            "preference_disrespect",
+            "holistic_provider_finding"
+        ],
+        "primary_motivations": [
+            "quality_of_life",
+            "lifestyle_integration",
+            "holistic_wellness"
+        ],
+        "prevention_approach": "lifestyle_focused",
+        "family_history_anxiety": (0.2, 0.4),
+        "life_transitions": {
+            "frequency": "low",
+            "types": ["relationship_changes", "career_advancement"]
+        }
     },
     "healthcare_professional": {
-        "age_range": (25, 45),  # Younger focus, starting from 25
+        "age_range": (25, 45),
         "gender_distribution": {"female": 0.90, "male": 0.10},
         "education_distribution": {
             "master": 0.4,
@@ -115,9 +166,26 @@ PERSONA_TEMPLATES: Dict[str, Dict] = {
             "age",
             "genetic_factors"
         ],
+        "pain_points": [
+            "research_clinical_gap",
+            "system_limitations",
+            "data_overload",
+            "professional_pressure"
+        ],
+        "primary_motivations": [
+            "evidence_based_practice",
+            "influencing_others",
+            "clinical_expertise"
+        ],
+        "prevention_approach": "data_driven",
+        "family_history_anxiety": (0.3, 0.6),
+        "life_transitions": {
+            "frequency": "moderate",
+            "types": ["career_advancement", "specialization_changes"]
+        }
     },
     "overlooked_risk_group": {
-        "age_range": (30, 50),  # Younger focus, starting from 30
+        "age_range": (30, 50),
         "gender_distribution": {"female": 0.92, "male": 0.08},
         "education_distribution": {
             "high_school": 0.5,
@@ -130,7 +198,24 @@ PERSONA_TEMPLATES: Dict[str, Dict] = {
         "risk_factors": ["age", "family_history", "lifestyle", "socioeconomic"],
         "health_awareness": (0.3, 0.5),
         "action_tendency": (0.1, 0.3),
-    },
+        "pain_points": [
+            "standard_prevention_mismatch",
+            "provider_dismissal",
+            "social_stigma",
+            "demographic_guidance_lack"
+        ],
+        "primary_motivations": [
+            "recognition",
+            "inclusivity",
+            "clear_guidance"
+        ],
+        "prevention_approach": "protocol_seeking",
+        "family_history_anxiety": (0.7, 1.0),
+        "life_transitions": {
+            "frequency": "moderate",
+            "types": ["retirement_planning", "healthcare_access_changes"]
+        }
+    }
 }
 
 # Health condition probabilities by age group
