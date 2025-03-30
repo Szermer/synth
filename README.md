@@ -11,8 +11,14 @@ This project generates a synthetic dataset of 500 customers based on defined per
 │   │   └── persona_config.py    # Persona templates and configuration
 │   ├── data_generation/
 │   │   └── generator.py         # Core data generation logic
+│   ├── test_scenarios/
+│   │   ├── generate_test_scenarios.py    # Generate test scenarios
+│   │   ├── analyze_journeys.py           # Analyze persona journeys
+│   │   ├── visualize_journeys.py         # Create journey visualizations
+│   │   └── test_execution_framework.py   # Test execution framework
 │   └── generate_dataset.py      # Script to run data generation
 ├── output/                      # Generated dataset output directory
+│   └── test_scenarios/         # Test results and visualizations
 ├── requirements.txt             # Project dependencies
 └── README.md                    # This file
 ```
@@ -29,6 +35,8 @@ This project generates a synthetic dataset of 500 customers based on defined per
   - Platform engagement data
   - Narrative elements
   - Social determinants of health context
+- Test execution framework for validation
+- Journey analysis and visualization capabilities
 
 ## Persona Types
 
@@ -94,15 +102,69 @@ This distribution reflects the early detection focus, with most customers in low
 
 ## Usage
 
+### Generate Dataset
+
 Run the data generation script:
 ```bash
 PYTHONPATH=src python3 src/generate_dataset.py
 ```
 
-The script will:
-1. Generate 500 synthetic customer profiles
-2. Save the dataset to `output/synthetic_customers.json`
-3. Print statistics about the generated dataset
+### Generate Test Scenarios
+
+Generate test scenarios for different persona types:
+```bash
+PYTHONPATH=src python3 src/test_scenarios/generate_test_scenarios.py
+```
+
+### Analyze Journeys
+
+Analyze persona journeys and generate insights:
+```bash
+PYTHONPATH=src python3 src/test_scenarios/analyze_journeys.py
+```
+
+### Visualize Journeys
+
+Create visualizations of journey patterns:
+```bash
+PYTHONPATH=src python3 src/test_scenarios/visualize_journeys.py
+```
+
+### Run Test Framework
+
+Execute the test framework to validate data quality:
+```bash
+PYTHONPATH=src python3 src/test_scenarios/test_execution_framework.py
+```
+
+## Test Framework
+
+The project includes a comprehensive test execution framework that validates:
+
+1. **Persona Distribution**
+   - Validates correct distribution of persona types
+   - Ensures adherence to target percentages
+   - Checks consistency across scenario types
+
+2. **Emotional States**
+   - Validates emotional state patterns
+   - Ensures appropriate distribution of emotions
+   - Checks consistency in emotional profiles
+
+3. **Journey Completion**
+   - Validates completion rates for each step
+   - Ensures logical progression through journeys
+   - Checks consistency in completion patterns
+
+4. **Risk Levels**
+   - Validates risk level distribution
+   - Ensures appropriate risk profiles per persona
+   - Checks consistency in risk assessment
+
+5. **Scenario Consistency**
+   - Validates consistency across scenario types
+   - Ensures persona type consistency
+   - Checks data structure integrity
 
 ## Output Format
 
@@ -110,34 +172,49 @@ The generated dataset is saved in JSON format with the following structure:
 
 ```json
 {
-  "customer_id": "uuid",
-  "persona_type": "string",
-  "core_profile": {
-    "age": "integer",
-    "gender": "string",
-    "education": "string",
-    "location": "object"
-  },
-  "health_profile": {
+  "scenario_type": "first_time_user",
+  "user": {
+    "name": "string",
+    "age": number,
+    "persona_type": "string",
     "risk_level": "string",
-    "conditions": "array",
-    "screening_history": "object"
+    "screening_history": {
+      "has_history": boolean,
+      "frequency": "string",
+      "last_screening": "string|null",
+      "completion_rate": number
+    }
   },
-  "life_events": "array",
-  "engagement_data": "object",
-  "narrative_elements": "object",
-  "sdoh_context": "object"
+  "journey": [
+    {
+      "step": "string",
+      "timestamp": "string",
+      "actions": ["string"],
+      "emotional_state": "string",
+      "completion_status": "string"
+    }
+  ]
 }
 ```
 
 ## Customization
 
-You can modify the following aspects of the data generation:
+You can customize the following aspects:
 
-1. Persona characteristics in `src/config/persona_config.py`
-2. Risk probabilities and distributions
-3. Life event types and frequencies
-4. Engagement patterns and metrics
+1. **Persona Characteristics**
+   - Modify persona types and their characteristics
+   - Adjust distribution percentages
+   - Update emotional state patterns
+
+2. **Journey Steps**
+   - Add or modify journey steps
+   - Update completion criteria
+   - Modify emotional state transitions
+
+3. **Risk Assessment**
+   - Adjust risk level criteria
+   - Modify risk distribution
+   - Update risk factors
 
 ## Development
 
@@ -147,6 +224,23 @@ The project uses:
 - Faker for generating realistic data
 - Type hints for better code maintainability
 
+To extend or modify the data generation:
+
+1. **Add New Persona Types**
+   - Update `persona_config.py`
+   - Add new persona characteristics
+   - Update distribution percentages
+
+2. **Modify Journey Steps**
+   - Update `generator.py`
+   - Add new step types
+   - Modify step logic
+
+3. **Add New Test Cases**
+   - Update `test_execution_framework.py`
+   - Add new validation rules
+   - Create custom test scenarios
+
 ## License
 
-MIT License
+This project is licensed under the MIT License.
