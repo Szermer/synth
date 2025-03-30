@@ -15,7 +15,8 @@ This project generates a synthetic dataset of 500 customers based on defined per
 │   │   ├── generate_test_scenarios.py    # Generate test scenarios
 │   │   ├── analyze_journeys.py           # Analyze persona journeys
 │   │   ├── visualize_journeys.py         # Create journey visualizations
-│   │   └── test_execution_framework.py   # Test execution framework
+│   │   ├── test_execution_framework.py   # Test execution framework
+│   │   └── validate_journey_phases.py    # Journey phase validation
 │   └── generate_dataset.py      # Script to run data generation
 ├── output/                      # Generated dataset output directory
 │   └── test_scenarios/         # Test results and visualizations
@@ -37,6 +38,35 @@ This project generates a synthetic dataset of 500 customers based on defined per
   - Social determinants of health context
 - Test execution framework for validation
 - Journey analysis and visualization capabilities
+- Journey phase validation framework
+
+## Customer Journey Framework
+
+The project implements a comprehensive customer journey framework with four key phases:
+
+### 1. Awareness Phase
+- Initial discovery and connection
+- Emotional state validation
+- Initial concern and curiosity assessment
+- Marketing content alignment
+
+### 2. Engagement Phase
+- Risk assessment completion
+- Narrative capture
+- Life events timeline creation
+- Progressive engagement tracking
+
+### 3. Action Phase
+- Prevention plan development
+- Support plan creation
+- Action planning
+- Motivation assessment
+
+### 4. Continuity Phase
+- Follow-up engagement
+- Risk awareness maintenance
+- Barrier identification
+- Stability monitoring
 
 ## Persona Types
 
@@ -137,6 +167,13 @@ Execute the test framework to validate data quality:
 PYTHONPATH=src python3 src/test_scenarios/test_execution_framework.py
 ```
 
+### Validate Journey Phases
+
+Run the journey phase validation:
+```bash
+PYTHONPATH=src python3 src/test_scenarios/validate_journey_phases.py
+```
+
 ## Test Framework
 
 The project includes a comprehensive test execution framework that validates:
@@ -165,6 +202,13 @@ The project includes a comprehensive test execution framework that validates:
    - Validates consistency across scenario types
    - Ensures persona type consistency
    - Checks data structure integrity
+
+6. **Journey Phase Validation**
+   - Validates Awareness phase emotional progression
+   - Checks Engagement phase completion rates
+   - Monitors Action phase motivation levels
+   - Tracks Continuity phase stability
+   - Analyzes phase transitions
 
 ## Output Format
 
@@ -216,6 +260,11 @@ You can customize the following aspects:
    - Modify risk distribution
    - Update risk factors
 
+4. **Journey Phases**
+   - Customize phase validation criteria
+   - Modify phase transition rules
+   - Update emotional state requirements
+
 ## Development
 
 The project uses:
@@ -240,6 +289,11 @@ To extend or modify the data generation:
    - Update `test_execution_framework.py`
    - Add new validation rules
    - Create custom test scenarios
+
+4. **Extend Journey Phase Validation**
+   - Update `validate_journey_phases.py`
+   - Add new phase-specific validation rules
+   - Modify transition criteria
 
 ## License
 
