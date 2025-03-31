@@ -298,3 +298,256 @@ To extend or modify the data generation:
 ## License
 
 This project is licensed under the MIT License.
+
+# Engagement Pattern System
+
+A sophisticated React component system for creating adaptive, persona-responsive user experiences. This system implements four key engagement patterns: Value Articulation, Progressive Disclosure, Emotional Scaffolding, and Persona Adaptation.
+
+## Features
+
+- **Value-First Architecture**: Emphasizes the "why" behind each step
+- **Progressive Disclosure**: Adapts content visibility based on user engagement
+- **Emotional Scaffolding**: Provides contextual emotional support
+- **Persona Adaptation**: Tailors content to user personas
+- **Dynamic Content Loading**: Progressive loading of content tiers
+- **Interaction-Based Adaptation**: Real-time content adaptation
+- **Progress Preservation**: Saves and restores user progress
+- **Development Tools**: Pattern visualization and metrics tracking
+
+## Installation
+
+```bash
+npm install @kit/engagement-patterns
+# or
+yarn add @kit/engagement-patterns
+```
+
+## Dependencies
+
+```json
+{
+  "dependencies": {
+    "react": "^18.0.0",
+    "zod": "^3.0.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.0.0"
+  }
+}
+```
+
+## Usage
+
+### Basic Implementation
+
+```tsx
+import { JourneyStepComponent } from '@kit/engagement-patterns';
+
+function JourneyPage() {
+  const step = {
+    id: 'step-1',
+    type: 'essential',
+    content: 'Your step content here...',
+    visibility: 'visible'
+  };
+
+  const user = {
+    id: 'user-1',
+    persona: 'health_aware_avoider',
+    email: 'user@example.com',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+
+  return (
+    <JourneyStepComponent
+      step={step}
+      user={user}
+      onComplete={(stepId, metrics) => {
+        console.log('Step completed:', stepId, metrics);
+      }}
+    />
+  );
+}
+```
+
+### Step Types
+
+The system supports three types of steps:
+
+1. **Essential**: Core information that should be immediately visible
+2. **Extended**: Additional context and details
+3. **Comprehensive**: Deep dive content with detailed information
+
+```tsx
+const essentialStep = {
+  type: 'essential',
+  content: 'Core information...'
+};
+
+const extendedStep = {
+  type: 'extended',
+  content: 'Core + extended content...'
+};
+
+const comprehensiveStep = {
+  type: 'comprehensive',
+  content: 'Core + extended + comprehensive content...'
+};
+```
+
+### User Personas
+
+The system supports various user personas:
+
+- `health_aware_avoider`: Cautious, detail-oriented users
+- `structured_system_seeker`: Analytical, organized users
+- `balanced_life_integrator`: Practical, holistic users
+- `healthcare_professional`: Professional, knowledgeable users
+- `overlooked_risk_group`: Pragmatic, resourceful users
+
+```tsx
+const user = {
+  persona: 'health_aware_avoider',
+  // ... other user properties
+};
+```
+
+### Pattern Components
+
+Each step can include various pattern components:
+
+```tsx
+const step = {
+  // ... basic step properties
+  valueComponents: {
+    preview: 'Why this matters...',
+    confirmation: 'You've made great progress!',
+    contextual: 'Additional context...'
+  },
+  emotionalComponents: {
+    type: 'reassurance',
+    intensity: 0.8,
+    message: 'You're doing great!'
+  },
+  personaComponents: {
+    approach: 'direct',
+    intensity: 0.7,
+    adaptations: ['Adapted content...']
+  }
+};
+```
+
+### Development Tools
+
+In development mode, the component displays pattern metrics and visualization:
+
+```tsx
+// Pattern metrics are automatically tracked
+const metrics = {
+  valueArticulation: 0.85,
+  emotionalScaffolding: 0.72,
+  progressiveDisclosure: 0.68,
+  personaAlignment: 0.91
+};
+```
+
+## Hooks
+
+### useDynamicContentLoading
+
+Manages progressive content loading:
+
+```tsx
+const { contentState } = useDynamicContentLoading(step, user);
+```
+
+### useInteractionAdaptation
+
+Adapts content based on user interactions:
+
+```tsx
+const adaptedStep = useInteractionAdaptation(measurements, enhancedStep);
+```
+
+### useProgressPreservation
+
+Manages progress saving and restoration:
+
+```tsx
+const { calculateProgress } = useProgressPreservation(step, user, interactions);
+```
+
+## Styling
+
+The component uses Tailwind CSS for styling. Custom styles can be applied using the `cn` utility:
+
+```tsx
+<div className={cn(
+  "base-styles",
+  {
+    'essential-styles': step.type === 'essential',
+    'extended-styles': step.type === 'extended',
+    'comprehensive-styles': step.type === 'comprehensive'
+  }
+)}>
+```
+
+## Best Practices
+
+1. **Content Structure**
+   - Start with essential content
+   - Layer extended content progressively
+   - Provide comprehensive details when needed
+
+2. **Persona Adaptation**
+   - Match content style to user persona
+   - Adjust emotional support intensity
+   - Use appropriate communication approach
+
+3. **Progress Tracking**
+   - Save progress regularly
+   - Restore from last known state
+   - Track completion metrics
+
+4. **Performance**
+   - Load content progressively
+   - Cache extended content
+   - Optimize for user interactions
+
+## Development
+
+### Running Tests
+
+```bash
+npm test
+# or
+yarn test
+```
+
+### Building
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+### Development Mode
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+MIT
