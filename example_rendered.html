@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engagement Pattern System - Rendered Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .journey-step {
+      transition: all 0.3s ease;
+    }
+    .pattern-meter {
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: #e5e7eb;
+    }
+    .pattern-meter-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-8">Engagement Pattern System - Rendered Example</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Configuration Panel -->
+      <div class="bg-white rounded-lg shadow p-6 space-y-6">
+        <h2 class="text-xl font-semibold">Configuration</h2>
+        
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">User Persona</label>
+            <select id="persona-select" class="w-full p-2 border rounded">
+              <option value="health_aware_avoider">health aware avoider</option>
+              <option value="structured_system_seeker">structured system seeker</option>
+              <option value="balanced_life_integrator">balanced life integrator</option>
+              <option value="healthcare_professional">healthcare professional</option>
+              <option value="overlooked_risk_group">overlooked risk group</option>
+            </select>
+            <p class="mt-1 text-sm text-gray-500">
+              Changes how content is adapted for the user
+            </p>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium mb-1">Step Type</label>
+            <select id="step-type-select" class="w-full p-2 border rounded">
+              <option value="essential">essential</option>
+              <option value="extended">extended</option>
+              <option value="comprehensive">comprehensive</option>
+            </select>
+            <p class="mt-1 text-sm text-gray-500">
+              Controls content depth and presentation style
+            </p>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium mb-1">Step Content</label>
+            <textarea id="content-textarea" rows="4" class="w-full p-2 border rounded">Understanding your health risks is an important first step toward prevention. This assessment will help identify potential areas of concern based on your age, family history, and lifestyle.</textarea>
+          </div>
+        </div>
+        
+        <!-- Metrics Display -->
+        <div class="mt-8 p-4 bg-blue-50 border border-blue-200 rounded">
+          <h3 class="font-medium text-blue-800 mb-2">Pattern Metrics</h3>
+          
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Value Articulation</span>
+                <span id="metric-value">0.85</span>
+              </div>
+              <div class="pattern-meter">
+                <div id="value-meter" class="pattern-meter-fill bg-blue-500" style="width: 85%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Emotional Scaffolding</span>
+                <span id="metric-emotional">0.72</span>
+              </div>
+              <div class="pattern-meter">
+                <div id="emotional-meter" class="pattern-meter-fill bg-green-500" style="width: 72%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Progressive Disclosure</span>
+                <span id="metric-disclosure">0.68</span>
+              </div>
+              <div class="pattern-meter">
+                <div id="disclosure-meter" class="pattern-meter-fill bg-yellow-500" style="width: 68%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Persona Alignment</span>
+                <span id="metric-persona">0.91</span>
+              </div>
+              <div class="pattern-meter">
+                <div id="persona-meter" class="pattern-meter-fill bg-purple-500" style="width: 91%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Rendered Journey Step -->
+      <div class="space-y-6">
+        <h2 class="text-xl font-semibold">Rendered Journey Step</h2>
+        
+        <!-- Journey Step Component -->
+        <div id="current-step" class="journey-step bg-white rounded-lg shadow p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div id="step-label" class="text-sm font-medium text-gray-500">Essential Information</div>
+          </div>
+          
+          <!-- Value Preview -->
+          <div class="text-sm text-gray-600">
+            <span id="value-preview">Why this matters: Identifying health risks early can prevent serious conditions later in life.</span>
+          </div>
+          
+          <!-- Main Content -->
+          <div class="prose prose-sm">
+            <p id="main-content">Understanding your health risks is an important first step toward prevention. This assessment will help identify potential areas of concern based on your age, family history, and lifestyle.</p>
+          </div>
+          
+          <!-- Emotional Support -->
+          <div id="emotional-support" class="p-3 rounded-md text-sm bg-blue-50 text-blue-700">
+            It's normal to feel concerned about potential health issues. This process is designed to help you take control of your health journey.
+          </div>
+          
+          <!-- Persona Adaptations -->
+          <div class="space-y-2">
+            <div id="persona-adaptation" class="text-sm text-gray-600">
+              We've noticed you prefer detailed information about health risks. We'll provide comprehensive explanations throughout this process.
+            </div>
+          </div>
+          
+          <!-- Value Confirmation -->
+          <div id="value-confirmation" class="text-sm font-medium text-blue-600">
+            Taking this step shows you're proactive about your health and well-being.
+          </div>
+          
+          <!-- Complete Button -->
+          <button id="complete-button" class="w-full px-4 py-2 text-sm font-medium text-white rounded-md bg-blue-600 hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            Complete This Step
+          </button>
+        </div>
+        
+        <!-- Different Step Types -->
+        <div id="step-previews" class="grid grid-cols-1 gap-4">
+          <!-- Extended Step (Preview) -->
+          <div id="extended-preview" class="journey-step bg-blue-50 rounded-lg shadow p-6 space-y-4 opacity-50">
+            <div class="flex items-center justify-between">
+              <div class="text-sm font-medium text-gray-500">Extended Learning</div>
+            </div>
+            
+            <div class="text-sm text-gray-600">
+              Why this matters: A deeper understanding of risk factors can help you make more informed decisions.
+            </div>
+            
+            <div class="prose prose-sm line-clamp-2">
+              <p>This extended information provides more context about how various factors contribute to your overall risk profile...</p>
+            </div>
+            
+            <button class="w-full px-4 py-2 text-sm font-medium text-white rounded-md bg-blue-600 hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+              Complete & Continue
+            </button>
+          </div>
+          
+          <!-- Comprehensive Step (Preview) -->
+          <div id="comprehensive-preview" class="journey-step bg-indigo-50 rounded-lg shadow p-6 space-y-4 opacity-30">
+            <div class="flex items-center justify-between">
+              <div class="text-sm font-medium text-gray-500">Comprehensive Guide</div>
+            </div>
+            
+            <div class="text-sm text-gray-600">
+              Why this matters: Complete knowledge empowers you to take precise, targeted action.
+            </div>
+            
+            <div class="prose prose-sm line-clamp-1">
+              <p>The comprehensive information includes detailed explanations of each risk factor's medical significance...</p>
+            </div>
+            
+            <button class="w-full px-4 py-2 text-sm font-medium text-white rounded-md bg-indigo-700 hover:bg-indigo-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+              Complete & Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Persona-specific content and adaptations
+    const personaData = {
+      'health_aware_avoider': {
+        valuePreview: 'Why this matters: Identifying health risks early can prevent serious conditions later in life.',
+        emotionalSupport: 'It\'s normal to feel concerned about potential health issues. This process is designed to help you take control of your health journey.',
+        personaAdaptation: 'We\'ve noticed you prefer detailed information about health risks. We\'ll provide comprehensive explanations throughout this process.',
+        valueConfirmation: 'Taking this step shows you\'re proactive about your health and well-being.',
+        metrics: {
+          valueArticulation: 0.85,
+          emotionalScaffolding: 0.72,
+          progressiveDisclosure: 0.68,
+          personaAlignment: 0.91
+        },
+        emotionalSupportClass: 'bg-blue-50 text-blue-700'
+      },
+      'structured_system_seeker': {
+        valuePreview: 'Why this matters: A systematic approach to health screening follows evidence-based protocols for optimal outcomes.',
+        emotionalSupport: 'Our structured assessment follows clinical guidelines to ensure complete and thorough evaluation of all potential risk factors.',
+        personaAdaptation: 'This assessment is organized in a clear sequence with defined steps and expected outcomes at each stage.',
+        valueConfirmation: 'You\'re following a proven approach to health risk management used by healthcare professionals.',
+        metrics: {
+          valueArticulation: 0.88,
+          emotionalScaffolding: 0.65,
+          progressiveDisclosure: 0.82,
+          personaAlignment: 0.94
+        },
+        emotionalSupportClass: 'bg-indigo-50 text-indigo-700'
+      },
+      'balanced_life_integrator': {
+        valuePreview: 'Why this matters: Understanding health risks helps integrate prevention into your daily routine without disruption.',
+        emotionalSupport: 'This assessment is designed to fit into your balanced approach to health and wellness.',
+        personaAdaptation: 'We focus on practical, sustainable actions that work with your existing lifestyle rather than requiring major changes.',
+        valueConfirmation: 'This approach helps maintain harmony between health awareness and everyday living.',
+        metrics: {
+          valueArticulation: 0.79,
+          emotionalScaffolding: 0.81,
+          progressiveDisclosure: 0.76,
+          personaAlignment: 0.85
+        },
+        emotionalSupportClass: 'bg-green-50 text-green-700'
+      },
+      'healthcare_professional': {
+        valuePreview: 'Why this matters: Early risk identification provides a clinical foundation for evidence-based preventive interventions.',
+        emotionalSupport: 'This assessment follows current clinical guidelines and uses validated screening methodologies.',
+        personaAdaptation: 'Technical terminology and clinical references are included for professional context and application.',
+        valueConfirmation: 'The data collected can inform appropriate clinical decision-making and patient education.',
+        metrics: {
+          valueArticulation: 0.76,
+          emotionalScaffolding: 0.58,
+          progressiveDisclosure: 0.91,
+          personaAlignment: 0.89
+        },
+        emotionalSupportClass: 'bg-purple-50 text-purple-700'
+      },
+      'overlooked_risk_group': {
+        valuePreview: 'Why this matters: Quick health checks can identify important issues without disrupting your busy schedule.',
+        emotionalSupport: 'This assessment is designed to be straightforward and minimally intrusive while still identifying important health factors.',
+        personaAdaptation: 'We focus on practical information with clear, direct benefits rather than overwhelming you with details.',
+        valueConfirmation: 'Even small steps toward health awareness can have significant benefits over time.',
+        metrics: {
+          valueArticulation: 0.92,
+          emotionalScaffolding: 0.88,
+          progressiveDisclosure: 0.61,
+          personaAlignment: 0.83
+        },
+        emotionalSupportClass: 'bg-yellow-50 text-yellow-700'
+      }
+    };
+
+    // Step types configuration
+    const stepTypes = {
+      'essential': {
+        label: 'Essential Information',
+        buttonText: 'Complete This Step',
+        bgColor: 'bg-white',
+        buttonColor: 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-500'
+      },
+      'extended': {
+        label: 'Extended Learning',
+        buttonText: 'Complete & Continue',
+        bgColor: 'bg-blue-50',
+        buttonColor: 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-500'
+      },
+      'comprehensive': {
+        label: 'Comprehensive Guide',
+        buttonText: 'Complete & Apply',
+        bgColor: 'bg-indigo-50',
+        buttonColor: 'bg-indigo-700 hover:bg-indigo-800 focus:ring-indigo-500'
+      }
+    };
+
+    // Get DOM elements
+    const personaSelect = document.getElementById('persona-select');
+    const stepTypeSelect = document.getElementById('step-type-select');
+    const contentTextarea = document.getElementById('content-textarea');
+    const metricValue = document.getElementById('metric-value');
+    const metricEmotional = document.getElementById('metric-emotional');
+    const metricDisclosure = document.getElementById('metric-disclosure');
+    const metricPersona = document.getElementById('metric-persona');
+    const valueMeter = document.getElementById('value-meter');
+    const emotionalMeter = document.getElementById('emotional-meter');
+    const disclosureMeter = document.getElementById('disclosure-meter');
+    const personaMeter = document.getElementById('persona-meter');
+    const currentStep = document.getElementById('current-step');
+    const stepLabel = document.getElementById('step-label');
+    const valuePreview = document.getElementById('value-preview');
+    const mainContent = document.getElementById('main-content');
+    const emotionalSupport = document.getElementById('emotional-support');
+    const personaAdaptation = document.getElementById('persona-adaptation');
+    const valueConfirmation = document.getElementById('value-confirmation');
+    const completeButton = document.getElementById('complete-button');
+    const extendedPreview = document.getElementById('extended-preview');
+    const comprehensivePreview = document.getElementById('comprehensive-preview');
+
+    // Function to update the journey step based on selected persona and type
+    function updateJourneyStep() {
+      const persona = personaSelect.value;
+      const stepType = stepTypeSelect.value;
+      const content = contentTextarea.value;
+      
+      // Update metrics
+      const metrics = personaData[persona].metrics;
+      metricValue.textContent = metrics.valueArticulation.toFixed(2);
+      metricEmotional.textContent = metrics.emotionalScaffolding.toFixed(2);
+      metricDisclosure.textContent = metrics.progressiveDisclosure.toFixed(2);
+      metricPersona.textContent = metrics.personaAlignment.toFixed(2);
+      
+      valueMeter.style.width = `${metrics.valueArticulation * 100}%`;
+      emotionalMeter.style.width = `${metrics.emotionalScaffolding * 100}%`;
+      disclosureMeter.style.width = `${metrics.progressiveDisclosure * 100}%`;
+      personaMeter.style.width = `${metrics.personaAlignment * 100}%`;
+      
+      // Update step content
+      stepLabel.textContent = stepTypes[stepType].label;
+      valuePreview.textContent = personaData[persona].valuePreview;
+      mainContent.textContent = content;
+      emotionalSupport.textContent = personaData[persona].emotionalSupport;
+      personaAdaptation.textContent = personaData[persona].personaAdaptation;
+      valueConfirmation.textContent = personaData[persona].valueConfirmation;
+      completeButton.textContent = stepTypes[stepType].buttonText;
+      
+      // Update styles
+      currentStep.className = `journey-step ${stepTypes[stepType].bgColor} rounded-lg shadow p-6 space-y-4`;
+      completeButton.className = `w-full px-4 py-2 text-sm font-medium text-white rounded-md ${stepTypes[stepType].buttonColor} focus:outline-none focus:ring-2`;
+      emotionalSupport.className = `p-3 rounded-md text-sm ${personaData[persona].emotionalSupportClass}`;
+      
+      // Update step previews visibility
+      if (stepType === 'essential') {
+        extendedPreview.style.display = 'block';
+        comprehensivePreview.style.display = 'block';
+      } else if (stepType === 'extended') {
+        extendedPreview.style.display = 'none';
+        comprehensivePreview.style.display = 'block';
+      } else {
+        extendedPreview.style.display = 'none';
+        comprehensivePreview.style.display = 'none';
+      }
+    }
+
+    // Add event listeners
+    personaSelect.addEventListener('change', updateJourneyStep);
+    stepTypeSelect.addEventListener('change', updateJourneyStep);
+    contentTextarea.addEventListener('input', updateJourneyStep);
+    
+    // Complete button click handler
+    completeButton.addEventListener('click', function() {
+      alert('Step completed! In a real implementation, this would trigger the onComplete callback with metrics data.');
+    });
+    
+    // Initialize with default values
+    updateJourneyStep();
+  </script>
+</body>
+</html>
