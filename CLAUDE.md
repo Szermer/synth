@@ -1,4 +1,6 @@
-# CLAUDE.md - Synth Project Guide
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Build Commands
 - Python setup: `python -m venv venv && source venv/bin/activate && pip install -r requirements.txt`
@@ -10,8 +12,8 @@
 ## Test Commands
 - Python tests: `PYTHONPATH=. pytest`
 - Run single test: `PYTHONPATH=. pytest src/tests/path_to_test.py::test_name`
-- Generate dataset: `python src/generate_dataset.py`
-- Validate dataset: `python src/validation/validate_dataset.py`
+- Generate dataset: `PYTHONPATH=. python src/generate_dataset.py`
+- Validate dataset: `PYTHONPATH=. python src/validation/validate_dataset.py`
 
 ## Code Style
 - **TypeScript**: 2-space indent, kebab-case filenames, Zod schemas, explicit typing
@@ -26,3 +28,6 @@
 - `engagement/` - React components using hooks pattern
 - `data_generation/` - Core data generation logic
 - `output/` - Generated datasets and reports
+
+## Architecture Overview
+The project combines synthetic customer data generation (Python) with an adaptive engagement UI system (React/TypeScript). Data generation creates realistic health personas with journey simulations, while the frontend provides personalized experiences through adaptive loading, emotional scaffolding, and progressive disclosure patterns. All components are configuration-driven and type-safe.
