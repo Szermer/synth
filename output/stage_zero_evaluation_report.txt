@@ -1,0 +1,176 @@
+
+============================================================
+STAGE ZERO HEALTH - SYNTHETIC USER EVALUATION REPORT
+============================================================
+
+### DEMOGRAPHIC ANALYSIS ###
+
+Persona Distribution:
+  health_aware_avoider: 150 (30.0%)
+  structured_system_seeker: 125 (25.0%)
+  balanced_life_integrator: 100 (20.0%)
+  healthcare_professional: 75 (15.0%)
+  overlooked_risk_group: 50 (10.0%)
+
+Age Statistics:
+  Mean: 43.0
+  Median: 44.0
+  Range: 25-60
+
+Age Groups:
+  18-29: 71 (14.2%)
+  30-39: 134 (26.8%)
+  40-49: 127 (25.4%)
+  50-59: 150 (30.0%)
+  60+: 18 (3.6%)
+
+Gender Distribution:
+  female: 478 (95.6%)
+  male: 22 (4.4%)
+
+Insurance Types:
+  employer: 144 (28.8%)
+  marketplace: 124 (24.8%)
+  medicaid: 119 (23.8%)
+  uninsured: 113 (22.6%)
+
+### COMPLETION PATTERN ANALYSIS ###
+
+Weeks Completed Distribution:
+  Week 1: 500 users (100.0% still active)
+  Week 2: 500 users (100.0% still active)
+  Week 3: 500 users (100.0% still active)
+  Week 4: 445 users (89.0% still active)
+  Week 5: 404 users (80.8% still active)
+  Week 6: 355 users (71.0% still active)
+  Week 7: 306 users (61.2% still active)
+  Week 8: 254 users (50.8% still active)
+  Week 9: 209 users (41.8% still active)
+  Week 10: 209 users (41.8% still active)
+
+Completion Rates by Persona:
+  health_aware_avoider: 35/150 (23.3%)
+  structured_system_seeker: 91/125 (72.8%)
+  balanced_life_integrator: 45/100 (45.0%)
+  healthcare_professional: 31/75 (41.3%)
+  overlooked_risk_group: 7/50 (14.0%)
+
+Dropout Statistics:
+  Total dropouts: 291 (58.2%)
+  Average dropout week: 5.5
+  Most common dropout week: 3
+
+### RISK ASSESSMENT ANALYSIS ###
+
+GAIL Risk Categories:
+  low: 167 (33.4%)
+  average: 265 (53.0%)
+  elevated: 68 (13.6%)
+
+Genetic Counseling Indicated: 74 (14.8%)
+
+Average Risk Factors by Persona:
+  health_aware_avoider: 1.02
+  structured_system_seeker: 1.16
+  balanced_life_integrator: 1.21
+  healthcare_professional: 1.21
+  overlooked_risk_group: 1.28
+
+### OPEN-ENDED RESPONSE ANALYSIS ###
+
+Users with open-ended responses: 500 (100.0%)
+
+Response Types Collected:
+  week_10_value: 209
+  week_1_motivation: 500
+  week_2_family_impact: 107
+
+Response Length Statistics:
+  Average length: 83 characters
+  Median length: 81 characters
+  Range: 57-120 characters
+
+### SAMPLE RESPONSES BY PERSONA ###
+
+HEALTH_AWARE_AVOIDER:
+
+week_1_motivation:
+"I've been having anxiety about cancer for months. Maybe knowing my actual risk will help."
+
+week_10_value:
+"I finally faced something I've been avoiding for years. The gradual approach made it manageable."
+
+STRUCTURED_SYSTEM_SEEKER:
+
+week_1_motivation:
+"I like to plan ahead. Understanding my risk helps me make informed decisions."
+
+week_10_value:
+"The comprehensive assessment was exactly what I needed. Data-driven and thorough."
+
+### PERSONALIZED PLAN ANALYSIS ###
+
+Users with personalized plans: 209 (41.8%)
+
+Plan Satisfaction Scores:
+  Average: 8.4/10
+  Median: 8/10
+
+Implementation Commitment:
+  Average: 7.5/10
+  Median: 8/10
+
+Most Common Immediate Actions:
+  Find primary care provider: 37 (17.7%)
+  Schedule baseline mammogram: 30 (14.4%)
+
+### JOURNEY QUALITY ANALYSIS ###
+
+Trust Level Progression:
+  Week 1: avg 5.0, users: 500
+  Week 2: avg 5.5, users: 500
+  Week 3: avg 6.0, users: 500
+  Week 4: avg 6.5, users: 445
+  Week 5: avg 7.0, users: 404
+  Week 6: avg 7.5, users: 355
+  Week 7: avg 8.0, users: 306
+  Week 8: avg 8.5, users: 254
+  Week 9: avg 9.0, users: 209
+  Week 10: avg 9.5, users: 209
+
+Total Time Spent (minutes):
+  Average: 148
+  Median: 149
+  Range: 39-263
+
+Emotional States by Week:
+
+  Week 1 (n=500):
+    anxious: 150 (30%)
+    curious: 125 (25%)
+    thoughtful: 100 (20%)
+
+  Week 5 (n=404):
+    engaged: 116 (29%)
+    overwhelmed: 111 (27%)
+    balanced: 84 (21%)
+
+  Week 10 (n=209):
+    satisfied: 91 (44%)
+    grateful: 45 (22%)
+    hopeful: 35 (17%)
+
+### LEARNING OBJECTIVES EVALUATION ###
+
+LO1: User Experience Validation
+  Week 1 completion: 100.0% (target: >85%)
+  Week 5 completion: 80.8% (target: >55%)
+  Week 10 completion: 41.8% (target: >35%)
+  Trust progression: 5.0 → 8.6
+
+LO2: Clinical Model Validation
+  High plan satisfaction (≥8/10): 73.2%
+
+LO3: Business Model Validation
+  High implementation commitment (≥7/10): 73.7%
+  NPS proxy: 44 (based on satisfaction scores)
