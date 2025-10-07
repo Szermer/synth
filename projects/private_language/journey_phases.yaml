@@ -1,0 +1,156 @@
+# Private Language Journey Phases
+# Session-based journey through knowledge capture maturity
+
+phases:
+  - name: "discovery"
+    order: 0
+    description: "User discovers Private Language and evaluates fit"
+    duration_estimate: "1-3 sessions"
+    completion_threshold: 0.7
+
+    objectives:
+      - "understand_knowledge_sovereignty"
+      - "evaluate_use_case_fit"
+      - "initial_signup"
+      - "first_capture_attempt"
+
+    emotional_objectives:
+      - "reduce_skepticism"
+      - "build_curiosity"
+      - "recognize_value"
+      - "overcome_documentation_anxiety"
+
+    data_to_collect:
+      - "expertise_domain"
+      - "current_documentation_approach"
+      - "pain_points"
+      - "primary_motivation"
+      - "tech_comfort_level"
+
+    narrative_prompts:
+      - "What brings you to Private Language?"
+      - "How do you currently capture your expertise?"
+      - "What's your biggest frustration with documentation?"
+      - "What would success look like for you?"
+
+    verification_questions:
+      - "Does this resonate with your needs?"
+      - "Can you see yourself using this regularly?"
+      - "What's your biggest concern?"
+
+  - name: "onboarding"
+    order: 1
+    description: "User learns the system and has first successful captures"
+    duration_estimate: "3-7 sessions"
+    completion_threshold: 0.7
+
+    objectives:
+      - "complete_first_capture"
+      - "review_generated_knowledge_atoms"
+      - "experience_gap_detection"
+      - "refine_first_extractions"
+      - "establish_capture_routine"
+
+    emotional_objectives:
+      - "build_confidence"
+      - "experience_surprise_value"
+      - "reduce_friction"
+      - "establish_trust"
+
+    data_to_collect:
+      - "preferred_capture_method"
+      - "capture_frequency_preference"
+      - "knowledge_domain_scope"
+      - "initial_gap_surprises"
+      - "refinement_patterns"
+
+    narrative_prompts:
+      - "What surprised you about your first capture?"
+      - "How does this compare to your usual documentation?"
+      - "What gaps did the system identify that you hadn't considered?"
+      - "How would you explain this to a colleague?"
+
+    verification_questions:
+      - "Is the system capturing what matters to you?"
+      - "Are the gaps it identifies useful?"
+      - "Would you continue using this?"
+
+  - name: "active_use"
+    order: 2
+    description: "Regular engagement with capture and synthesis"
+    duration_estimate: "10-50 sessions"
+    completion_threshold: 0.6
+
+    objectives:
+      - "establish_regular_capture_rhythm"
+      - "use_semantic_search"
+      - "engage_with_gap_detection"
+      - "export_teaching_materials"
+      - "see_knowledge_growth"
+      - "experience_time_savings"
+
+    emotional_objectives:
+      - "build_habit"
+      - "experience_value"
+      - "reduce_documentation_anxiety"
+      - "feel_progress"
+
+    data_to_collect:
+      - "capture_frequency"
+      - "session_duration"
+      - "search_patterns"
+      - "export_usage"
+      - "gap_engagement_rate"
+      - "knowledge_atom_count"
+      - "time_savings_reported"
+
+    narrative_prompts:
+      - "How has this changed your documentation approach?"
+      - "What do you use the knowledge base for?"
+      - "How much time are you saving?"
+      - "What's working best for you?"
+
+    verification_questions:
+      - "Is this becoming part of your routine?"
+      - "Are you seeing value from your knowledge base?"
+      - "Would you recommend this to others?"
+
+  - name: "mature_use"
+    order: 3
+    description: "Knowledge base becomes 'second brain' and revenue asset"
+    duration_estimate: "50+ sessions"
+    completion_threshold: 0.5
+
+    objectives:
+      - "knowledge_base_as_second_brain"
+      - "student_direct_access"
+      - "create_paid_courses"
+      - "refer_other_practitioners"
+      - "contribute_to_marketplace"
+      - "continuous_knowledge_evolution"
+
+    emotional_objectives:
+      - "achieve_mastery"
+      - "become_advocate"
+      - "experience_legacy_value"
+      - "recognize_revenue_potential"
+
+    data_to_collect:
+      - "knowledge_base_size"
+      - "student_access_patterns"
+      - "course_creation_count"
+      - "referral_count"
+      - "marketplace_contribution"
+      - "perceived_legacy_value"
+      - "revenue_impact"
+
+    narrative_prompts:
+      - "How has your knowledge base evolved?"
+      - "How are others using your captured knowledge?"
+      - "What new opportunities has this created?"
+      - "What's the most valuable thing you've preserved?"
+
+    verification_questions:
+      - "Could you work without this now?"
+      - "What would you tell your past self?"
+      - "How has this changed your teaching/practice?"

@@ -1,553 +1,273 @@
-# Synthetic Customer Dataset Generator
+# Synth - Multi-Domain Synthetic User Data Generator
 
-This project generates a synthetic dataset of 500 customers based on defined persona types and their characteristics. The dataset focuses on early risk detection and prevention, with a particular emphasis on younger demographics and life transitions. The dataset includes detailed profiles with demographic information, health data, life events, engagement patterns, and social determinants of health context.
+**Generate realistic synthetic user data across different domains using persona archetypes and journey phase modeling.**
 
-## Project Structure
+Synth is a flexible framework for creating synthetic user datasets based on configurable personas and user journeys. Originally built for healthcare applications, it now supports any domain through YAML-based project configurations.
+
+## ✨ Features
+
+- **Multi-Domain Support** - Configure different projects with domain-specific personas and journeys
+- **Persona-Driven Generation** - Create users based on realistic behavioral archetypes
+- **Journey Phase Modeling** - Simulate user progression through discovery, onboarding, active use, and maturity
+- **Emotional State Tracking** - Model emotional progression throughout user journeys
+- **Narrative Generation** - Create realistic conversational responses based on persona characteristics
+- **Flexible Journey Types** - Support for time-based, session-based, or milestone-based journeys
+- **YAML Configuration** - Human-readable, version-controllable project definitions
+
+## 🏗️ Architecture
 
 ```
-.
-├── src/
-│   ├── config/
-│   │   └── persona_config.py    # Persona templates and configuration
-│   ├── data_generation/
-│   │   └── generator.py         # Core data generation logic
-│   ├── test_scenarios/
-│   │   ├── generate_test_scenarios.py    # Generate test scenarios
-│   │   ├── analyze_journeys.py           # Analyze persona journeys
-│   │   ├── visualize_journeys.py         # Create journey visualizations
-│   │   ├── test_execution_framework.py   # Test execution framework
-│   │   └── validate_journey_phases.py    # Journey phase validation
-│   └── generate_dataset.py      # Script to run data generation
-├── output/                      # Generated dataset output directory
-│   └── test_scenarios/         # Test results and visualizations
-├── requirements.txt             # Project dependencies
-└── README.md                    # This file
+synth/
+├── core/                       # Domain-agnostic engine
+│   ├── models/                # Data models (Persona, Journey, UserProfile)
+│   ├── generators/            # Generation engines
+│   ├── validation/            # Validation framework
+│   └── utils/                 # Config loaders and utilities
+│
+├── projects/                   # Project-specific configurations
+│   └── private_language/      # Example: Knowledge sovereignty platform
+│       ├── config.yaml        # Project metadata
+│       ├── personas.yaml      # Persona definitions
+│       ├── journey_phases.yaml # Journey structure
+│       ├── emotional_states.yaml # Emotional progressions
+│       ├── data_schema.yaml   # Data fields
+│       └── narrative_patterns.yaml # Response styles
+│
+├── cli.py                     # Command-line interface
+└── output/                    # Generated datasets
 ```
 
-## Features
+## 🚀 Quick Start
 
-- Generates 500 synthetic customer profiles
-- Five distinct persona types with realistic characteristics
-- Focus on early risk detection and prevention
-- Comprehensive profile data including:
-  - Core demographic information
-  - Health profiles and conditions
-  - Life events and timeline
-  - Platform engagement data
-  - Narrative elements
-  - Social determinants of health context
-- Test execution framework for validation
-- Journey analysis and visualization capabilities
-- Journey phase validation framework
+### Installation
 
-## Customer Journey Framework
-
-The project implements a comprehensive customer journey framework with four key phases:
-
-### 1. Awareness Phase
-- Initial discovery and connection
-- Emotional state validation
-- Initial concern and curiosity assessment
-- Marketing content alignment
-
-### 2. Engagement Phase
-- Risk assessment completion
-- Narrative capture
-- Life events timeline creation
-- Progressive engagement tracking
-
-### 3. Action Phase
-- Prevention plan development
-- Support plan creation
-- Action planning
-- Motivation assessment
-
-### 4. Continuity Phase
-- Follow-up engagement
-- Risk awareness maintenance
-- Barrier identification
-- Stability monitoring
-
-## Persona Types
-
-1. **Health-Aware Avoiders (30%)**
-   - High health awareness but low action tendency
-   - Tend to avoid healthcare interactions
-   - Often experience anxiety about health matters
-   - Age range: 25-45 years
-
-2. **Structured System-Seekers (25%)**
-   - Highly organized approach to health
-   - Regular engagement with healthcare systems
-   - Strong preference for systematic processes
-   - Age range: 30-50 years
-
-3. **Balanced Life Integrators (20%)**
-   - Balanced approach to health and wellness
-   - Moderate engagement with healthcare
-   - Focus on work-life balance
-   - Age range: 28-48 years
-
-4. **Healthcare Professionals (15%)**
-   - Professional healthcare expertise
-   - High engagement with healthcare systems
-   - Systematic approach to health management
-   - Age range: 25-45 years
-
-5. **Overlooked Risk Group (10%)**
-   - Lower engagement with healthcare
-   - Multiple risk factors
-   - Often prioritize other aspects of life
-   - Age range: 30-50 years
-
-## Age Distribution
-
-The dataset focuses on early risk detection with the following age distribution:
-- 20s: ~14%
-- 30s: ~50%
-- 40s: ~33%
-- 50s: ~3%
-
-This distribution emphasizes the "30-year threshold" where health awareness typically increases and early prevention becomes crucial.
-
-## Risk Level Distribution
-
-- Low Risk: ~71%
-- Moderate Risk: ~29%
-
-This distribution reflects the early detection focus, with most customers in lower risk categories where prevention is most impactful.
-
-## Installation
-
-1. Create a virtual environment:
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-### Generate Dataset
-
-Run the data generation script:
 ```bash
-PYTHONPATH=src python3 src/generate_dataset.py
+# Clone the repository
+git clone https://github.com/Szermer/synth.git
+cd synth
+
+# Create virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-### Generate Test Scenarios
+### Generate Synthetic Users
 
-Generate test scenarios for different persona types:
 ```bash
-PYTHONPATH=src python3 src/test_scenarios/generate_test_scenarios.py
+# List available projects
+python cli.py list-projects
+
+# Generate 1000 users for Private Language
+python cli.py generate private_language --count 1000
+
+# Validate project configuration
+python cli.py validate private_language
 ```
 
-### Analyze Journeys
+### Output
 
-Analyze persona journeys and generate insights:
-```bash
-PYTHONPATH=src python3 src/test_scenarios/analyze_journeys.py
-```
-
-### Visualize Journeys
-
-Create visualizations of journey patterns:
-```bash
-PYTHONPATH=src python3 src/test_scenarios/visualize_journeys.py
-```
-
-### Run Test Framework
-
-Execute the test framework to validate data quality:
-```bash
-PYTHONPATH=src python3 src/test_scenarios/test_execution_framework.py
-```
-
-### Validate Journey Phases
-
-Run the journey phase validation:
-```bash
-PYTHONPATH=src python3 src/test_scenarios/validate_journey_phases.py
-```
-
-## Test Framework
-
-The project includes a comprehensive test execution framework that validates:
-
-1. **Persona Distribution**
-   - Validates correct distribution of persona types
-   - Ensures adherence to target percentages
-   - Checks consistency across scenario types
-
-2. **Emotional States**
-   - Validates emotional state patterns
-   - Ensures appropriate distribution of emotions
-   - Checks consistency in emotional profiles
-
-3. **Journey Completion**
-   - Validates completion rates for each step
-   - Ensures logical progression through journeys
-   - Checks consistency in completion patterns
-
-4. **Risk Levels**
-   - Validates risk level distribution
-   - Ensures appropriate risk profiles per persona
-   - Checks consistency in risk assessment
-
-5. **Scenario Consistency**
-   - Validates consistency across scenario types
-   - Ensures persona type consistency
-   - Checks data structure integrity
-
-6. **Journey Phase Validation**
-   - Validates Awareness phase emotional progression
-   - Checks Engagement phase completion rates
-   - Monitors Action phase motivation levels
-   - Tracks Continuity phase stability
-   - Analyzes phase transitions
-
-## Output Format
-
-The generated dataset is saved in JSON format with the following structure:
+Generated data is saved to `output/<project_name>_synthetic_users.json`:
 
 ```json
 {
-  "scenario_type": "first_time_user",
-  "user": {
-    "name": "string",
-    "age": number,
-    "persona_type": "string",
-    "risk_level": "string",
-    "screening_history": {
-      "has_history": boolean,
-      "frequency": "string",
-      "last_screening": "string|null",
-      "completion_rate": number
-    }
+  "id": "uuid",
+  "persona_type": "studio_practitioner",
+  "name": "Sarah Martinez",
+  "age": 42,
+  "gender": "female",
+  "education": "bachelors",
+  "attributes": {
+    "expertise_domain": "ceramics",
+    "years_in_craft": 15,
+    "tech_comfort": 0.65
   },
-  "journey": [
-    {
-      "step": "string",
-      "timestamp": "string",
-      "actions": ["string"],
-      "emotional_state": "string",
-      "completion_status": "string"
-    }
-  ]
-}
-```
-
-## Customization
-
-You can customize the following aspects:
-
-1. **Persona Characteristics**
-   - Modify persona types and their characteristics
-   - Adjust distribution percentages
-   - Update emotional state patterns
-
-2. **Journey Steps**
-   - Add or modify journey steps
-   - Update completion criteria
-   - Modify emotional state transitions
-
-3. **Risk Assessment**
-   - Adjust risk level criteria
-   - Modify risk distribution
-   - Update risk factors
-
-4. **Journey Phases**
-   - Customize phase validation criteria
-   - Modify phase transition rules
-   - Update emotional state requirements
-
-## Development
-
-The project uses:
-- Python 3.8+
-- Pandas for data manipulation
-- Faker for generating realistic data
-- Type hints for better code maintainability
-
-To extend or modify the data generation:
-
-1. **Add New Persona Types**
-   - Update `persona_config.py`
-   - Add new persona characteristics
-   - Update distribution percentages
-
-2. **Modify Journey Steps**
-   - Update `generator.py`
-   - Add new step types
-   - Modify step logic
-
-3. **Add New Test Cases**
-   - Update `test_execution_framework.py`
-   - Add new validation rules
-   - Create custom test scenarios
-
-4. **Extend Journey Phase Validation**
-   - Update `validate_journey_phases.py`
-   - Add new phase-specific validation rules
-   - Modify transition criteria
-
-## License
-
-This project is licensed under the MIT License.
-
-# Engagement Pattern System
-
-A sophisticated React component system for creating adaptive, persona-responsive user experiences. This system implements four key engagement patterns: Value Articulation, Progressive Disclosure, Emotional Scaffolding, and Persona Adaptation.
-
-## Features
-
-- **Value-First Architecture**: Emphasizes the "why" behind each step
-- **Progressive Disclosure**: Adapts content visibility based on user engagement
-- **Emotional Scaffolding**: Provides contextual emotional support
-- **Persona Adaptation**: Tailors content to user personas
-- **Dynamic Content Loading**: Progressive loading of content tiers
-- **Interaction-Based Adaptation**: Real-time content adaptation
-- **Progress Preservation**: Saves and restores user progress
-- **Development Tools**: Pattern visualization and metrics tracking
-
-## Installation
-
-```bash
-npm install @kit/engagement-patterns
-# or
-yarn add @kit/engagement-patterns
-```
-
-## Dependencies
-
-```json
-{
-  "dependencies": {
-    "react": "^18.0.0",
-    "zod": "^3.0.0",
-    "clsx": "^2.0.0",
-    "tailwind-merge": "^2.0.0"
+  "journey": {
+    "journey_type": "session_based",
+    "phases": [...],
+    "steps": [...],
+    "overall_completion": 0.73
   }
 }
 ```
 
-## Usage
+## 📋 Creating a New Project
 
-### Basic Implementation
-
-```tsx
-import { JourneyStepComponent } from '@kit/engagement-patterns';
-
-function JourneyPage() {
-  const step = {
-    id: 'step-1',
-    type: 'essential',
-    content: 'Your step content here...',
-    visibility: 'visible'
-  };
-
-  const user = {
-    id: 'user-1',
-    persona: 'health_aware_avoider',
-    email: 'user@example.com',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  };
-
-  return (
-    <JourneyStepComponent
-      step={step}
-      user={user}
-      onComplete={(stepId, metrics) => {
-        console.log('Step completed:', stepId, metrics);
-      }}
-    />
-  );
-}
-```
-
-### Step Types
-
-The system supports three types of steps:
-
-1. **Essential**: Core information that should be immediately visible
-2. **Extended**: Additional context and details
-3. **Comprehensive**: Deep dive content with detailed information
-
-```tsx
-const essentialStep = {
-  type: 'essential',
-  content: 'Core information...'
-};
-
-const extendedStep = {
-  type: 'extended',
-  content: 'Core + extended content...'
-};
-
-const comprehensiveStep = {
-  type: 'comprehensive',
-  content: 'Core + extended + comprehensive content...'
-};
-```
-
-### User Personas
-
-The system supports various user personas:
-
-- `health_aware_avoider`: Cautious, detail-oriented users
-- `structured_system_seeker`: Analytical, organized users
-- `balanced_life_integrator`: Practical, holistic users
-- `healthcare_professional`: Professional, knowledgeable users
-- `overlooked_risk_group`: Pragmatic, resourceful users
-
-```tsx
-const user = {
-  persona: 'health_aware_avoider',
-  // ... other user properties
-};
-```
-
-### Pattern Components
-
-Each step can include various pattern components:
-
-```tsx
-const step = {
-  // ... basic step properties
-  valueComponents: {
-    preview: 'Why this matters...',
-    confirmation: 'You've made great progress!',
-    contextual: 'Additional context...'
-  },
-  emotionalComponents: {
-    type: 'reassurance',
-    intensity: 0.8,
-    message: 'You're doing great!'
-  },
-  personaComponents: {
-    approach: 'direct',
-    intensity: 0.7,
-    adaptations: ['Adapted content...']
-  }
-};
-```
-
-### Development Tools
-
-In development mode, the component displays pattern metrics and visualization:
-
-```tsx
-// Pattern metrics are automatically tracked
-const metrics = {
-  valueArticulation: 0.85,
-  emotionalScaffolding: 0.72,
-  progressiveDisclosure: 0.68,
-  personaAlignment: 0.91
-};
-```
-
-## Hooks
-
-### useDynamicContentLoading
-
-Manages progressive content loading:
-
-```tsx
-const { contentState } = useDynamicContentLoading(step, user);
-```
-
-### useInteractionAdaptation
-
-Adapts content based on user interactions:
-
-```tsx
-const adaptedStep = useInteractionAdaptation(measurements, enhancedStep);
-```
-
-### useProgressPreservation
-
-Manages progress saving and restoration:
-
-```tsx
-const { calculateProgress } = useProgressPreservation(step, user, interactions);
-```
-
-## Styling
-
-The component uses Tailwind CSS for styling. Custom styles can be applied using the `cn` utility:
-
-```tsx
-<div className={cn(
-  "base-styles",
-  {
-    'essential-styles': step.type === 'essential',
-    'extended-styles': step.type === 'extended',
-    'comprehensive-styles': step.type === 'comprehensive'
-  }
-)}>
-```
-
-## Best Practices
-
-1. **Content Structure**
-   - Start with essential content
-   - Layer extended content progressively
-   - Provide comprehensive details when needed
-
-2. **Persona Adaptation**
-   - Match content style to user persona
-   - Adjust emotional support intensity
-   - Use appropriate communication approach
-
-3. **Progress Tracking**
-   - Save progress regularly
-   - Restore from last known state
-   - Track completion metrics
-
-4. **Performance**
-   - Load content progressively
-   - Cache extended content
-   - Optimize for user interactions
-
-## Development
-
-### Running Tests
+### 1. Create Project Directory
 
 ```bash
-npm test
-# or
-yarn test
+mkdir -p projects/your_project
 ```
 
-### Building
+### 2. Define Configuration Files
+
+#### `config.yaml` - Project Metadata
+
+```yaml
+name: "Your Project"
+description: "Description of your domain"
+version: "1.0"
+domain: "your_domain"
+
+default_count: 1000
+journey_type: "session_based"  # or "time_based" or "milestone_based"
+
+journey:
+  type: "session_based"
+  phases:
+    - discovery
+    - onboarding
+    - active_use
+```
+
+#### `personas.yaml` - Define Your Personas
+
+```yaml
+personas:
+  persona_type_1:
+    name: "Persona Name"
+    description: "Who they are"
+    distribution: 0.30  # 30% of users
+
+    demographics:
+      age_range: [25, 55]
+      gender_distribution:
+        female: 0.50
+        male: 0.50
+      education_distribution:
+        bachelors: 0.60
+        masters: 0.40
+
+    behavioral:
+      engagement_pattern: "cautious_gradual"
+      action_tendency: [0.5, 0.7]
+      anxiety_level: [0.3, 0.6]
+
+    completion_thresholds:
+      discovery: [0.6, 0.8]
+      onboarding: [0.5, 0.7]
+```
+
+#### `journey_phases.yaml` - Define User Journey
+
+```yaml
+phases:
+  - name: "discovery"
+    order: 0
+    description: "User discovers your product"
+    objectives:
+      - "understand_value_proposition"
+      - "evaluate_fit"
+    emotional_objectives:
+      - "reduce_skepticism"
+      - "build_curiosity"
+    data_to_collect:
+      - "discovery_source"
+      - "primary_pain_point"
+```
+
+#### `emotional_states.yaml` - Define Emotional Progression
+
+```yaml
+emotional_progressions:
+  persona_type_1:
+    discovery:
+      - "skeptical"
+      - "curious"
+    onboarding:
+      - "learning"
+      - "confident"
+```
+
+#### `narrative_patterns.yaml` - Define Response Styles
+
+```yaml
+patterns:
+  persona_type_1:
+    response_style: "cautious_practical"
+    detail_level: "moderate"
+    linguistic_markers:
+      - "I think"
+      - "maybe"
+```
+
+### 3. Generate Data
 
 ```bash
-npm run build
-# or
-yarn build
+python cli.py validate your_project
+python cli.py generate your_project --count 500
 ```
 
-### Development Mode
+## 💡 Example Projects
+
+### Private Language
+A knowledge sovereignty platform for craft expertise preservation. Demonstrates:
+- 7 distinct personas (Studio Practitioner, Educator, Master Craftsperson, etc.)
+- Session-based journey progression
+- Tacit knowledge capture and documentation patterns
+- Legacy preservation motivations
+
+## 🛠️ Development
+
+### Project Structure
+
+- **Core Engine** (`core/`) - Domain-agnostic generation logic
+- **Models** (`core/models/`) - Data structures for personas, journeys, users
+- **Generators** (`core/generators/`) - Persona, journey, and narrative generation
+- **Utils** (`core/utils/`) - Configuration loading and helpers
+- **Projects** (`projects/`) - Domain-specific configurations
+
+### Adding Features
+
+The core engine is designed to be extended without modification. Add new capabilities by:
+1. Extending YAML schemas in project configs
+2. Adding custom attributes to persona configs
+3. Defining new journey phases
+4. Creating domain-specific narrative patterns
+
+### Testing
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Run tests
+PYTHONPATH=. pytest
+
+# Run specific test
+PYTHONPATH=. pytest src/tests/test_file.py::test_name
 ```
 
-## Contributing
+## 📚 Documentation
+
+- **Personas** - Behavioral archetypes with demographic and psychological traits
+- **Journey Phases** - Stages users progress through (discovery → mature use)
+- **Journey Types**:
+  - **Time-Based**: Weekly/daily progression (e.g., 10-week program)
+  - **Session-Based**: Variable capture sessions (e.g., knowledge logging)
+  - **Milestone-Based**: Achievement-triggered progression
+- **Emotional States** - How user emotions evolve through journey
+- **Narrative Patterns** - How personas communicate and respond
+
+## 🗃️ Archive
+
+Previous domain-specific implementations are archived in `archive/`:
+- `stage_zero/` - Healthcare risk assessment synthetic users (10-week conversation flows)
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-## License
+## 📄 License
 
-MIT
+MIT License - See LICENSE file for details
+
+## 🔗 Related Projects
+
+- **Private Language** - Knowledge sovereignty platform ([/Szermer/PrivateLanguage](https://github.com/Szermer/PrivateLanguage))
+
+---
+
+**Version 2.0** - Multi-domain refactor | Originally built for Stage Zero Health

@@ -1,0 +1,45 @@
+# Private Language Project Configuration
+# Knowledge Sovereignty Platform - Synthetic User Generation
+
+name: "Private Language"
+description: "Knowledge sovereignty platform for craft expertise preservation"
+version: "1.0"
+domain: "knowledge_capture"
+
+# Generation settings
+default_count: 1000
+journey_type: "session_based"  # Users engage in capture sessions, not time-based weeks
+
+# Journey structure
+journey:
+  type: "session_based"
+  phases:
+    - discovery
+    - onboarding
+    - active_use
+    - mature_use
+
+# Key metrics to track
+metrics:
+  - knowledge_capture_rate
+  - gap_detection_engagement
+  - feature_adoption
+  - session_frequency
+  - retention_rate
+  - referral_likelihood
+  - documentation_time_savings
+
+# Pricing tiers for user distribution
+pricing_tiers:
+  - name: "Practitioner"
+    price: 49
+    percentage: 0.60
+  - name: "Professional"
+    price: 99
+    percentage: 0.25
+  - name: "Team"
+    price: 500
+    percentage: 0.10
+  - name: "Enterprise"
+    price: 10000
+    percentage: 0.05

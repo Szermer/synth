@@ -1,0 +1,354 @@
+# Private Language User Personas
+# Based on USER_PERSONAS.md
+
+personas:
+  studio_practitioner:
+    name: "Studio Practitioner"
+    description: "Individual creator preserving evolving expertise"
+    archetype: "Sarah - Professional ceramicist"
+    distribution: 0.30
+    priority: "tier_1_mvp"
+
+    demographics:
+      age_range: [35, 55]
+      gender_distribution:
+        female: 0.65
+        male: 0.30
+        non_binary: 0.05
+      education_distribution:
+        high_school: 0.15
+        associates: 0.20
+        bachelors: 0.45
+        masters: 0.15
+        phd: 0.05
+
+    behavioral:
+      engagement_pattern: "cautious_gradual"
+      action_tendency: [0.5, 0.7]
+      anxiety_level: [0.4, 0.7]
+      tech_comfort: [0.4, 0.7]  # Moderate tech comfort
+      documentation_comfort: [0.2, 0.5]  # Low comfort with traditional docs
+
+    attributes:
+      craft_experience_years: [10, 25]
+      students_per_year: [5, 15]
+      teaching_hours_per_month: [10, 40]
+      studio_size: ["solo", "small_2_3"]
+      primary_revenue: ["making", "teaching_mix"]
+
+    pain_points:
+      - "documentation_exhausting"
+      - "knowledge_in_head"
+      - "teaching_repetitive"
+      - "expertise_evolves_fast"
+      - "students_find_gaps"
+
+    motivations:
+      - "preserve_expertise"
+      - "teach_more_effectively"
+      - "reduce_repetition"
+      - "build_legacy"
+
+    completion_thresholds:
+      discovery: [0.6, 0.8]
+      onboarding: [0.5, 0.7]
+      active_use: [0.4, 0.6]
+      mature_use: [0.3, 0.5]
+
+  educator_instructor:
+    name: "Educator/Instructor"
+    description: "Teaching-focused professional systematizing curriculum"
+    archetype: "Marcus - University professor"
+    distribution: 0.25
+    priority: "tier_1_mvp"
+
+    demographics:
+      age_range: [40, 60]
+      gender_distribution:
+        female: 0.50
+        male: 0.45
+        non_binary: 0.05
+      education_distribution:
+        bachelors: 0.10
+        masters: 0.45
+        phd: 0.45
+
+    behavioral:
+      engagement_pattern: "methodical"
+      action_tendency: [0.7, 0.9]
+      anxiety_level: [0.2, 0.4]
+      tech_comfort: [0.7, 0.9]  # High tech comfort
+      documentation_comfort: [0.6, 0.8]
+
+    attributes:
+      teaching_experience_years: [15, 30]
+      practice_experience_years: [20, 40]
+      students_per_year: [30, 100]
+      institution_type: ["university", "design_school", "workshop_center"]
+      publishes_research: [true, false]
+
+    pain_points:
+      - "repetitive_questions"
+      - "outdated_curriculum"
+      - "no_documentation_time"
+      - "cant_scale_expertise"
+      - "student_vocabulary_gaps"
+
+    motivations:
+      - "improve_outcomes"
+      - "reduce_repetition"
+      - "scale_expertise"
+      - "curriculum_evolution"
+      - "publish_research"
+
+    completion_thresholds:
+      discovery: [0.8, 0.95]
+      onboarding: [0.7, 0.9]
+      active_use: [0.6, 0.8]
+      mature_use: [0.5, 0.7]
+
+  master_craftsperson:
+    name: "Master Craftsperson"
+    description: "Legacy preservation before retirement"
+    archetype: "Elena - Master luthier approaching retirement"
+    distribution: 0.15
+    priority: "tier_2_growth"
+
+    demographics:
+      age_range: [55, 70]
+      gender_distribution:
+        female: 0.45
+        male: 0.50
+        non_binary: 0.05
+      education_distribution:
+        high_school: 0.25
+        associates: 0.15
+        bachelors: 0.35
+        masters: 0.20
+        phd: 0.05
+
+    behavioral:
+      engagement_pattern: "legacy_focused"
+      action_tendency: [0.6, 0.8]
+      anxiety_level: [0.6, 0.8]  # High anxiety about time
+      tech_comfort: [0.2, 0.5]  # Low-moderate tech comfort
+      documentation_comfort: [0.1, 0.3]  # Very low comfort with writing
+
+    attributes:
+      craft_experience_years: [30, 50]
+      years_until_retirement: [1, 5]
+      training_successor: [true, false]
+      master_level: true
+      tacit_knowledge_ratio: [0.7, 0.9]  # High tacit knowledge
+
+    pain_points:
+      - "time_running_out"
+      - "tacit_knowledge_invisible"
+      - "writing_torture"
+      - "successor_different_questions"
+      - "knowledge_will_be_lost"
+
+    motivations:
+      - "preserve_before_retirement"
+      - "train_successor"
+      - "create_legacy"
+      - "ensure_techniques_survive"
+      - "build_family_heirloom"
+
+    completion_thresholds:
+      discovery: [0.7, 0.9]
+      onboarding: [0.6, 0.8]
+      active_use: [0.5, 0.7]
+      mature_use: [0.6, 0.8]  # High completion in mature phase
+
+  student_apprentice:
+    name: "Student/Apprentice"
+    description: "Learning through understanding principles"
+    archetype: "Jordan - Student seeking efficient learning"
+    distribution: 0.15
+    priority: "tier_2_growth"
+
+    demographics:
+      age_range: [18, 35]
+      gender_distribution:
+        female: 0.50
+        male: 0.45
+        non_binary: 0.05
+      education_distribution:
+        high_school: 0.20
+        associates: 0.15
+        bachelors: 0.50
+        masters: 0.15
+
+    behavioral:
+      engagement_pattern: "exploratory"
+      action_tendency: [0.6, 0.8]
+      anxiety_level: [0.3, 0.6]
+      tech_comfort: [0.8, 0.95]  # Digital native
+      documentation_comfort: [0.5, 0.7]
+
+    attributes:
+      craft_experience_years: [0, 5]
+      enrollment_status: ["full_time_student", "part_time", "self_taught"]
+      learning_goal: ["career_preparation", "skill_building", "hobbyist"]
+
+    pain_points:
+      - "cant_ask_expert_24_7"
+      - "dont_know_what_missing"
+      - "mistakes_expensive"
+      - "explanations_vary"
+
+    motivations:
+      - "learn_efficiently"
+      - "understand_why"
+      - "access_expertise"
+      - "avoid_mistakes"
+      - "build_confidence"
+
+    completion_thresholds:
+      discovery: [0.7, 0.9]
+      onboarding: [0.6, 0.8]
+      active_use: [0.5, 0.7]
+      mature_use: [0.3, 0.5]
+
+  knowledge_consumer:
+    name: "Knowledge Consumer"
+    description: "Accessing specific expertise for projects"
+    archetype: "Alex - Professional needing specific techniques"
+    distribution: 0.10
+    priority: "tier_2_growth"
+
+    demographics:
+      age_range: [25, 65]
+      gender_distribution:
+        female: 0.50
+        male: 0.48
+        non_binary: 0.02
+      education_distribution:
+        bachelors: 0.55
+        masters: 0.35
+        phd: 0.10
+
+    behavioral:
+      engagement_pattern: "transactional"
+      action_tendency: [0.7, 0.9]
+      anxiety_level: [0.2, 0.4]
+      tech_comfort: [0.7, 0.9]
+
+    attributes:
+      use_case: ["adjacent_professional", "hobbyist", "researcher"]
+      frequency: ["one_time", "occasional", "project_based"]
+      pay_per_query: true
+
+    pain_points:
+      - "cant_afford_full_courses"
+      - "youtube_unverified"
+      - "tutorials_miss_nuance"
+
+    motivations:
+      - "specific_technique_access"
+      - "verified_expertise"
+      - "cost_effective"
+      - "quick_answers"
+
+    completion_thresholds:
+      discovery: [0.8, 0.95]
+      onboarding: [0.6, 0.8]
+      active_use: [0.4, 0.6]
+      mature_use: [0.2, 0.4]
+
+  department_head:
+    name: "Department Head/Program Director"
+    description: "Institutional knowledge preservation"
+    archetype: "Dr. Thompson - Academic department head"
+    distribution: 0.03
+    priority: "tier_3_scale"
+
+    demographics:
+      age_range: [45, 65]
+      gender_distribution:
+        female: 0.52
+        male: 0.46
+        non_binary: 0.02
+      education_distribution:
+        masters: 0.20
+        phd: 0.80
+
+    behavioral:
+      engagement_pattern: "strategic"
+      action_tendency: [0.7, 0.9]
+      anxiety_level: [0.4, 0.6]
+      tech_comfort: [0.6, 0.8]
+
+    attributes:
+      instructors_managed: [5, 20]
+      students_per_year: [100, 500]
+      budget_authority: [50000, 500000]
+      retiring_faculty_crisis: [true, false]
+
+    pain_points:
+      - "inconsistent_teaching_quality"
+      - "retiring_faculty_knowledge_loss"
+      - "accreditation_pressure"
+      - "budget_constraints"
+
+    motivations:
+      - "preserve_institutional_knowledge"
+      - "standardize_quality"
+      - "improve_outcomes"
+      - "reduce_onboarding_time"
+
+    completion_thresholds:
+      discovery: [0.8, 0.95]
+      onboarding: [0.7, 0.9]
+      active_use: [0.6, 0.8]
+      mature_use: [0.7, 0.9]
+
+  enterprise_knowledge_manager:
+    name: "Enterprise Knowledge Manager"
+    description: "Organizational expertise capture at scale"
+    archetype: "Patricia - Chief Learning Officer"
+    distribution: 0.02
+    priority: "tier_3_scale"
+
+    demographics:
+      age_range: [35, 55]
+      gender_distribution:
+        female: 0.55
+        male: 0.43
+        non_binary: 0.02
+      education_distribution:
+        bachelors: 0.30
+        masters: 0.55
+        phd: 0.15
+
+    behavioral:
+      engagement_pattern: "enterprise_strategic"
+      action_tendency: [0.8, 0.95]
+      anxiety_level: [0.3, 0.5]
+      tech_comfort: [0.8, 0.95]
+
+    attributes:
+      employees_managed: [100, 10000]
+      budget_authority: [100000, 5000000]
+      ai_training_focus: [true, false]
+      compliance_requirements: [true, false]
+
+    pain_points:
+      - "expert_turnover_expensive"
+      - "knowledge_silos"
+      - "ai_training_data_gap"
+      - "compliance_risk"
+
+    motivations:
+      - "reduce_knowledge_loss"
+      - "accelerate_onboarding"
+      - "proprietary_ai_training"
+      - "demonstrate_roi"
+      - "compliance_documentation"
+
+    completion_thresholds:
+      discovery: [0.85, 0.95]
+      onboarding: [0.8, 0.95]
+      active_use: [0.7, 0.9]
+      mature_use: [0.8, 0.95]
