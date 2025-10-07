@@ -219,6 +219,15 @@ A knowledge sovereignty platform for craft expertise preservation. Demonstrates:
 - **Utils** (`core/utils/`) - Configuration loading and helpers
 - **Projects** (`projects/`) - Domain-specific configurations
 
+### Architecture
+
+- [C4 Architecture Diagram](docs/architecture/C4_ARCHITECTURE.md) - System architecture overview
+- [Decision Registry](docs/architecture/DECISION_REGISTRY.md) - All architectural decisions
+- [Architecture Decision Records](docs/architecture/decisions/) - Detailed ADRs
+  - [ADR-0001: Multi-Domain Architecture Refactor](docs/architecture/decisions/0001-multi-domain-architecture-refactor.md)
+  - [ADR-0002: YAML Configuration Schema](docs/architecture/decisions/0002-yaml-configuration-schema.md)
+  - [ADR-0003: Session-Based Journey Modeling](docs/architecture/decisions/0003-session-based-journey-modeling.md)
+
 ### Adding Features
 
 The core engine is designed to be extended without modification. Add new capabilities by:
@@ -239,6 +248,7 @@ PYTHONPATH=. pytest src/tests/test_file.py::test_name
 
 ## 📚 Documentation
 
+### Concepts
 - **Personas** - Behavioral archetypes with demographic and psychological traits
 - **Journey Phases** - Stages users progress through (discovery → mature use)
 - **Journey Types**:
@@ -247,6 +257,12 @@ PYTHONPATH=. pytest src/tests/test_file.py::test_name
   - **Milestone-Based**: Achievement-triggered progression
 - **Emotional States** - How user emotions evolve through journey
 - **Narrative Patterns** - How personas communicate and respond
+
+### Documentation
+- [Recent Changes](docs/RECENT_CHANGES.md) - Version 2.0 migration guide
+- [TODO](TODO.md) - Roadmap and planned features
+- [Architecture](docs/architecture/) - System design and ADRs
+- [Decision Registry](docs/architecture/DECISION_REGISTRY.md) - All architectural decisions
 
 ## 🗃️ Archive
 
