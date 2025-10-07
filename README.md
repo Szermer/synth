@@ -208,10 +208,64 @@ python cli.py generate your_project --count 500
 
 ### Private Language
 A knowledge sovereignty platform for craft expertise preservation. Demonstrates:
-- 7 distinct personas (Studio Practitioner, Educator, Master Craftsperson, etc.)
-- Session-based journey progression
+- 10 distinct personas (Master Educator, Studio Practitioner, Department Head, Early Adopter, etc.)
+- Session-based journey progression with engagement stratification
 - Tacit knowledge capture and documentation patterns
 - Legacy preservation motivations
+- Comprehensive E2E testing framework with persona-based behaviors
+
+## 🧪 E2E Testing Framework
+
+Synth includes a persona-based E2E testing framework that uses the synthetic user data to drive realistic Playwright tests:
+
+### Features
+- **Persona-Aware Behaviors** - Tests adapt to user attributes (tech comfort, AI attitude, engagement tier)
+- **50+ Test Scenarios** - Coverage across all 10 persona types including edge cases
+- **Beta Test Simulation** - 5-person cohort matching real beta screening criteria
+- **Realistic Timing** - Typing speed, hesitation, reading time based on persona
+- **Dropout Testing** - Simulate realistic user dropout scenarios
+
+### Quick Start
+
+```bash
+# Install Playwright
+npm install -D @playwright/test
+
+# Run E2E tests
+npx playwright test
+
+# Run beta test simulation
+npx playwright test --grep "Beta Test"
+
+# Run specific persona tests
+npx playwright test --grep "Master Educator"
+```
+
+### Example Test
+
+```typescript
+import { test, expect } from './fixtures/personas.fixture';
+import { UploadPage } from './page-objects/upload.page';
+
+test('First capture session', async ({ page, betaTester }) => {
+  // betaTester has realistic attributes: tech_comfort, engagement_tier, etc.
+  const uploadPage = new UploadPage(page, betaTester);
+
+  const result = await uploadPage.firstCaptureSession({
+    medium: 'ceramics_pottery',
+    sessionType: 'throwing',
+    duration: 22
+  });
+
+  expect(result.success).toBe(true);
+  expect(result.timeInvested).toBeGreaterThanOrEqual(13); // Matches synthetic data
+});
+```
+
+### Documentation
+- [E2E Test Scenarios](src/tests/e2e/E2E_TEST_SCENARIOS.md) - 50+ test scenarios
+- [E2E Framework README](src/tests/e2e/README.md) - Complete guide
+- [ADR-0005: E2E Testing Framework](docs/architecture/decisions/0005-e2e-testing-framework-persona-based.md)
 
 ## 🛠️ Development
 
@@ -231,6 +285,8 @@ A knowledge sovereignty platform for craft expertise preservation. Demonstrates:
   - [ADR-0001: Multi-Domain Architecture Refactor](docs/architecture/decisions/0001-multi-domain-architecture-refactor.md)
   - [ADR-0002: YAML Configuration Schema](docs/architecture/decisions/0002-yaml-configuration-schema.md)
   - [ADR-0003: Session-Based Journey Modeling](docs/architecture/decisions/0003-session-based-journey-modeling.md)
+  - [ADR-0004: Synthetic User Framework Integration](docs/architecture/decisions/0004-synthetic-user-framework-integration.md)
+  - [ADR-0005: Persona-Based E2E Testing Framework](docs/architecture/decisions/0005-e2e-testing-framework-persona-based.md)
 
 ### Adding Features
 
@@ -242,13 +298,28 @@ The core engine is designed to be extended without modification. Add new capabil
 
 ### Testing
 
+**Unit Tests:**
 ```bash
-# Run tests
+# Run Python unit tests
 PYTHONPATH=. pytest
 
 # Run specific test
 PYTHONPATH=. pytest src/tests/test_file.py::test_name
 ```
+
+**E2E Tests:**
+```bash
+# Run Playwright E2E tests
+npx playwright test
+
+# Run beta test simulation
+npx playwright test --grep "Beta Test"
+
+# Debug mode
+npx playwright test --debug
+```
+
+See [E2E Testing Framework](#-e2e-testing-framework) for details.
 
 ## 📚 Documentation
 

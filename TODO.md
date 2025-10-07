@@ -6,12 +6,13 @@
 - [ ] None - v2.1 complete!
 
 ### 📋 Next Up (High Priority)
-- [ ] Create beta tester simulation cohort (3-5 ceramicists matching screening criteria)
-- [ ] Generate realistic first-session scenarios for beta test validation
 - [ ] Add JSON Schema for YAML validation
 - [ ] Create project template generator CLI command
 - [ ] Add unit tests for core generators
 - [ ] Document migration path for Stage Zero users
+- [ ] Implement QueryPage and ReviewPage objects for E2E tests
+- [ ] Create mock upload files (videos, documents) for E2E tests
+- [ ] Add E2E tests to CI/CD pipeline
 
 ## Features
 
@@ -40,7 +41,7 @@
 ### Integration
 - [ ] SDV (Synthetic Data Vault) integration for demographics
 - [ ] Faker provider customization per project
-- [ ] Export to testing frameworks (Playwright, Cypress)
+- [x] Export to testing frameworks (Playwright, Cypress)
 - [ ] API layer for on-demand generation
 - [ ] Database seeding utilities
 
@@ -143,6 +144,18 @@
 - [ ] Annual conference/meetup
 
 ## Completed ✅
+
+### v2.2 Release (2025-10-07)
+- [x] Persona-based E2E testing framework
+- [x] Beta test simulation cohort (5 ceramicists matching screening criteria)
+- [x] E2E test scenarios catalog (50+ scenarios across all personas)
+- [x] Persona-aware Playwright page objects (BasePage, UploadPage)
+- [x] Test fixtures from synthetic data
+- [x] First capture session tests (12 Playwright tests)
+- [x] Beta cohort selector (generate_beta_test_cohort.py)
+- [x] E2E framework documentation (README, test scenarios)
+- [x] ADR-0005: E2E Testing Framework
+- [x] User story mapping to test scenarios
 
 ### v2.1 Release (2025-10-07)
 - [x] Synthetic User Generation Framework integration

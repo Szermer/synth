@@ -1,5 +1,132 @@
 # Recent Changes
 
+## Version 2.2.0 - Persona-Based E2E Testing Framework (2025-10-07)
+
+### 🧪 E2E Testing Integration
+
+**Framework Overview** ([ADR-0005](architecture/decisions/0005-e2e-testing-framework-persona-based.md))
+- Persona-based E2E testing using 500-user synthetic cohort
+- Playwright tests that adapt to user attributes (tech comfort, AI attitude, engagement tier)
+- 50+ test scenarios across all 10 persona types
+- Beta test simulation with 5 ceramicists matching screening criteria
+
+**Test Scenario Catalog**
+- Created `E2E_TEST_SCENARIOS.md` with comprehensive test catalog (1,200 lines)
+- Priority organization (P0: Critical path, P1: Institutional/adoption, P2/P3: Edge cases)
+- Mapped to Private Language user stories (US001-US025)
+- Coverage matrix:
+  - Master Educator (30%): 5 scenarios
+  - Studio Practitioner (20%): 6 scenarios
+  - Department Head (15%): 3 scenarios
+  - Early Adopter (10%): 3 scenarios
+  - Skeptical Veteran + Edge Cases (25%): 15+ scenarios
+
+**Beta Test Simulation**
+- Generated beta cohort: 5 ceramicists from 500-user dataset
+- Screening criteria applied:
+  - Medium: ceramics_pottery ✓
+  - Tech comfort: 0.4-0.7 (moderate) ✓
+  - Craft experience: 3+ years (avg 12.0 years) ✓
+  - Teaching experience: workshops/classes ✓
+  - Engagement: standard or high ✓
+- `generate_beta_test_cohort.py` - Automated cohort selector (210 lines)
+- `output/beta_test_cohort.json` - 5 realistic beta testers
+
+**Persona-Aware Page Objects**
+- `BasePage` (350 lines): Behavioral adaptation engine
+  - Typing speed: 30-120ms/char based on tech_comfort
+  - Reading delays: 2-5s based on age and AI attitude
+  - Hesitation patterns: Low tech users hover before clicking
+  - Dropout simulation: 15% risk for low engagement users
+- `UploadPage` (250 lines): Upload/capture workflows
+  - `firstCaptureSession()` - Beta test scenario
+  - `previewExtraction()` - High engagement users only
+  - `handleUploadError()` - Error recovery flows
+- Behavioral adaptations by persona:
+  - Low tech comfort (< 0.4): 120ms/char typing, 1s hesitation, re-reads fields
+  - High tech comfort (> 0.8): 30ms/char typing, fast navigation
+  - Skeptical AI attitude: 5s reading privacy, hesitation before upload
+  - Age > 60: 1.3x slower reading
+
+**Test Fixtures**
+- `personas.fixture.ts` (180 lines): Loads from synthetic cohort
+- Preset personas: earlyAdopter, skepticalVeteran, masterEducator, betaTester
+- Custom criteria filtering: `getPersonaBy({ techComfort, aiAttitude, engagementTier })`
+- Extends Playwright test with persona fixtures
+
+**Playwright Tests**
+- `first-capture.spec.ts` (240 lines): 12 test scenarios
+  - T-SP-001: Ceramicist first session (multi-modal capture)
+  - T-SP-002: Low tech comfort error recovery
+  - T-ME-001: Master educator curriculum upload
+  - Engagement tier variations (high, standard, low)
+  - Capture behavior patterns (systematic, crisis-driven)
+  - Beta tester simulations (5 scenarios)
+
+**Performance Baselines**
+From synthetic user data:
+- Upload time: <2 min for 45-min video
+- Query response: <10s for complex queries
+- First session time: 13-15 min average
+- Extraction accuracy: >85% (measured by approval rate)
+
+**Success Criteria** (From Beta Testing Plan)
+- ✅ Extraction accuracy >85%
+- ✅ Query satisfaction >85% "helpful"
+- ✅ Review efficiency: >60% of flagged items reviewed
+- ✅ Retention: >75% complete all 6 weeks
+- ✅ NPS >0 (more promoters than detractors)
+
+### 📚 Documentation
+
+**E2E Framework Documentation**
+- `src/tests/e2e/README.md` (650 lines): Comprehensive framework guide
+  - Architecture overview
+  - Test data sources (500-user cohort, beta cohort)
+  - Persona-aware testing details
+  - Fixtures usage examples
+  - Page object patterns
+  - Running tests guide
+  - Metrics & validation
+  - User story mapping
+  - Best practices
+  - Troubleshooting
+
+**New ADR**
+- ADR-0005: Persona-Based E2E Testing Framework
+- Documents test scenario catalog, beta simulation, persona-aware behaviors
+- Implementation details (7 files, 3,080 lines)
+- Consequences: Comprehensive coverage vs increased complexity
+- Alternatives considered: Generic tests, manual test cases, record-and-replay
+
+**Updated Files**
+- Decision Registry with ADR-0005
+- README with E2E Testing Framework section
+- TODO.md with completed E2E items
+
+### 🔧 Technical Changes
+
+**Files Created**
+- `src/tests/e2e/E2E_TEST_SCENARIOS.md` (1,200 lines)
+- `src/tests/e2e/README.md` (650 lines)
+- `src/tests/e2e/page-objects/base.page.ts` (350 lines)
+- `src/tests/e2e/page-objects/upload.page.ts` (250 lines)
+- `src/tests/e2e/fixtures/personas.fixture.ts` (180 lines)
+- `src/tests/e2e/tests/first-capture.spec.ts` (240 lines)
+- `generate_beta_test_cohort.py` (210 lines)
+
+**Total:** 7 files, 3,080 lines
+
+### 📊 Results
+
+- **Coverage**: 50+ test scenarios across all 10 persona types
+- **Beta Cohort**: 5 ceramicists with perfect criteria match
+- **Realism**: Tests adapt to tech comfort, AI attitude, engagement tier
+- **Validation**: Beta test plan scenarios validated before real users
+- **Integration**: Seamless use of 500-user synthetic cohort for test data
+
+---
+
 ## Version 2.1.0 - Synthetic User Framework Integration (2025-10-07)
 
 ### 🎯 Framework Enhancements

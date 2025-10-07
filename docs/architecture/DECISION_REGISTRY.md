@@ -14,6 +14,7 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 | [ADR-0002](decisions/0002-yaml-configuration-schema.md) | YAML Configuration Schema | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 | [ADR-0003](decisions/0003-session-based-journey-modeling.md) | Session-Based Journey Modeling | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 | [ADR-0004](decisions/0004-synthetic-user-framework-integration.md) | Synthetic User Generation Framework Integration | ✅ Accepted | 2025-10-07 | 🟡 Medium |
+| [ADR-0005](decisions/0005-e2e-testing-framework-persona-based.md) | Persona-Based E2E Testing Framework | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 
 ## Status Legend
 
@@ -50,11 +51,18 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 **Solution:** Implement correlation matrices, engagement stratification, and capture behaviors
 **Impact:** 500-user cohorts with realistic distributions and behavioral patterns
 
+### ADR-0005: Persona-Based E2E Testing Framework 🟡
+**Problem:** Traditional E2E tests lack behavioral diversity and realistic user patterns
+**Solution:** Playwright tests that adapt to persona attributes from synthetic cohort
+**Impact:** 50+ test scenarios with realistic behaviors, beta test simulation, comprehensive coverage
+
 ## Cross-Project Decisions
 
 ### Private Language Integration
 - **ADR-0001**: Enabled Private Language as first multi-domain project
 - **ADR-0003**: Session-based journeys model knowledge capture sessions
+- **ADR-0004**: 500-user cohort with engagement patterns and capture behaviors
+- **ADR-0005**: E2E testing framework leveraging synthetic data for realistic tests
 
 ### Stage Zero Archive
 - **ADR-0001**: Original code preserved in `archive/stage_zero/`
@@ -81,7 +89,7 @@ Potential upcoming ADRs:
 ### Creating New ADRs
 
 1. Copy `docs/architecture/decisions/template.md`
-2. Number sequentially (next: ADR-0004)
+2. Number sequentially (next: ADR-0006)
 3. Fill in all sections
 4. Link related ADRs
 5. Update this registry

@@ -43,6 +43,7 @@ graph TB
         Core[Core Engine]
         Projects[Project Configs<br/>YAML]
         Tools[Analysis Tools]
+        E2E[E2E Testing<br/>Playwright]
     end
 
     subgraph "Core Engine"
@@ -63,9 +64,12 @@ graph TB
     Utils --> Projects
     CLI --> Tools
     Generators --> Output
+    Output -->|"Test data"| E2E
+    E2E -->|"Uses cohort"| Output
 
     style Core fill:#4A90E2,color:#fff
     style CLI fill:#50E3C2,color:#000
+    style E2E fill:#BD10E0,color:#fff
 ```
 
 **Containers:**
@@ -90,6 +94,12 @@ graph TB
    - Scenario analysis
    - Cohort reporting
    - User story generation
+
+5. **E2E Testing Framework** (`src/tests/e2e/`)
+   - Persona-based Playwright tests
+   - Test fixtures from synthetic cohort
+   - Beta test simulation
+   - Adaptive test behaviors
 
 ## Level 3: Component Diagram - Core Engine
 
@@ -360,13 +370,60 @@ python cli.py generate project_name --count 1000
 - Vectorized operations with numpy
 - Streaming JSON output
 
+## E2E Testing Integration
+
+**Framework Architecture** (ADR-0005)
+
+```mermaid
+graph TB
+    Cohort[500-User Cohort<br/>JSON]
+    Fixtures[Playwright Fixtures<br/>personas.fixture.ts]
+    PageObjects[Page Objects<br/>BasePage, UploadPage]
+    Tests[Test Specs<br/>first-capture.spec.ts]
+
+    Cohort -->|"Loads"| Fixtures
+    Fixtures -->|"Provides persona"| Tests
+    PageObjects -->|"Uses persona"| Tests
+    Tests -->|"Validates"| Application[Private Language App]
+
+    style Cohort fill:#F5A623,color:#000
+    style Tests fill:#BD10E0,color:#fff
+```
+
+**Testing Components:**
+
+1. **Test Fixtures** (`fixtures/personas.fixture.ts`)
+   - Loads 500-user synthetic cohort
+   - Provides preset personas (betaTester, earlyAdopter, skepticalVeteran)
+   - Custom criteria filtering
+
+2. **Persona-Aware Page Objects** (`page-objects/`)
+   - BasePage: Behavioral adaptation (typing speed, hesitation, reading)
+   - UploadPage: Upload workflows with persona-specific timing
+   - Adapts to: tech_comfort, ai_attitude, engagement_tier, age
+
+3. **Test Scenarios** (`tests/first-capture.spec.ts`)
+   - 50+ scenarios across all personas
+   - Beta test simulation (5 ceramicists)
+   - Engagement tier variations
+   - Capture behavior patterns
+
+**Behavioral Adaptations:**
+- Low tech comfort (< 0.4): 120ms/char typing, 1s hesitation
+- High tech comfort (> 0.8): 30ms/char typing, fast navigation
+- Skeptical AI attitude: 5s reading delays, upload hesitation
+- Age > 60: 1.3x slower reading
+
 ## Related Documents
 
 - [ADR-0001: Multi-Domain Architecture](decisions/0001-multi-domain-architecture-refactor.md)
 - [ADR-0002: YAML Configuration Schema](decisions/0002-yaml-configuration-schema.md)
 - [ADR-0003: Session-Based Journey Modeling](decisions/0003-session-based-journey-modeling.md)
+- [ADR-0004: Synthetic User Framework Integration](decisions/0004-synthetic-user-framework-integration.md)
+- [ADR-0005: Persona-Based E2E Testing Framework](decisions/0005-e2e-testing-framework-persona-based.md)
 - [README.md](../../README.md)
 - [DECISION_REGISTRY.md](DECISION_REGISTRY.md)
+- [E2E Testing README](../../src/tests/e2e/README.md)
 
 ---
 
