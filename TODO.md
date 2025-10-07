@@ -3,9 +3,11 @@
 ## Active Development
 
 ### 🚀 In Progress
-- [ ] Complete documentation for v2.0 release
+- [ ] None - v2.1 complete!
 
 ### 📋 Next Up (High Priority)
+- [ ] Create beta tester simulation cohort (3-5 ceramicists matching screening criteria)
+- [ ] Generate realistic first-session scenarios for beta test validation
 - [ ] Add JSON Schema for YAML validation
 - [ ] Create project template generator CLI command
 - [ ] Add unit tests for core generators
@@ -141,6 +143,19 @@
 - [ ] Annual conference/meetup
 
 ## Completed ✅
+
+### v2.1 Release (2025-10-07)
+- [x] Synthetic User Generation Framework integration
+- [x] Correlation matrices (age ↔ tech_comfort, etc.)
+- [x] Engagement stratification (high/standard/low)
+- [x] Knowledge capture behaviors (systematic, opportunistic, crisis-driven, experimental)
+- [x] Expanded persona set (10 personas: core 80%, edge cases 20%)
+- [x] Enhanced PersonaGenerator with correlations
+- [x] Enhanced JourneyGenerator with engagement/behavior patterns
+- [x] 500-user cohort generation and validation
+- [x] Framework validation tool (analyze_framework_validation.py)
+- [x] ADR-0004: Framework Integration
+- [x] Updated documentation (RECENT_CHANGES, README, DECISION_REGISTRY)
 
 ### v2.0 Release (2025-10-07)
 - [x] Multi-domain architecture refactor

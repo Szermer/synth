@@ -13,6 +13,7 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 | [ADR-0001](decisions/0001-multi-domain-architecture-refactor.md) | Multi-Domain Architecture Refactor | ✅ Accepted | 2025-10-07 | 🔴 High |
 | [ADR-0002](decisions/0002-yaml-configuration-schema.md) | YAML Configuration Schema | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 | [ADR-0003](decisions/0003-session-based-journey-modeling.md) | Session-Based Journey Modeling | ✅ Accepted | 2025-10-07 | 🟡 Medium |
+| [ADR-0004](decisions/0004-synthetic-user-framework-integration.md) | Synthetic User Generation Framework Integration | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 
 ## Status Legend
 
@@ -43,6 +44,11 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 **Problem:** Time-based journeys too rigid for variable user behaviors
 **Solution:** Support 3 journey types: time-based, session-based, milestone-based
 **Impact:** Realistic modeling of irregular engagement patterns
+
+### ADR-0004: Synthetic User Generation Framework Integration 🟡
+**Problem:** Initial personas lacked statistical realism and behavioral diversity
+**Solution:** Implement correlation matrices, engagement stratification, and capture behaviors
+**Impact:** 500-user cohorts with realistic distributions and behavioral patterns
 
 ## Cross-Project Decisions
 

@@ -144,16 +144,34 @@ class JourneyGenerator:
         persona: Persona,
         journey: Journey
     ) -> List[JourneyStep]:
-        """Generate steps for session-based journeys"""
+        """Generate steps for session-based journeys with engagement and behavior patterns"""
         steps = []
         current_time = journey.started_at
 
-        total_sessions = random.randint(5, 20)  # Variable session count
+        # Get engagement tier and capture behavior from attributes
+        engagement_tier = persona.attributes.get('engagement_tier', 'standard')
+        capture_behavior = persona.attributes.get('capture_behavior', 'opportunistic')
+
+        # Adjust session count based on engagement tier
+        # High: 15-25 sessions, Standard: 10-20, Low: 5-12
+        if engagement_tier == 'high':
+            total_sessions = random.randint(15, 25)
+            completion_boost = 0.2
+        elif engagement_tier == 'low':
+            total_sessions = random.randint(5, 12)
+            completion_boost = -0.2
+        else:  # standard
+            total_sessions = random.randint(10, 20)
+            completion_boost = 0.0
 
         for session_num in range(total_sessions):
             # Pick a phase (could be random or sequential)
             phase_idx = min(session_num // 3, len(journey.phases) - 1)
             phase = journey.phases[phase_idx]
+
+            # Determine completion based on engagement level + tier
+            completion_prob = min(0.95, max(0.1, persona.engagement_level + completion_boost))
+            is_completed = random.random() < completion_prob
 
             # Create session step
             step = self._create_step(
@@ -161,12 +179,36 @@ class JourneyGenerator:
                 step_number=session_num + 1,
                 timestamp=current_time,
                 persona=persona,
-                is_completed=random.random() < persona.engagement_level
+                is_completed=is_completed
             )
             steps.append(step)
 
-            # Sessions happen at irregular intervals
-            current_time += timedelta(days=random.randint(1, 14))
+            # Interval between sessions depends on capture behavior
+            if capture_behavior == 'systematic':
+                # Regular scheduled intervals (2-7 days)
+                interval_days = random.randint(2, 7)
+            elif capture_behavior == 'opportunistic':
+                # Variable intervals (1-14 days)
+                interval_days = random.randint(1, 14)
+            elif capture_behavior == 'crisis_driven':
+                # Bursty patterns - clusters with gaps
+                if session_num % 5 < 3:
+                    # Intense burst (1-3 days)
+                    interval_days = random.randint(1, 3)
+                else:
+                    # Long gap (10-30 days)
+                    interval_days = random.randint(10, 30)
+            else:  # experimental
+                # Very irregular - wide range
+                interval_days = random.randint(1, 21)
+
+            current_time += timedelta(days=interval_days)
+
+            # Engagement-tier-based dropout risk
+            if engagement_tier == 'low' and session_num > 3:
+                # Higher dropout for low engagement users
+                if not is_completed and random.random() < 0.15:
+                    break
 
         return steps
 
