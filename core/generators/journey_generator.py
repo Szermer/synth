@@ -4,6 +4,7 @@ import random
 import uuid
 from datetime import datetime, timedelta
 from typing import Dict, List, Any, Optional
+from pathlib import Path
 
 from ..models.persona import Persona
 from ..models.journey import (
@@ -14,6 +15,12 @@ from ..models.journey import (
     CompletionStatus
 )
 
+try:
+    from .ssr_response_generator import SSRResponseGenerator
+    SSR_AVAILABLE = True
+except ImportError:
+    SSR_AVAILABLE = False
+
 
 class JourneyGenerator:
     """Generate user journeys based on persona and phase configurations"""
@@ -22,7 +29,9 @@ class JourneyGenerator:
         self,
         journey_type: JourneyType,
         phases_config: List[Dict[str, Any]],
-        emotional_states: Dict[str, List[str]]
+        emotional_states: Dict[str, List[str]],
+        ssr_config_path: Optional[str] = None,
+        enable_ssr: bool = False
     ):
         """
         Initialize journey generator
@@ -31,6 +40,8 @@ class JourneyGenerator:
             journey_type: Type of journey progression
             phases_config: List of phase configurations
             emotional_states: Emotional progression by persona type
+            ssr_config_path: Path to SSR response scales YAML (optional)
+            enable_ssr: Whether to generate SSR-based responses (requires ssr_config_path)
         """
         self.journey_type = journey_type
         self.phases_config = phases_config
@@ -38,6 +49,23 @@ class JourneyGenerator:
 
         # Build phases
         self.phases = self._build_phases()
+
+        # Initialize SSR generator if requested
+        self.ssr_generator = None
+        self.ssr_enabled = enable_ssr and SSR_AVAILABLE
+
+        if enable_ssr:
+            if not SSR_AVAILABLE:
+                raise ImportError(
+                    "SSR support requires semantic-similarity-rating package. "
+                    "Install with: pip install git+https://github.com/pymc-labs/semantic-similarity-rating.git"
+                )
+            if not ssr_config_path:
+                raise ValueError("ssr_config_path required when enable_ssr=True")
+
+            self.ssr_generator = SSRResponseGenerator(
+                reference_config_path=ssr_config_path
+            )
 
     def _build_phases(self) -> List[JourneyPhase]:
         """Build JourneyPhase objects from configuration"""
@@ -299,7 +327,17 @@ class JourneyGenerator:
         ):
             data_captured[field] = f"generated_{field}_value"
 
-        return JourneyStep(
+        # Generate SSR-based responses if enabled
+        ssr_responses = {}
+        if self.ssr_enabled and self.ssr_generator:
+            ssr_responses = self._generate_ssr_responses(
+                persona=persona,
+                phase=phase,
+                emotional_state=emotional_state,
+                engagement_score=engagement_score
+            )
+
+        step = JourneyStep(
             id=str(uuid.uuid4()),
             phase_id=phase.id,
             step_number=step_number,
@@ -311,3 +349,124 @@ class JourneyGenerator:
             time_invested=time_invested,
             engagement_score=engagement_score
         )
+
+        # Add SSR responses to step if available
+        if ssr_responses:
+            step.ssr_responses = ssr_responses
+
+        return step
+
+    def _generate_ssr_responses(
+        self,
+        persona: Persona,
+        phase: JourneyPhase,
+        emotional_state: str,
+        engagement_score: float
+    ) -> Dict[str, Any]:
+        """
+        Generate SSR-based responses for a journey step.
+
+        This creates simulated LLM responses and converts them to realistic
+        probability distributions using Semantic Similarity Rating.
+
+        Args:
+            persona: User persona
+            phase: Current journey phase
+            emotional_state: Current emotional state
+            engagement_score: Engagement level (0-1)
+
+        Returns:
+            Dictionary with SSR response data for multiple scales
+        """
+        if not self.ssr_generator:
+            return {}
+
+        # Create contextual stimulus
+        stimulus = f"Phase: {phase.name}, Objectives: {', '.join(phase.objectives[:2])}"
+
+        # Generate simulated LLM responses based on engagement and emotional state
+        # In production, these would come from actual LLM calls
+        responses = self._simulate_llm_responses(
+            persona=persona,
+            emotional_state=emotional_state,
+            engagement_score=engagement_score
+        )
+
+        ssr_data = {}
+
+        # Generate SSR ratings for available scales
+        available_scales = ['engagement', 'satisfaction', 'progress', 'relevance']
+
+        for scale_id in available_scales:
+            if scale_id not in self.ssr_generator.available_scales:
+                continue
+
+            response_text = responses.get(scale_id, responses.get('default', ''))
+
+            try:
+                ssr_response = self.ssr_generator.generate_persona_response(
+                    persona_config=persona.attributes,
+                    stimulus=stimulus,
+                    scale_id=scale_id,
+                    llm_response=response_text
+                )
+                ssr_data[scale_id] = ssr_response
+            except Exception as e:
+                # Silently skip scales that fail
+                continue
+
+        return ssr_data
+
+    def _simulate_llm_responses(
+        self,
+        persona: Persona,
+        emotional_state: str,
+        engagement_score: float
+    ) -> Dict[str, str]:
+        """
+        Simulate LLM responses based on persona and state.
+
+        In production, replace this with actual LLM API calls.
+
+        Args:
+            persona: User persona
+            emotional_state: Current emotional state
+            engagement_score: Engagement level (0-1)
+
+        Returns:
+            Dictionary of simulated responses for different scales
+        """
+        # Response templates based on engagement level
+        if engagement_score > 0.7:
+            templates = {
+                'engagement': "This is really interesting and relevant to my goals. I'm excited to continue.",
+                'satisfaction': "I'm very satisfied with this experience. It's meeting my expectations well.",
+                'progress': "I can feel myself making good progress. Things are clicking.",
+                'relevance': "This is highly relevant to what I need to learn right now."
+            }
+        elif engagement_score > 0.4:
+            templates = {
+                'engagement': "This seems useful. I'll keep going for now.",
+                'satisfaction': "It's okay, nothing exceptional but reasonably helpful.",
+                'progress': "I'm making some progress, though it's slower than I hoped.",
+                'relevance': "Some of this is relevant, though not all of it applies to me."
+            }
+        else:
+            templates = {
+                'engagement': "I'm not really feeling engaged with this. It's not what I expected.",
+                'satisfaction': "I'm somewhat disappointed. This isn't quite working for me.",
+                'progress': "I don't feel like I'm making much progress. It's frustrating.",
+                'relevance': "This doesn't seem very relevant to my actual needs."
+            }
+
+        # Modify based on emotional state
+        if emotional_state in ['frustrated', 'overwhelmed']:
+            for key in templates:
+                templates[key] = templates[key].replace("I'm", "I'm feeling a bit overwhelmed but I'm")
+        elif emotional_state in ['confident', 'motivated']:
+            for key in templates:
+                templates[key] = templates[key].replace(".", " and I feel confident about it.")
+
+        templates['default'] = templates.get('engagement', '')
+
+        return templates

@@ -15,6 +15,7 @@ Synth is a flexible framework for creating synthetic user datasets based on conf
 - **Emotional State Tracking** - Model emotional progression throughout user journeys
 - **Narrative Generation** - Create realistic conversational responses based on persona characteristics
 - **Flexible Journey Types** - Support for time-based, session-based, or milestone-based journeys
+- **Semantic Similarity Rating (SSR)** - Research-validated methodology for generating realistic Likert-scale response distributions (optional)
 - **YAML Configuration** - Human-readable, version-controllable project definitions
 - **Validated Framework** - 500-user cohorts with perfect distribution accuracy
 
@@ -56,6 +57,11 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Optional: Install SSR dependencies for semantic similarity rating
+# Note: Adds ~500MB embedding model on first run
+pip install polars sentence-transformers
+pip install git+https://github.com/pymc-labs/semantic-similarity-rating.git
 ```
 
 ### Generate Synthetic Users
@@ -96,6 +102,102 @@ Generated data is saved to `output/<project_name>_synthetic_users.json`:
   }
 }
 ```
+
+## 🎯 Semantic Similarity Rating (SSR)
+
+Synth optionally integrates the **Semantic Similarity Rating (SSR)** methodology for generating realistic Likert-scale response distributions. Unlike direct numerical elicitation (which produces unrealistic narrow peaks), SSR converts free-text LLM responses to probability distributions using semantic similarity.
+
+### Why SSR?
+
+Based on research from "LLMs Reproduce Human Purchase Intent via Semantic Similarity Elicitation of Likert Ratings" (Maier et al., 2025):
+
+- ✅ **90% test-retest reliability** (vs human data)
+- ✅ **KS similarity > 0.85** with real human response distributions
+- ✅ **Full scale utilization** - uses entire 1-5 range naturally
+- ✅ **Rich qualitative feedback** - provides free-text explanations
+
+### Quick Start
+
+```python
+from core.generators.ssr_response_generator import SSRResponseGenerator
+
+# Initialize with reference scales
+generator = SSRResponseGenerator(
+    reference_config_path="projects/private_language/response_scales.yaml"
+)
+
+# Generate response PMF from text
+persona = {"age": 25, "level": "beginner", "goal": "travel"}
+response = generator.generate_persona_response(
+    persona_config=persona,
+    stimulus="Complete this 15-minute lesson",
+    scale_id="engagement",
+    llm_response="This looks interesting! I want to try it."
+)
+
+print(f"Expected engagement: {response['expected_value']:.2f}/5")
+print(f"PMF: {response['pmf']}")  # Probability distribution [0.05, 0.10, 0.20, 0.35, 0.30]
+```
+
+### Available Scales
+
+Synth includes 8 pre-defined scales for learning domains:
+- `engagement` - Content engagement levels
+- `satisfaction` - Experience satisfaction
+- `difficulty` - Perceived difficulty
+- `progress` - Learning progress perception
+- `relevance` - Goal relevance
+- `completion` - Completion likelihood
+- `confidence` - Application confidence
+- `interest` - Continuation interest
+
+### Journey Integration
+
+Enable SSR in journey generation:
+
+```python
+from core.generators.journey_generator import JourneyGenerator
+
+generator = JourneyGenerator(
+    journey_type=JourneyType.SESSION_BASED,
+    phases_config=phases,
+    emotional_states=emotions,
+    ssr_config_path="projects/private_language/response_scales.yaml",
+    enable_ssr=True  # Enable SSR responses
+)
+
+journey = generator.generate(persona, user_id)
+
+# Access SSR responses in journey steps
+for step in journey.steps:
+    if hasattr(step, 'ssr_responses'):
+        engagement = step.ssr_responses['engagement']
+        print(f"Text: {engagement['text_response']}")
+        print(f"PMF: {engagement['pmf']}")
+        print(f"Expected: {engagement['expected_value']:.2f}/5")
+```
+
+### Example Script
+
+Run the comprehensive example to see SSR in action:
+
+```bash
+PYTHONPATH=. python example_ssr_generation.py
+```
+
+This demonstrates:
+- Single persona responses
+- Different personas producing different distributions
+- Journey progression across multiple touchpoints
+- Survey aggregation statistics
+- Multiple scale usage
+- Temperature effects on distribution sharpness
+
+### Documentation
+
+- [ADR-0006: SSR Integration](docs/architecture/decisions/0006-semantic-similarity-rating-integration.md) - Complete design rationale
+- [example_ssr_generation.py](example_ssr_generation.py) - 6 comprehensive usage examples
+- [Research Paper](docs/2510.08338v2.pdf) - Original SSR methodology paper
 
 ## 📋 Creating a New Project
 
@@ -287,6 +389,7 @@ test('First capture session', async ({ page, betaTester }) => {
   - [ADR-0003: Session-Based Journey Modeling](docs/architecture/decisions/0003-session-based-journey-modeling.md)
   - [ADR-0004: Synthetic User Framework Integration](docs/architecture/decisions/0004-synthetic-user-framework-integration.md)
   - [ADR-0005: Persona-Based E2E Testing Framework](docs/architecture/decisions/0005-e2e-testing-framework-persona-based.md)
+  - [ADR-0006: Semantic Similarity Rating Integration](docs/architecture/decisions/0006-semantic-similarity-rating-integration.md)
 
 ### Adding Features
 

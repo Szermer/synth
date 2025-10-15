@@ -1,0 +1,166 @@
+# Response Scales for Private Language Project
+# Reference statements for Semantic Similarity Rating (SSR)
+#
+# Each scale must have exactly 5 points (1-5) with:
+# - label: Human-readable label
+# - statement: Reference statement for semantic similarity matching
+
+engagement_scale:
+  id: "engagement"
+  description: "User engagement with learning content"
+  scale_points:
+    1:
+      label: "Not engaged at all"
+      statement: "I'm not interested in this content and won't engage with it at all."
+    2:
+      label: "Slightly engaged"
+      statement: "I might look at this briefly but probably won't spend much time on it."
+    3:
+      label: "Moderately engaged"
+      statement: "This seems somewhat interesting. I'll give it a try if I have time."
+    4:
+      label: "Very engaged"
+      statement: "This looks quite interesting. I plan to engage with it meaningfully."
+    5:
+      label: "Extremely engaged"
+      statement: "This is exactly what I need. I'm fully committed to this content."
+
+difficulty_scale:
+  id: "difficulty"
+  description: "Perceived difficulty of content"
+  scale_points:
+    1:
+      label: "Too easy"
+      statement: "This is far too easy for my level. I'm not learning anything new here."
+    2:
+      label: "Slightly easy"
+      statement: "This is a bit easy, but there are some useful elements I can work with."
+    3:
+      label: "Just right"
+      statement: "This difficulty level is perfect for my current abilities and learning goals."
+    4:
+      label: "Slightly challenging"
+      statement: "This is challenging but manageable. I'm learning a lot from this."
+    5:
+      label: "Too difficult"
+      statement: "This is overwhelming and too difficult for my current level to understand."
+
+completion_intent_scale:
+  id: "completion"
+  description: "Likelihood of completing a learning session"
+  scale_points:
+    1:
+      label: "Will not complete"
+      statement: "I'm very unlikely to finish this. It doesn't fit my needs at all."
+    2:
+      label: "Probably won't complete"
+      statement: "I'll start but probably won't finish all of it. It's not quite what I need."
+    3:
+      label: "Might complete"
+      statement: "I'm somewhat interested. I might complete it if it stays engaging enough."
+    4:
+      label: "Likely to complete"
+      statement: "This looks valuable. I plan to complete most or all of it."
+    5:
+      label: "Definitely will complete"
+      statement: "This is exactly what I need. I'm committed to completing it fully."
+
+satisfaction_scale:
+  id: "satisfaction"
+  description: "Satisfaction with learning experience"
+  scale_points:
+    1:
+      label: "Very dissatisfied"
+      statement: "I'm very dissatisfied with this. It didn't meet my expectations at all."
+    2:
+      label: "Somewhat dissatisfied"
+      statement: "I'm somewhat dissatisfied. There were issues that bothered me."
+    3:
+      label: "Neutral"
+      statement: "It's okay. Nothing particularly good or bad about this experience."
+    4:
+      label: "Somewhat satisfied"
+      statement: "I'm somewhat satisfied. It met most of my expectations reasonably well."
+    5:
+      label: "Very satisfied"
+      statement: "I'm very satisfied. This exceeded my expectations and was excellent."
+
+progress_perception_scale:
+  id: "progress"
+  description: "Perceived learning progress"
+  scale_points:
+    1:
+      label: "No progress"
+      statement: "I don't feel like I'm making any progress at all with my learning."
+    2:
+      label: "Minimal progress"
+      statement: "I'm making very little progress. It's slower than I hoped."
+    3:
+      label: "Some progress"
+      statement: "I'm making some progress. It's steady but nothing remarkable."
+    4:
+      label: "Good progress"
+      statement: "I'm making good progress. I can see clear improvement in my skills."
+    5:
+      label: "Excellent progress"
+      statement: "I'm making excellent progress. I'm learning rapidly and feeling confident."
+
+relevance_scale:
+  id: "relevance"
+  description: "Relevance of content to learner goals"
+  scale_points:
+    1:
+      label: "Not relevant"
+      statement: "This is not relevant to my goals at all. It's not what I need."
+    2:
+      label: "Slightly relevant"
+      statement: "This is only slightly relevant. Most of it doesn't apply to what I need."
+    3:
+      label: "Moderately relevant"
+      statement: "This is moderately relevant. Some parts are useful for my goals."
+    4:
+      label: "Very relevant"
+      statement: "This is very relevant to my goals. Most of this is exactly what I need."
+    5:
+      label: "Extremely relevant"
+      statement: "This is extremely relevant. Everything here directly supports my learning goals."
+
+confidence_scale:
+  id: "confidence"
+  description: "Confidence in ability to use learned material"
+  scale_points:
+    1:
+      label: "Not confident"
+      statement: "I'm not confident at all. I don't think I can use this material effectively."
+    2:
+      label: "Slightly confident"
+      statement: "I'm slightly confident. I might be able to use some of this with help."
+    3:
+      label: "Moderately confident"
+      statement: "I'm moderately confident. I think I can use this with some practice."
+    4:
+      label: "Very confident"
+      statement: "I'm very confident. I feel ready to use this material in real situations."
+    5:
+      label: "Extremely confident"
+      statement: "I'm extremely confident. I can definitely use this effectively right now."
+
+interest_scale:
+  id: "interest"
+  description: "Interest in continuing with similar content"
+  scale_points:
+    1:
+      label: "Not interested"
+      statement: "I'm not interested in continuing with this type of content at all."
+    2:
+      label: "Slightly interested"
+      statement: "I'm slightly interested but it would need significant improvements."
+    3:
+      label: "Moderately interested"
+      statement: "I'm moderately interested. I might continue if it stays this way."
+    4:
+      label: "Very interested"
+      statement: "I'm very interested. I definitely want to continue with more of this."
+    5:
+      label: "Extremely interested"
+      statement: "I'm extremely interested. I can't wait to continue with more content like this."

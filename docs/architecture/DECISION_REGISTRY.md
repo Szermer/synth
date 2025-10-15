@@ -15,6 +15,7 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 | [ADR-0003](decisions/0003-session-based-journey-modeling.md) | Session-Based Journey Modeling | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 | [ADR-0004](decisions/0004-synthetic-user-framework-integration.md) | Synthetic User Generation Framework Integration | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 | [ADR-0005](decisions/0005-e2e-testing-framework-persona-based.md) | Persona-Based E2E Testing Framework | ✅ Accepted | 2025-10-07 | 🟡 Medium |
+| [ADR-0006](decisions/0006-semantic-similarity-rating-integration.md) | Semantic Similarity Rating (SSR) Integration | ✅ Accepted | 2025-10-15 | 🟢 High |
 
 ## Status Legend
 
@@ -56,6 +57,11 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 **Solution:** Playwright tests that adapt to persona attributes from synthetic cohort
 **Impact:** 50+ test scenarios with realistic behaviors, beta test simulation, comprehensive coverage
 
+### ADR-0006: Semantic Similarity Rating (SSR) Integration 🟢
+**Problem:** Direct Likert-scale elicitation produces unrealistic narrow response distributions
+**Solution:** Integrate PyMC Labs SSR methodology to convert LLM text to probability distributions using semantic similarity
+**Impact:** Research-validated realistic response patterns (90% test-retest reliability, KS > 0.85), optional feature, backward compatible
+
 ## Cross-Project Decisions
 
 ### Private Language Integration
@@ -63,6 +69,7 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 - **ADR-0003**: Session-based journeys model knowledge capture sessions
 - **ADR-0004**: 500-user cohort with engagement patterns and capture behaviors
 - **ADR-0005**: E2E testing framework leveraging synthetic data for realistic tests
+- **ADR-0006**: SSR response scales for learning domain (engagement, satisfaction, progress, relevance, etc.)
 
 ### Stage Zero Archive
 - **ADR-0001**: Original code preserved in `archive/stage_zero/`
@@ -89,7 +96,7 @@ Potential upcoming ADRs:
 ### Creating New ADRs
 
 1. Copy `docs/architecture/decisions/template.md`
-2. Number sequentially (next: ADR-0006)
+2. Number sequentially (next: ADR-0007)
 3. Fill in all sections
 4. Link related ADRs
 5. Update this registry
@@ -112,5 +119,5 @@ This registry is updated whenever:
 - Major architectural changes occur
 - Cross-ADR relationships are identified
 
-**Last Updated:** 2025-10-07
+**Last Updated:** 2025-10-15
 **Maintainer:** Stephen Szermer

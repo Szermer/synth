@@ -48,7 +48,7 @@ graph TB
 
     subgraph "Core Engine"
         Models[Data Models<br/>Persona, Journey]
-        Generators[Generators<br/>Persona, Journey, Narrative]
+        Generators[Generators<br/>Persona, Journey, Narrative, SSR]
         Utils[Utilities<br/>ConfigLoader]
     end
 
@@ -115,6 +115,7 @@ graph TB
         PersonaGen[PersonaGenerator]
         JourneyGen[JourneyGenerator]
         NarrativeGen[NarrativeGenerator]
+        SSRGen[SSRResponseGenerator]
     end
 
     subgraph "Utils (core/utils/)"
@@ -126,8 +127,10 @@ graph TB
     PersonaGen -->|"Instantiates"| Persona
     JourneyGen -->|"Creates"| Journey
     JourneyGen -->|"Uses"| Persona
+    JourneyGen -->|"Optional"| SSRGen
     NarrativeGen -->|"Uses"| Persona
     NarrativeGen -->|"Uses"| Journey
+    SSRGen -->|"Enhances"| Journey
     PersonaGen -->|"Produces"| UserProfile
     JourneyGen -->|"Produces"| UserProfile
 
@@ -196,6 +199,20 @@ Responsibilities:
 - Apply linguistic markers
 - Vary response length
 - Match emotional state
+```
+
+**SSRResponseGenerator** (`ssr_response_generator.py`)
+```python
+Input:  PersonaConfig, Stimulus, ScaleID, LLMResponse
+Output: Dict[pmf, expected_value, most_likely_rating]
+
+Responsibilities:
+- Convert free-text responses to probability distributions
+- Load YAML reference scales
+- Apply semantic similarity via sentence-transformers
+- Calculate PMFs using embedding similarity
+- Support multiple scales (engagement, satisfaction, etc.)
+- Aggregate survey-level statistics
 ```
 
 ### Utilities (`core/utils/`)
@@ -322,8 +339,12 @@ graph LR
 | **Data Models** | dataclasses | Type-safe structures |
 | **Configuration** | PyYAML | Config parsing |
 | **Data Generation** | Faker | Realistic demographics |
+| **SSR (Optional)** | sentence-transformers | Semantic embeddings |
+| **SSR (Optional)** | polars | SSR data processing |
+| **SSR (Optional)** | semantic-similarity-rating | PMF conversion |
 | **Output** | JSON | Exportable datasets |
 | **Testing** | pytest | Unit/integration tests |
+| **E2E Testing** | Playwright | Persona-based tests |
 
 ## Deployment
 
@@ -421,11 +442,12 @@ graph TB
 - [ADR-0003: Session-Based Journey Modeling](decisions/0003-session-based-journey-modeling.md)
 - [ADR-0004: Synthetic User Framework Integration](decisions/0004-synthetic-user-framework-integration.md)
 - [ADR-0005: Persona-Based E2E Testing Framework](decisions/0005-e2e-testing-framework-persona-based.md)
+- [ADR-0006: Semantic Similarity Rating Integration](decisions/0006-semantic-similarity-rating-integration.md)
 - [README.md](../../README.md)
 - [DECISION_REGISTRY.md](DECISION_REGISTRY.md)
 - [E2E Testing README](../../src/tests/e2e/README.md)
 
 ---
 
-**Last Updated:** 2025-10-07
+**Last Updated:** 2025-10-15
 **Maintainer:** Stephen Szermer

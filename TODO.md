@@ -45,6 +45,18 @@
 - [ ] API layer for on-demand generation
 - [ ] Database seeding utilities
 
+### Semantic Similarity Rating (SSR)
+- [x] Core SSR integration with PyMC Labs implementation
+- [x] 8 predefined reference scales
+- [x] Optional SSR in journey generation
+- [ ] Real LLM integration (replace simulated responses with OpenAI/Anthropic API)
+- [ ] Dynamic scale generation from descriptions
+- [ ] Batch embedding computation for performance
+- [ ] Distribution comparison visualizations
+- [ ] Cohort segmentation by response patterns
+- [ ] Cost tracking and optimization for LLM calls
+- [ ] SSR caching for repeated stimuli
+
 ## Documentation
 
 ### User Guides
@@ -145,6 +157,18 @@
 
 ## Completed ✅
 
+### v2.3 Release (2025-10-15)
+- [x] Semantic Similarity Rating (SSR) integration
+- [x] SSRResponseGenerator for realistic Likert-scale distributions
+- [x] 8 reference scales (engagement, satisfaction, difficulty, progress, relevance, completion, confidence, interest)
+- [x] YAML-driven reference scale configuration
+- [x] Optional SSR support in JourneyGenerator
+- [x] Temperature control for distribution sharpness
+- [x] Survey aggregation for cohort-level statistics
+- [x] Example script with 6 comprehensive demonstrations
+- [x] ADR-0006: Semantic Similarity Rating Integration
+- [x] SSR documentation in README
+
 ### v2.2 Release (2025-10-07)
 - [x] Persona-based E2E testing framework
 - [x] Beta test simulation cohort (5 ceramicists matching screening criteria)
@@ -189,5 +213,5 @@
 - 🟡 Medium - Important but not urgent
 - 🟢 Low - Nice to have
 
-**Last Updated:** 2025-10-07
+**Last Updated:** 2025-10-15
 **Maintainer:** Stephen Szermer
