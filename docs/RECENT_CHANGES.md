@@ -1,5 +1,231 @@
 # Recent Changes
 
+## Version 2.4.0 - Real LLM Integration (2025-10-15)
+
+### 🤖 Authentic Persona-Specific Response Generation
+
+**Real LLM Integration** ([ADR-0007](architecture/decisions/0007-real-llm-integration.md))
+- Integrated Anthropic Claude Sonnet 4.5 for generating authentic persona-specific responses
+- Replaces simulated template responses with natural language generation
+- References specific persona attributes (craft medium, experience level, tech comfort, AI attitude)
+- Contextual awareness of journey phase and emotional state
+- Research-grade quality suitable for validation studies and beta test simulation
+
+### 🎯 Problem Solved
+
+**Limitations of Simulated Responses:**
+- Generic and repetitive (same templates across all users)
+- Lack context awareness (don't reference specific persona attributes)
+- Limited variation (only 3 engagement levels: high/medium/low)
+- Miss subtle nuances in voice and tone
+- No learning or improvement over time
+
+**Real LLM Solution:**
+- Authentic persona voices with natural language variation
+- Contextual awareness of user attributes, journey phase, emotional state
+- Full 1-5 scale utilization in responses
+- Nuanced communication patterns matching persona characteristics
+- Production-quality responses suitable for research validation
+
+### 📊 Core Features
+
+**LLMResponseGenerator** (`core/generators/llm_response_generator.py`, 180 lines)
+- Anthropic Claude Sonnet 4.5 API integration (model: `claude-sonnet-4-5-20250929`)
+- Persona context injection (age, tech_comfort, ai_attitude, craft medium, years_in_craft)
+- Scale-specific prompting (engagement, satisfaction, progress, relevance)
+- Emotional state awareness in prompt engineering
+- Temperature control (0.8) for natural variation
+- 200-token response limit for cost optimization
+- Graceful error handling with automatic fallback to simulated responses
+
+**Journey Generator Integration**
+- Added `use_real_llm` and `llm_model` parameters to `JourneyGenerator`
+- Optional feature - defaults to simulated responses (backward compatible)
+- Seamless integration with SSR pipeline
+- Real LLM responses automatically converted to probability distributions
+- Fallback to simulated on API error (no data loss)
+
+**Cost Management**
+- Cost estimation tool (`estimate_llm_costs.py`)
+- Clear per-call pricing (~$0.002 per API call, ~$0.12 per journey)
+- Batch size recommendations with cost breakdowns
+- Hybrid approach support (mix real LLM + simulated)
+- Environment variable security (.env for API keys)
+
+### 🎨 Example Comparison
+
+**Simulated Response:**
+> "This seems useful. I'll keep going for now."
+
+**Real LLM (Claude Sonnet 4.5):**
+> "I'm intrigued by the knowledge sovereignty angle—I've definitely felt like my creative process gets lost in platforms that don't really *get* performance work. But I need to understand better how this actually helps me document and develop my pieces in a way that's more useful than what I'm already cobbling together with video files and scattered notes."
+
+### 💰 Cost Information
+
+**Pricing (Claude Sonnet 4.5):**
+- Single API call: ~$0.002 (~0.2¢)
+- Single journey (14 steps × 4 scales): ~$0.12 (12¢)
+- 10-user cohort: ~$1.20
+- 100-user cohort: ~$12
+- 500-user cohort: ~$60
+
+**Recommended Hybrid Approach:**
+```
+5 real LLM users: $0.60
+495 simulated users: $0.00
+Total for 500-user cohort: $0.60
+```
+
+### 🔧 Technical Implementation
+
+**Files Created**
+- `core/generators/llm_response_generator.py` (180 lines)
+- `test_single_llm_call.py` - Single API call validation
+- `test_focused_llm.py` - 2 journey steps test (~$0.02)
+- `test_one_journey.py` - Full journey test (~$0.12)
+- `generate_llm_cohort.py` - Batch generation script
+- `generate_two_users_llm.py` - 2-user test script
+- `quick_llm_test.py` - Rapid validation (2 API calls, ~10 seconds)
+- `estimate_llm_costs.py` - Cost calculator tool
+- `.env` - API key storage (gitignored)
+
+**Files Modified**
+- `core/generators/journey_generator.py` - Added LLM integration with fallback
+- `requirements.txt` - Added `anthropic>=0.64.0`
+- `.gitignore` - Confirmed .env protection
+
+### 🎓 Usage Examples
+
+**Basic Usage:**
+```python
+from core.generators.llm_response_generator import LLMResponseGenerator
+
+# Initialize with Claude Sonnet 4.5
+llm_gen = LLMResponseGenerator(model="claude-sonnet-4-5-20250929")
+
+# Generate persona-specific response
+response = llm_gen.generate_response(
+    persona={
+        "age": 46,
+        "tech_comfort": 0.49,
+        "medium": "ceramics",
+        "years_in_craft": 15,
+        "ai_attitude": "cautious"
+    },
+    stimulus="Starting your knowledge capture session",
+    scale_id="engagement",
+    phase="discovery",
+    emotional_state="curious_cautious",
+    engagement_score=0.65
+)
+```
+
+**Journey Integration:**
+```python
+from core.generators.journey_generator import JourneyGenerator
+
+generator = JourneyGenerator(
+    journey_type=JourneyType.SESSION_BASED,
+    phases_config=phases,
+    emotional_states=emotions,
+    ssr_config_path="projects/private_language/response_scales.yaml",
+    enable_ssr=True,
+    use_real_llm=True,  # Enable real LLM
+    llm_model="claude-sonnet-4-5-20250929"
+)
+
+journey = generator.generate(persona, user_id)
+
+# Each step includes authentic LLM responses + SSR distributions
+for step in journey.steps:
+    if hasattr(step, 'ssr_responses'):
+        print(step.ssr_responses['engagement']['text_response'])
+        print(step.ssr_responses['engagement']['expected_value'])
+```
+
+**Cost Estimation:**
+```bash
+PYTHONPATH=. python estimate_llm_costs.py
+
+# Output shows costs for different batch sizes
+# Single journey: $0.12
+# 10 journeys: $1.20
+# 100 journeys: $12.00
+```
+
+### ✨ Key Advantages
+
+- ✅ **Authentic Persona Voices** - References specific attributes (craft medium, experience)
+- ✅ **Natural Language Variation** - No two responses identical
+- ✅ **Contextual Awareness** - Adapts to journey phase and emotional state
+- ✅ **Research-Grade Quality** - Suitable for validation studies
+- ✅ **Seamless SSR Integration** - Works perfectly with probability distributions
+- ✅ **Backward Compatible** - Optional feature, existing code unchanged
+- ✅ **Cost Transparent** - Clear estimation before generation
+- ✅ **Graceful Fallback** - Automatic simulated responses on API error
+- ✅ **Production Ready** - Error handling, security, comprehensive testing
+
+### 🧪 Test Scripts
+
+**Quick Validation (2 API calls, ~10 seconds, $0.004):**
+```bash
+PYTHONPATH=. python quick_llm_test.py
+```
+
+**Focused Test (2 journey steps, 8 API calls, ~30 seconds, $0.02):**
+```bash
+PYTHONPATH=. python test_focused_llm.py
+```
+
+**Full Journey (56 API calls, ~2 minutes, $0.12):**
+```bash
+PYTHONPATH=. python test_one_journey.py
+```
+
+**Batch Generation (full cohort):**
+```bash
+PYTHONPATH=. python generate_llm_cohort.py
+```
+
+### 🚀 Future Enhancements (Phase 2)
+
+Documented in ADR-0007:
+- [ ] Prompt caching (90% cost reduction for repeated system prompts)
+- [ ] Parallel API calls (4x faster generation)
+- [ ] Multi-provider support (OpenAI GPT-4, local LLM)
+- [ ] Response caching for common persona/stimulus combinations
+- [ ] Streaming responses for better UX
+- [ ] Budget controls and limits
+
+### 📚 Documentation
+
+**New ADR**
+- ADR-0007: Real LLM Integration
+- Complete design rationale with 400+ lines
+- Implementation details and code examples
+- Alternatives considered (OpenAI, local LLM, fine-tuning)
+- Cost analysis and optimization strategies
+- Future enhancements roadmap
+- Cross-references to ADRs 0004-0006
+
+**Updated Files**
+- README.md with Real LLM Integration section
+- TODO.md with v2.4 completed items and future enhancements
+- DECISION_REGISTRY.md with ADR-0007
+- C4_ARCHITECTURE.md with LLM integration layer
+- This file (RECENT_CHANGES.md)
+
+### 🔗 References
+
+- ADR: [ADR-0007](architecture/decisions/0007-real-llm-integration.md)
+- Implementation: `core/generators/llm_response_generator.py`
+- Cost Tool: `estimate_llm_costs.py`
+- Test Scripts: `quick_llm_test.py`, `test_focused_llm.py`, `test_one_journey.py`
+- Anthropic API: https://docs.anthropic.com/
+- Claude Sonnet 4.5: Model ID `claude-sonnet-4-5-20250929`
+
+---
+
 ## Version 2.3.0 - Semantic Similarity Rating (SSR) Integration (2025-10-15)
 
 ### 🎯 Research-Validated Response Generation

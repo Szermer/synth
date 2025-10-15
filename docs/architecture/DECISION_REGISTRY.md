@@ -16,6 +16,7 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 | [ADR-0004](decisions/0004-synthetic-user-framework-integration.md) | Synthetic User Generation Framework Integration | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 | [ADR-0005](decisions/0005-e2e-testing-framework-persona-based.md) | Persona-Based E2E Testing Framework | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 | [ADR-0006](decisions/0006-semantic-similarity-rating-integration.md) | Semantic Similarity Rating (SSR) Integration | ✅ Accepted | 2025-10-15 | 🟢 High |
+| [ADR-0007](decisions/0007-real-llm-integration.md) | Real LLM Integration for Response Generation | ✅ Accepted | 2025-10-15 | 🟢 High |
 
 ## Status Legend
 
@@ -62,6 +63,11 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 **Solution:** Integrate PyMC Labs SSR methodology to convert LLM text to probability distributions using semantic similarity
 **Impact:** Research-validated realistic response patterns (90% test-retest reliability, KS > 0.85), optional feature, backward compatible
 
+### ADR-0007: Real LLM Integration for Response Generation 🟢
+**Problem:** Simulated template responses are generic, repetitive, and lack persona-specific context awareness
+**Solution:** Integrate Anthropic Claude Sonnet 4.5 API for generating authentic persona-specific responses that feed into SSR pipeline
+**Impact:** Dramatic quality improvement (authentic voices, natural variation, contextual awareness), optional feature with graceful fallback, cost-transparent (~$0.12 per journey), production-ready with comprehensive testing
+
 ## Cross-Project Decisions
 
 ### Private Language Integration
@@ -70,6 +76,7 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 - **ADR-0004**: 500-user cohort with engagement patterns and capture behaviors
 - **ADR-0005**: E2E testing framework leveraging synthetic data for realistic tests
 - **ADR-0006**: SSR response scales for learning domain (engagement, satisfaction, progress, relevance, etc.)
+- **ADR-0007**: Real LLM integration for authentic persona-specific responses (Claude Sonnet 4.5)
 
 ### Stage Zero Archive
 - **ADR-0001**: Original code preserved in `archive/stage_zero/`
@@ -96,7 +103,7 @@ Potential upcoming ADRs:
 ### Creating New ADRs
 
 1. Copy `docs/architecture/decisions/template.md`
-2. Number sequentially (next: ADR-0007)
+2. Number sequentially (next: ADR-0008)
 3. Fill in all sections
 4. Link related ADRs
 5. Update this registry

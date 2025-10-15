@@ -21,6 +21,12 @@ try:
 except ImportError:
     SSR_AVAILABLE = False
 
+try:
+    from .llm_response_generator import LLMResponseGenerator
+    LLM_AVAILABLE = True
+except ImportError:
+    LLM_AVAILABLE = False
+
 
 class JourneyGenerator:
     """Generate user journeys based on persona and phase configurations"""
@@ -31,7 +37,9 @@ class JourneyGenerator:
         phases_config: List[Dict[str, Any]],
         emotional_states: Dict[str, List[str]],
         ssr_config_path: Optional[str] = None,
-        enable_ssr: bool = False
+        enable_ssr: bool = False,
+        use_real_llm: bool = False,
+        llm_model: str = "claude-sonnet-4-5-20250929"
     ):
         """
         Initialize journey generator
@@ -42,10 +50,13 @@ class JourneyGenerator:
             emotional_states: Emotional progression by persona type
             ssr_config_path: Path to SSR response scales YAML (optional)
             enable_ssr: Whether to generate SSR-based responses (requires ssr_config_path)
+            use_real_llm: Whether to use real LLM API calls instead of simulated responses
+            llm_model: LLM model to use (default: claude-sonnet-4-5-20250929 - Claude Sonnet 4.5)
         """
         self.journey_type = journey_type
         self.phases_config = phases_config
         self.emotional_states = emotional_states
+        self.use_real_llm = use_real_llm
 
         # Build phases
         self.phases = self._build_phases()
@@ -66,6 +77,16 @@ class JourneyGenerator:
             self.ssr_generator = SSRResponseGenerator(
                 reference_config_path=ssr_config_path
             )
+
+        # Initialize LLM generator if requested
+        self.llm_generator = None
+        if use_real_llm:
+            if not LLM_AVAILABLE:
+                raise ImportError(
+                    "LLM support requires anthropic package. "
+                    "Install with: pip install anthropic"
+                )
+            self.llm_generator = LLMResponseGenerator(model=llm_model)
 
     def _build_phases(self) -> List[JourneyPhase]:
         """Build JourneyPhase objects from configuration"""
@@ -366,8 +387,7 @@ class JourneyGenerator:
         """
         Generate SSR-based responses for a journey step.
 
-        This creates simulated LLM responses and converts them to realistic
-        probability distributions using Semantic Similarity Rating.
+        Uses real LLM API if use_real_llm=True, otherwise simulates responses.
 
         Args:
             persona: User persona
@@ -384,14 +404,6 @@ class JourneyGenerator:
         # Create contextual stimulus
         stimulus = f"Phase: {phase.name}, Objectives: {', '.join(phase.objectives[:2])}"
 
-        # Generate simulated LLM responses based on engagement and emotional state
-        # In production, these would come from actual LLM calls
-        responses = self._simulate_llm_responses(
-            persona=persona,
-            emotional_state=emotional_state,
-            engagement_score=engagement_score
-        )
-
         ssr_data = {}
 
         # Generate SSR ratings for available scales
@@ -401,7 +413,26 @@ class JourneyGenerator:
             if scale_id not in self.ssr_generator.available_scales:
                 continue
 
-            response_text = responses.get(scale_id, responses.get('default', ''))
+            # Get response text (real LLM or simulated)
+            if self.use_real_llm and self.llm_generator:
+                try:
+                    response_text = self.llm_generator.generate_response(
+                        persona=persona.attributes,
+                        stimulus=stimulus,
+                        scale_id=scale_id,
+                        phase=phase.name,
+                        emotional_state=emotional_state,
+                        engagement_score=engagement_score
+                    )
+                except Exception as e:
+                    print(f"⚠️  LLM API error for {scale_id}: {e}")
+                    # Fallback to simulated
+                    responses = self._simulate_llm_responses(persona, emotional_state, engagement_score)
+                    response_text = responses.get(scale_id, responses.get('default', ''))
+            else:
+                # Use simulated responses
+                responses = self._simulate_llm_responses(persona, emotional_state, engagement_score)
+                response_text = responses.get(scale_id, responses.get('default', ''))
 
             try:
                 ssr_response = self.ssr_generator.generate_persona_response(

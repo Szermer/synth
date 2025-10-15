@@ -16,6 +16,7 @@ Synth is a flexible framework for creating synthetic user datasets based on conf
 - **Narrative Generation** - Create realistic conversational responses based on persona characteristics
 - **Flexible Journey Types** - Support for time-based, session-based, or milestone-based journeys
 - **Semantic Similarity Rating (SSR)** - Research-validated methodology for generating realistic Likert-scale response distributions (optional)
+- **Real LLM Integration** - Generate authentic persona-specific responses using Claude Sonnet 4.5 (optional)
 - **YAML Configuration** - Human-readable, version-controllable project definitions
 - **Validated Framework** - 500-user cohorts with perfect distribution accuracy
 
@@ -198,6 +199,155 @@ This demonstrates:
 - [ADR-0006: SSR Integration](docs/architecture/decisions/0006-semantic-similarity-rating-integration.md) - Complete design rationale
 - [example_ssr_generation.py](example_ssr_generation.py) - 6 comprehensive usage examples
 - [Research Paper](docs/2510.08338v2.pdf) - Original SSR methodology paper
+
+## 🤖 Real LLM Integration
+
+Synth optionally integrates **Anthropic Claude Sonnet 4.5** for generating authentic, persona-specific responses. Unlike simulated template responses, real LLM responses reference specific persona attributes, use natural language variation, and capture nuanced contextual awareness.
+
+### Why Real LLM?
+
+**Limitations of Simulated Responses:**
+- Generic and repetitive (same templates across all users)
+- Lack context awareness (don't reference persona attributes)
+- Limited variation (only 3 engagement levels: high/medium/low)
+- Miss subtle nuances in voice and tone
+
+**Real LLM Benefits:**
+- ✅ **Authentic persona voices** - References craft medium, experience level, tech comfort
+- ✅ **Natural language variation** - No two responses identical
+- ✅ **Contextual awareness** - Adapts to journey phase and emotional state
+- ✅ **Research-grade quality** - Suitable for validation studies and beta test simulation
+
+**Example Comparison:**
+
+*Simulated:*
+> "This seems useful. I'll keep going for now."
+
+*Real LLM (Claude Sonnet 4.5):*
+> "I'm intrigued by the knowledge sovereignty angle—I've definitely felt like my creative process gets lost in platforms that don't really *get* performance work. But I need to understand better how this actually helps me document and develop my pieces in a way that's more useful than what I'm already cobbling together with video files and scattered notes."
+
+### Installation
+
+```bash
+# Install Anthropic SDK
+pip install anthropic>=0.64.0
+
+# Set up API key (create .env file)
+echo "ANTHROPIC_API_KEY=your-api-key-here" > .env
+```
+
+**Get API Key:** Sign up at [console.anthropic.com](https://console.anthropic.com/)
+
+### Quick Start
+
+```python
+from core.generators.llm_response_generator import LLMResponseGenerator
+
+# Initialize generator
+llm_gen = LLMResponseGenerator(model="claude-sonnet-4-5-20250929")
+
+# Generate persona-specific response
+response = llm_gen.generate_response(
+    persona={
+        "age": 46,
+        "tech_comfort": 0.49,
+        "medium": "ceramics",
+        "years_in_craft": 15,
+        "ai_attitude": "cautious"
+    },
+    stimulus="Starting your knowledge capture session",
+    scale_id="engagement",
+    phase="discovery",
+    emotional_state="curious_cautious",
+    engagement_score=0.65
+)
+
+print(response)
+# Output: "I'm curious about this, though I have to admit I'm a bit hesitant
+# about AI being involved in documenting my ceramic work..."
+```
+
+### Journey Integration
+
+Enable real LLM in journey generation (works seamlessly with SSR):
+
+```python
+from core.generators.journey_generator import JourneyGenerator
+
+generator = JourneyGenerator(
+    journey_type=JourneyType.SESSION_BASED,
+    phases_config=phases,
+    emotional_states=emotions,
+    ssr_config_path="projects/private_language/response_scales.yaml",
+    enable_ssr=True,
+    use_real_llm=True,  # Enable real LLM responses
+    llm_model="claude-sonnet-4-5-20250929"
+)
+
+journey = generator.generate(persona, user_id)
+
+# Each step includes authentic LLM responses converted to SSR distributions
+for step in journey.steps:
+    if hasattr(step, 'ssr_responses'):
+        engagement = step.ssr_responses['engagement']
+        print(f"Response: {engagement['text_response']}")
+        print(f"Expected Value: {engagement['expected_value']:.2f}/5")
+        print(f"PMF: {engagement['pmf']}")
+```
+
+**Graceful Fallback:** If API fails, automatically falls back to simulated responses (no data loss).
+
+### Cost Information
+
+**Pricing (Claude Sonnet 4.5):**
+- Single API call: ~$0.002 (~0.2¢)
+- Single journey (14 steps × 4 scales): ~$0.12 (12¢)
+- 10-user cohort: ~$1.20
+- 100-user cohort: ~$12
+- 500-user cohort: ~$60
+
+**Cost Estimation Tool:**
+```bash
+PYTHONPATH=. python estimate_llm_costs.py
+
+# Output shows estimated costs for different batch sizes
+```
+
+**Recommended Hybrid Approach:**
+Generate 5-10 critical personas with real LLM, use simulated for the rest:
+```
+5 real LLM users: $0.60
+495 simulated users: $0.00
+Total for 500-user cohort: $0.60
+```
+
+### Example Scripts
+
+**Quick Validation (2 API calls, ~10 seconds):**
+```bash
+PYTHONPATH=. python quick_llm_test.py
+```
+
+**Focused Test (2 journey steps, ~30 seconds):**
+```bash
+PYTHONPATH=. python test_focused_llm.py
+```
+
+**Full Journey (56 API calls, ~2 minutes):**
+```bash
+PYTHONPATH=. python test_one_journey.py
+```
+
+**Batch Generation (full cohort):**
+```bash
+PYTHONPATH=. python generate_llm_cohort.py
+```
+
+### Documentation
+
+- [ADR-0007: Real LLM Integration](docs/architecture/decisions/0007-real-llm-integration.md) - Complete design rationale and implementation details
+- [LLMResponseGenerator](core/generators/llm_response_generator.py) - Core implementation
+- [Cost Estimation](estimate_llm_costs.py) - Cost calculator tool
 
 ## 📋 Creating a New Project
 
@@ -390,6 +540,7 @@ test('First capture session', async ({ page, betaTester }) => {
   - [ADR-0004: Synthetic User Framework Integration](docs/architecture/decisions/0004-synthetic-user-framework-integration.md)
   - [ADR-0005: Persona-Based E2E Testing Framework](docs/architecture/decisions/0005-e2e-testing-framework-persona-based.md)
   - [ADR-0006: Semantic Similarity Rating Integration](docs/architecture/decisions/0006-semantic-similarity-rating-integration.md)
+  - [ADR-0007: Real LLM Integration](docs/architecture/decisions/0007-real-llm-integration.md)
 
 ### Adding Features
 

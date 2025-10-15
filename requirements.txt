@@ -10,3 +10,4 @@ pyyaml>=6.0.0
 polars>=0.20.0
 sentence-transformers>=2.2.0
 semantic-similarity-rating @ git+https://github.com/pymc-labs/semantic-similarity-rating.git
+anthropic>=0.64.0

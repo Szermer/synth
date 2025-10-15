@@ -48,7 +48,7 @@ graph TB
 
     subgraph "Core Engine"
         Models[Data Models<br/>Persona, Journey]
-        Generators[Generators<br/>Persona, Journey, Narrative, SSR]
+        Generators[Generators<br/>Persona, Journey, Narrative, SSR, LLM]
         Utils[Utilities<br/>ConfigLoader]
     end
 
@@ -116,6 +116,7 @@ graph TB
         JourneyGen[JourneyGenerator]
         NarrativeGen[NarrativeGenerator]
         SSRGen[SSRResponseGenerator]
+        LLMGen[LLMResponseGenerator]
     end
 
     subgraph "Utils (core/utils/)"
@@ -128,6 +129,8 @@ graph TB
     JourneyGen -->|"Creates"| Journey
     JourneyGen -->|"Uses"| Persona
     JourneyGen -->|"Optional"| SSRGen
+    JourneyGen -->|"Optional"| LLMGen
+    LLMGen -->|"Feeds"| SSRGen
     NarrativeGen -->|"Uses"| Persona
     NarrativeGen -->|"Uses"| Journey
     SSRGen -->|"Enhances"| Journey
@@ -213,6 +216,22 @@ Responsibilities:
 - Calculate PMFs using embedding similarity
 - Support multiple scales (engagement, satisfaction, etc.)
 - Aggregate survey-level statistics
+```
+
+**LLMResponseGenerator** (`llm_response_generator.py`)
+```python
+Input:  PersonaConfig, Stimulus, ScaleID, Phase, EmotionalState, EngagementScore
+Output: str (authentic persona-specific response)
+
+Responsibilities:
+- Generate authentic persona-specific responses via Claude Sonnet 4.5 API
+- Inject persona context (age, tech_comfort, ai_attitude, craft experience)
+- Apply scale-specific prompting (engagement, satisfaction, progress, relevance)
+- Emotional state awareness in prompt engineering
+- Temperature control (0.8) for natural variation
+- Token limits (200) for cost optimization
+- Graceful error handling with fallback to simulated responses
+- Environment variable security for API keys
 ```
 
 ### Utilities (`core/utils/`)
@@ -342,6 +361,8 @@ graph LR
 | **SSR (Optional)** | sentence-transformers | Semantic embeddings |
 | **SSR (Optional)** | polars | SSR data processing |
 | **SSR (Optional)** | semantic-similarity-rating | PMF conversion |
+| **LLM (Optional)** | Anthropic Claude Sonnet 4.5 | Authentic response generation |
+| **LLM (Optional)** | anthropic SDK | Claude API integration |
 | **Output** | JSON | Exportable datasets |
 | **Testing** | pytest | Unit/integration tests |
 | **E2E Testing** | Playwright | Persona-based tests |
@@ -362,34 +383,54 @@ python cli.py generate project_name --count 1000
 ## Security Considerations
 
 **Current Implementation:**
-- No external API calls (fully local)
-- No sensitive data storage
+- Optional external API calls (Claude Sonnet 4.5 for LLM integration)
+- API keys stored in `.env` file (gitignored)
+- No sensitive data storage (except API keys in environment)
 - YAML parsing uses `safe_load()`
 - No code execution from configs
+- Graceful fallback if API unavailable
+
+**LLM Security:**
+- Environment variable-based API key management
+- `.env` file gitignored to prevent credential exposure
+- No hardcoded API keys in source
+- Optional feature - disabled by default
+- Cost estimation before generation
 
 **Future Enhancements:**
 - Input validation for all YAML fields
 - Rate limiting for API mode
 - Audit logging for enterprise use
 - Encryption for exported datasets
+- API key rotation support
+- Budget controls for LLM costs
 
 ## Performance Characteristics
 
-**Current Performance:**
+**Simulated Response Generation:**
 - 100 users: ~2-3 seconds
 - 1,000 users: ~20-30 seconds
 - 10,000 users: ~3-5 minutes
+
+**Real LLM Generation (Optional):**
+- Single journey: ~1-2 minutes (56 API calls)
+- 10 users: ~10-20 minutes
+- Sequential API calls (future: parallelization for 4x speedup)
+- Network latency dependent
 
 **Bottlenecks:**
 - Journey step generation (O(n × m) where m = avg steps)
 - Emotional state lookups
 - JSON serialization for large datasets
+- LLM API calls (when enabled): ~1-2 seconds per call
 
 **Optimization Opportunities:**
 - Parallel persona generation
 - Cached YAML parsing
 - Vectorized operations with numpy
 - Streaming JSON output
+- Parallel LLM API calls (4x speedup potential)
+- Prompt caching for LLM (90% cost/time reduction)
 
 ## E2E Testing Integration
 
@@ -443,6 +484,7 @@ graph TB
 - [ADR-0004: Synthetic User Framework Integration](decisions/0004-synthetic-user-framework-integration.md)
 - [ADR-0005: Persona-Based E2E Testing Framework](decisions/0005-e2e-testing-framework-persona-based.md)
 - [ADR-0006: Semantic Similarity Rating Integration](decisions/0006-semantic-similarity-rating-integration.md)
+- [ADR-0007: Real LLM Integration](decisions/0007-real-llm-integration.md)
 - [README.md](../../README.md)
 - [DECISION_REGISTRY.md](DECISION_REGISTRY.md)
 - [E2E Testing README](../../src/tests/e2e/README.md)

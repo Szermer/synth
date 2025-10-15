@@ -3,7 +3,7 @@
 ## Active Development
 
 ### 🚀 In Progress
-- [ ] None - v2.1 complete!
+- [ ] None - v2.4 complete!
 
 ### 📋 Next Up (High Priority)
 - [ ] Add JSON Schema for YAML validation
@@ -49,12 +49,17 @@
 - [x] Core SSR integration with PyMC Labs implementation
 - [x] 8 predefined reference scales
 - [x] Optional SSR in journey generation
-- [ ] Real LLM integration (replace simulated responses with OpenAI/Anthropic API)
+- [x] Real LLM integration (Claude Sonnet 4.5 API)
+- [x] Cost estimation tool for batch generation
+- [x] Graceful fallback to simulated responses
+- [ ] Prompt caching for cost reduction (90% savings potential)
+- [ ] Parallel API calls for 4x faster generation
+- [ ] Multi-provider support (OpenAI, local LLM)
+- [ ] Response caching for common persona/stimulus combinations
 - [ ] Dynamic scale generation from descriptions
 - [ ] Batch embedding computation for performance
 - [ ] Distribution comparison visualizations
 - [ ] Cohort segmentation by response patterns
-- [ ] Cost tracking and optimization for LLM calls
 - [ ] SSR caching for repeated stimuli
 
 ## Documentation
@@ -156,6 +161,23 @@
 - [ ] Annual conference/meetup
 
 ## Completed ✅
+
+### v2.4 Release (2025-10-15)
+- [x] Real LLM integration with Claude Sonnet 4.5
+- [x] LLMResponseGenerator for authentic persona-specific responses
+- [x] Optional real LLM parameter in JourneyGenerator
+- [x] Persona context injection (age, tech_comfort, ai_attitude, craft experience)
+- [x] Scale-specific prompting (engagement, satisfaction, progress, relevance)
+- [x] Emotional state awareness in prompts
+- [x] Temperature control (0.8) for natural variation
+- [x] 200-token response limit for cost optimization
+- [x] Cost estimation tool (estimate_llm_costs.py)
+- [x] Graceful fallback to simulated on API error
+- [x] Environment variable security (.env with ANTHROPIC_API_KEY)
+- [x] Test scripts (quick_llm_test.py, test_focused_llm.py, test_one_journey.py, generate_llm_cohort.py)
+- [x] ADR-0007: Real LLM Integration
+- [x] Updated README with Real LLM Integration section
+- [x] Updated DECISION_REGISTRY and C4_ARCHITECTURE
 
 ### v2.3 Release (2025-10-15)
 - [x] Semantic Similarity Rating (SSR) integration
