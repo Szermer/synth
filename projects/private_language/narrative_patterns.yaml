@@ -1,0 +1,268 @@
+# Narrative Response Patterns by Persona
+# How each persona type communicates and responds
+
+patterns:
+  studio_practitioner:
+    response_style: "cautious_practical"
+    detail_level: "moderate"
+
+    linguistic_markers:
+      - "I think"
+      - "maybe"
+      - "in my experience"
+      - "when I'm working"
+      - "it's hard to explain, but"
+
+    uncertainty_markers:
+      probability: 0.4
+      examples:
+        - "I'm not sure"
+        - "maybe"
+        - "I think"
+        - "possibly"
+
+    craft_specific_language:
+      probability: 0.8
+      examples:
+        - "the clay tells you"
+        - "you can feel when it's ready"
+        - "the sound changes"
+        - "it's about the texture"
+
+    teaching_references:
+      probability: 0.5
+      examples:
+        - "I tell my students"
+        - "when teaching this"
+        - "the way I explain it is"
+
+  educator_instructor:
+    response_style: "systematic_comprehensive"
+    detail_level: "detailed"
+
+    linguistic_markers:
+      - "systematically"
+      - "first... second... third"
+      - "in terms of"
+      - "from a pedagogical perspective"
+      - "based on my teaching experience"
+
+    organizational_language:
+      probability: 0.7
+      examples:
+        - "let me break this down"
+        - "here's the framework"
+        - "the timeline is"
+        - "the structure is"
+
+    research_references:
+      probability: 0.4
+      examples:
+        - "research shows"
+        - "evidence suggests"
+        - "studies indicate"
+
+    student_outcome_focus:
+      probability: 0.8
+      examples:
+        - "students learn faster when"
+        - "this improves retention"
+        - "the success rate increased"
+
+  master_craftsperson:
+    response_style: "experiential_tacit"
+    detail_level: "variable"
+
+    linguistic_markers:
+      - "in my 40 years"
+      - "back when"
+      - "the old way"
+      - "you develop a feel for"
+      - "it's hard to put into words"
+
+    tacit_knowledge_indicators:
+      probability: 0.9
+      examples:
+        - "you just know"
+        - "it's a feeling"
+        - "I can hear it"
+        - "the wood tells you"
+        - "years of experience"
+
+    legacy_focus:
+      probability: 0.6
+      examples:
+        - "before I retire"
+        - "for the next generation"
+        - "preserving this technique"
+        - "so this doesn't get lost"
+
+    successor_mentions:
+      probability: 0.5
+      examples:
+        - "my apprentice"
+        - "the person taking over"
+        - "passing this on"
+
+  student_apprentice:
+    response_style: "learning_engaged"
+    detail_level: "exploratory"
+
+    linguistic_markers:
+      - "I'm learning"
+      - "help me understand"
+      - "does this mean"
+      - "I'm still figuring out"
+      - "this is new to me"
+
+    question_asking:
+      probability: 0.8
+      examples:
+        - "why does"
+        - "how do I"
+        - "what if"
+        - "can you explain"
+
+    confidence_building:
+      probability: 0.5
+      examples:
+        - "I'm getting better at"
+        - "starting to understand"
+        - "makes more sense now"
+
+    mistake_references:
+      probability: 0.6
+      examples:
+        - "last time I messed up"
+        - "learned the hard way"
+        - "made that mistake"
+
+  knowledge_consumer:
+    response_style: "direct_pragmatic"
+    detail_level: "brief"
+
+    linguistic_markers:
+      - "I need"
+      - "looking for"
+      - "quick question"
+      - "specifically"
+      - "just this one thing"
+
+    efficiency_focus:
+      probability: 0.8
+      examples:
+        - "the fastest way"
+        - "most efficient"
+        - "save time"
+        - "straight to the point"
+
+    value_assessment:
+      probability: 0.7
+      examples:
+        - "is this worth"
+        - "cost vs benefit"
+        - "return on investment"
+        - "compared to alternatives"
+
+  department_head:
+    response_style: "strategic_institutional"
+    detail_level: "comprehensive"
+
+    linguistic_markers:
+      - "from a departmental perspective"
+      - "institutionally"
+      - "our program goals"
+      - "accreditation requirements"
+      - "budget considerations"
+
+    outcomes_metrics:
+      probability: 0.9
+      examples:
+        - "student success rates"
+        - "graduation outcomes"
+        - "teaching quality metrics"
+        - "enrollment numbers"
+
+    faculty_references:
+      probability: 0.7
+      examples:
+        - "our instructors"
+        - "retiring faculty"
+        - "department colleagues"
+
+    strategic_thinking:
+      probability: 0.8
+      examples:
+        - "long-term impact"
+        - "institutional goals"
+        - "strategic plan"
+
+  enterprise_knowledge_manager:
+    response_style: "enterprise_strategic"
+    detail_level: "comprehensive"
+
+    linguistic_markers:
+      - "organizationally"
+      - "at scale"
+      - "enterprise-wide"
+      - "compliance requires"
+      - "ROI demonstrates"
+
+    metrics_focus:
+      probability: 0.95
+      examples:
+        - "data shows"
+        - "metrics indicate"
+        - "measured outcomes"
+        - "quantifiable results"
+
+    risk_assessment:
+      probability: 0.7
+      examples:
+        - "risk mitigation"
+        - "compliance considerations"
+        - "security requirements"
+
+    ai_training_references:
+      probability: 0.6
+      examples:
+        - "AI training data"
+        - "proprietary knowledge"
+        - "machine learning models"
+
+# Response length distribution by persona
+response_lengths:
+  studio_practitioner:
+    min_words: 20
+    max_words: 100
+    avg_words: 50
+
+  educator_instructor:
+    min_words: 40
+    max_words: 200
+    avg_words: 100
+
+  master_craftsperson:
+    min_words: 30
+    max_words: 150
+    avg_words: 75
+
+  student_apprentice:
+    min_words: 15
+    max_words: 80
+    avg_words: 40
+
+  knowledge_consumer:
+    min_words: 10
+    max_words: 50
+    avg_words: 25
+
+  department_head:
+    min_words: 50
+    max_words: 250
+    avg_words: 125
+
+  enterprise_knowledge_manager:
+    min_words: 60
+    max_words: 300
+    avg_words: 150

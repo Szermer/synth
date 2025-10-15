@@ -1,0 +1,222 @@
+# Data Schema for Private Language Synthetic Users
+# Fields to generate and collect throughout journey
+
+user_profile_fields:
+  # Core identity
+  - field: "name"
+    type: "string"
+    generator: "faker.name"
+    required: true
+
+  - field: "email"
+    type: "string"
+    generator: "faker.email"
+    required: true
+
+  - field: "expertise_domain"
+    type: "string"
+    options:
+      - "ceramics"
+      - "woodworking"
+      - "metalworking"
+      - "textile_arts"
+      - "glassblowing"
+      - "lutherie"
+      - "sculpture"
+      - "furniture_making"
+      - "jewelry_making"
+      - "printmaking"
+    required: true
+
+  - field: "years_in_craft"
+    type: "integer"
+    range: [0, 50]
+    persona_specific: true  # Varies by persona config
+
+  - field: "teaching_experience"
+    type: "boolean"
+    probability: 0.7  # 70% teach in some capacity
+
+  - field: "students_per_year"
+    type: "integer"
+    range: [0, 100]
+    conditional: "teaching_experience"
+
+  # Practice context
+  - field: "studio_type"
+    type: "string"
+    options:
+      - "home_studio"
+      - "shared_studio"
+      - "private_studio"
+      - "university_workshop"
+      - "community_center"
+
+  - field: "practice_type"
+    type: "string"
+    options:
+      - "full_time_practice"
+      - "part_time_practice"
+      - "teaching_primary"
+      - "hobby_serious"
+      - "academic"
+
+  # Documentation & Tech
+  - field: "current_documentation_method"
+    type: "array"
+    options:
+      - "none"
+      - "notebook_physical"
+      - "photos_unorganized"
+      - "instagram"
+      - "blog"
+      - "video"
+      - "structured_database"
+
+  - field: "tech_proficiency"
+    type: "float"
+    range: [0.0, 1.0]
+    persona_specific: true
+
+  - field: "smartphone_user"
+    type: "boolean"
+    probability: 0.95
+
+  - field: "voice_recording_comfort"
+    type: "float"
+    range: [0.0, 1.0]
+
+# Journey-specific data collection
+
+discovery_phase_data:
+  - field: "discovery_source"
+    type: "string"
+    options:
+      - "word_of_mouth"
+      - "social_media"
+      - "conference"
+      - "search_engine"
+      - "academic_recommendation"
+      - "article"
+
+  - field: "primary_pain_point"
+    type: "string"
+    options:
+      - "knowledge_loss_fear"
+      - "teaching_repetition"
+      - "no_time_to_document"
+      - "successor_training"
+      - "student_self_service"
+
+  - field: "expected_time_investment"
+    type: "string"
+    options:
+      - "5_min_per_session"
+      - "15_min_per_session"
+      - "30_min_per_session"
+      - "1_hour_per_session"
+
+onboarding_phase_data:
+  - field: "first_capture_method"
+    type: "string"
+    options:
+      - "conversational_reflection"
+      - "voice_memo"
+      - "typed_notes"
+      - "video_narration"
+
+  - field: "first_capture_duration"
+    type: "integer"
+    range: [5, 60]
+    unit: "minutes"
+
+  - field: "knowledge_atoms_generated"
+    type: "integer"
+    range: [5, 50]
+
+  - field: "gaps_identified_count"
+    type: "integer"
+    range: [0, 20]
+
+  - field: "surprise_value_rating"
+    type: "float"
+    range: [1.0, 5.0]
+    description: "How surprising/valuable were identified gaps"
+
+active_use_phase_data:
+  - field: "weekly_capture_frequency"
+    type: "float"
+    range: [0.0, 7.0]
+    description: "Sessions per week"
+
+  - field: "avg_session_duration"
+    type: "integer"
+    range: [5, 45]
+    unit: "minutes"
+
+  - field: "total_knowledge_atoms"
+    type: "integer"
+    range: [50, 1000]
+
+  - field: "semantic_searches_per_week"
+    type: "integer"
+    range: [0, 20]
+
+  - field: "gap_detection_engagement"
+    type: "float"
+    range: [0.0, 1.0]
+    description: "How often user reviews gap reports"
+
+  - field: "teaching_materials_exported"
+    type: "integer"
+    range: [0, 50]
+
+  - field: "time_savings_perceived"
+    type: "string"
+    options:
+      - "10_percent"
+      - "25_percent"
+      - "50_percent"
+      - "75_percent"
+
+mature_use_phase_data:
+  - field: "knowledge_base_size"
+    type: "integer"
+    range: [500, 5000]
+    description: "Total knowledge atoms"
+
+  - field: "student_direct_access_enabled"
+    type: "boolean"
+    probability: 0.6
+
+  - field: "courses_created"
+    type: "integer"
+    range: [0, 10]
+
+  - field: "referrals_made"
+    type: "integer"
+    range: [0, 15]
+
+  - field: "marketplace_contributor"
+    type: "boolean"
+    probability: 0.3
+
+  - field: "monthly_revenue_impact"
+    type: "integer"
+    range: [0, 5000]
+    unit: "dollars"
+    description: "Additional revenue attributed to Private Language"
+
+  - field: "legacy_value_rating"
+    type: "float"
+    range: [1.0, 5.0]
+    description: "How valuable as legacy preservation"
+
+  - field: "nps_score"
+    type: "integer"
+    range: [0, 10]
+    description: "Net Promoter Score"
+
+  - field: "testimonial_provided"
+    type: "boolean"
+    probability: 0.4

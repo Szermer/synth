@@ -1,0 +1,180 @@
+# Emotional State Progressions by Persona
+# How emotional states evolve through journey phases
+
+emotional_progressions:
+  studio_practitioner:
+    discovery:
+      - "skeptical"
+      - "curious_cautious"
+      - "intrigued"
+      - "hesitant_hopeful"
+    onboarding:
+      - "uncertain"
+      - "surprised_positive"
+      - "gradually_confident"
+      - "encouraged"
+    active_use:
+      - "engaged"
+      - "relieved"
+      - "productive"
+      - "satisfied"
+    mature_use:
+      - "confident"
+      - "empowered"
+      - "advocate"
+      - "grateful"
+
+  educator_instructor:
+    discovery:
+      - "analytically_curious"
+      - "evaluating"
+      - "professionally_interested"
+      - "methodically_assessing"
+    onboarding:
+      - "systematically_learning"
+      - "impressed"
+      - "strategically_planning"
+      - "optimistic"
+    active_use:
+      - "efficiently_engaged"
+      - "systematically_improving"
+      - "measurably_satisfied"
+      - "strategically_expanding"
+    mature_use:
+      - "outcomes_driven"
+      - "research_focused"
+      - "department_advocate"
+      - "institutionally_committed"
+
+  master_craftsperson:
+    discovery:
+      - "urgently_seeking"
+      - "desperate_hopeful"
+      - "time_anxious"
+      - "cautiously_optimistic"
+    onboarding:
+      - "gradually_trusting"
+      - "pleasantly_surprised"
+      - "relieved"
+      - "motivated"
+    active_use:
+      - "dedicated"
+      - "increasingly_confident"
+      - "legacy_focused"
+      - "purposeful"
+    mature_use:
+      - "accomplished"
+      - "legacy_satisfied"
+      - "passing_torch"
+      - "peaceful"
+
+  student_apprentice:
+    discovery:
+      - "excited"
+      - "exploratory"
+      - "tech_comfortable"
+      - "eager"
+    onboarding:
+      - "learning_actively"
+      - "building_confidence"
+      - "finding_rhythm"
+      - "increasingly_independent"
+    active_use:
+      - "self_sufficient"
+      - "competent"
+      - "efficiently_learning"
+      - "sharing_knowledge"
+    mature_use:
+      - "advanced"
+      - "peer_teaching"
+      - "knowledge_contributing"
+      - "mastery_approaching"
+
+  knowledge_consumer:
+    discovery:
+      - "solution_seeking"
+      - "evaluating_value"
+      - "cost_conscious"
+      - "pragmatic"
+    onboarding:
+      - "transactional"
+      - "efficiency_focused"
+      - "assessing_accuracy"
+      - "value_calculating"
+    active_use:
+      - "selectively_engaged"
+      - "project_focused"
+      - "results_oriented"
+      - "occasionally_satisfied"
+    mature_use:
+      - "reliable_consumer"
+      - "recommend_selectively"
+      - "value_confirmed"
+      - "casually_loyal"
+
+  department_head:
+    discovery:
+      - "strategically_assessing"
+      - "budget_conscious"
+      - "outcome_focused"
+      - "pilot_considering"
+    onboarding:
+      - "institutionally_evaluating"
+      - "metrics_tracking"
+      - "cautiously_optimistic"
+      - "expansion_planning"
+    active_use:
+      - "department_implementing"
+      - "results_measuring"
+      - "faculty_onboarding"
+      - "strategically_scaling"
+    mature_use:
+      - "institutionally_committed"
+      - "accreditation_leveraging"
+      - "department_advocate"
+      - "organization_expanding"
+
+  enterprise_knowledge_manager:
+    discovery:
+      - "enterprise_evaluating"
+      - "roi_calculating"
+      - "risk_assessing"
+      - "strategically_interested"
+    onboarding:
+      - "pilot_executing"
+      - "integration_planning"
+      - "compliance_validating"
+      - "scale_projecting"
+    active_use:
+      - "organization_deploying"
+      - "metrics_analyzing"
+      - "roi_demonstrating"
+      - "expansion_planning"
+    mature_use:
+      - "enterprise_integrated"
+      - "ai_training_optimizing"
+      - "strategic_partner"
+      - "market_influencing"
+
+# Common emotional markers across personas
+common_markers:
+  positive:
+    - "satisfied"
+    - "confident"
+    - "empowered"
+    - "engaged"
+    - "motivated"
+
+  negative:
+    - "frustrated"
+    - "anxious"
+    - "overwhelmed"
+    - "skeptical"
+    - "uncertain"
+
+  transitional:
+    - "curious"
+    - "hopeful"
+    - "evaluating"
+    - "learning"
+    - "adapting"
