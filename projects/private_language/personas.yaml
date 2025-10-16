@@ -742,3 +742,245 @@ personas:
       onboarding: [0.2, 0.9]
       active_use: [0.1, 0.85]
       mature_use: [0.1, 0.8]
+
+  # ========================================
+  # NETWORK EFFECT PERSONAS (NEW - Critical for validation)
+  # ========================================
+
+  student_apprentice:
+    name: "Student/Apprentice"
+    description: "Early learner accessing instructor's knowledge base for self-service help"
+    archetype: "Jordan - College student reducing office hours dependency"
+    distribution: 0.04  # 20/500 users (links to master_educator personas)
+    priority: "tier_2_growth"
+    category: "network_effect"
+
+    demographics:
+      age_range: [18, 35]
+      gender_distribution:
+        female: 0.52
+        male: 0.45
+        non_binary: 0.03
+      education_distribution:
+        high_school: 0.10
+        some_college: 0.30
+        bachelors: 0.45
+        masters: 0.15
+
+    behavioral:
+      engagement_pattern: "exploratory_urgent"
+      action_tendency: [0.6, 0.8]
+      anxiety_level: [0.4, 0.7]
+      tech_comfort: [0.7, 0.95]  # Digital natives
+      documentation_comfort: [0.5, 0.8]
+      ai_attitude: ["enthusiastic", "pragmatic"]
+      device_preference: ["mobile", "tablet", "mixed"]
+
+    attributes:
+      # Academic status
+      learning_stage: ["beginner", "intermediate", "advanced"]
+      learning_stage_distribution:
+        beginner: 0.40
+        intermediate: 0.40
+        advanced: 0.20
+
+      # Relationship to instructor
+      instructor_id: null  # Will be linked to master_educator
+      access_type: "student_view"  # Read-only access to knowledge base
+      course_enrolled: true
+
+      # Usage patterns
+      question_frequency: [2, 10]  # Questions per week
+      search_usage: ["high", "very_high"]
+      self_service_success_rate: [0.5, 0.8]  # 50-80% of questions answered without asking
+      office_hours_reduction: [0.3, 0.7]  # 30-70% reduction in office hours visits
+
+      # Learning style
+      preferred_learning_mode: ["text", "video", "interactive", "mixed"]
+      learning_goal: ["complete_course", "skill_mastery", "project_completion", "exam_prep"]
+
+      # Engagement drivers
+      time_pressure: ["high", "medium", "low"]
+      grades_motivation: [0.5, 0.9]
+      intrinsic_curiosity: [0.4, 0.9]
+
+    pain_points:
+      - "cant_ask_instructor_24_7"
+      - "expensive_mistakes"
+      - "vague_textbook_explanations"
+      - "need_just_in_time_answers"
+      - "office_hours_inconvenient"
+
+    motivations:
+      - "learn_faster"
+      - "understand_why_not_just_what"
+      - "avoid_mistakes"
+      - "reduce_anxiety"
+      - "access_expertise_on_demand"
+
+    completion_thresholds:
+      discovery: [0.7, 0.9]
+      onboarding: [0.6, 0.8]
+      active_use: [0.7, 0.9]  # High usage during semester
+      mature_use: [0.4, 0.6]  # Lower after course completion
+
+  knowledge_consumer:
+    name: "Knowledge Consumer"
+    description: "Pay-per-query user seeking specific expert knowledge for current project"
+    archetype: "Alex - Professional needing verified expertise for specific problem"
+    distribution: 0.03  # 15/500 users (validates marketplace model)
+    priority: "tier_2_growth"
+    category: "marketplace"
+
+    demographics:
+      age_range: [25, 65]
+      gender_distribution:
+        female: 0.48
+        male: 0.48
+        non_binary: 0.04
+      education_distribution:
+        high_school: 0.10
+        associates: 0.15
+        bachelors: 0.45
+        masters: 0.25
+        phd: 0.05
+
+    behavioral:
+      engagement_pattern: "transactional"
+      action_tendency: [0.7, 0.9]  # High when need is urgent
+      anxiety_level: [0.3, 0.6]
+      tech_comfort: [0.6, 0.9]
+      documentation_comfort: [0.5, 0.8]
+      ai_attitude: ["pragmatic", "cautious"]
+      device_preference: ["desktop", "mobile", "mixed"]
+
+    attributes:
+      # Usage pattern
+      usage_pattern: "one_time_query"
+      payment_model: "pay_per_query"
+      subscription_conversion_potential: [0.2, 0.5]  # 20-50% convert to subscribers
+
+      # Query characteristics
+      query_specificity: ["highly_specific", "moderately_specific"]
+      query_complexity: ["simple", "moderate", "complex"]
+      query_frequency: [1, 5]  # Queries per year
+      typical_query_examples:
+        - "How do I fix cracking in high-fire ceramics?"
+        - "What causes glaze crawling on vertical surfaces?"
+        - "Best practices for teaching wheel throwing to beginners?"
+
+      # Economic
+      willingness_to_pay: [5, 50]  # $ per query
+      verification_requirement: "expert_verified"  # Must be from verified practitioner
+      price_sensitivity: ["low", "medium", "high"]
+      price_sensitivity_distribution:
+        low: 0.30  # Urgent need, high value
+        medium: 0.50
+        high: 0.20  # Price-conscious but willing if value clear
+
+      # Context
+      use_case: ["current_project", "problem_solving", "research", "learning"]
+      use_case_distribution:
+        current_project: 0.50
+        problem_solving: 0.30
+        research: 0.15
+        learning: 0.05
+
+      # Discovery
+      discovery_source: ["search_engine", "social_media", "referral", "marketplace_browse"]
+
+    pain_points:
+      - "youtube_unverified"
+      - "full_courses_overkill"
+      - "forums_unreliable"
+      - "books_too_general"
+      - "need_expert_now"
+
+    motivations:
+      - "solve_specific_problem"
+      - "verified_expert_knowledge"
+      - "time_efficient"
+      - "pay_for_value"
+      - "avoid_trial_and_error_costs"
+
+    completion_thresholds:
+      discovery: [0.8, 0.95]  # High conversion on finding right answer
+      onboarding: [0.5, 0.7]  # Minimal onboarding needed
+      active_use: [0.3, 0.5]  # Transactional, not habitual
+      mature_use: [0.1, 0.3]  # Low - most don't reach this
+
+  teaching_assistant:
+    name: "Teaching Assistant"
+    description: "Supports master educator by answering student questions using shared knowledge base"
+    archetype: "Maya - Graduate TA managing student questions at scale"
+    distribution: 0.02  # 10/500 users (links to master_educator personas)
+    priority: "tier_2_growth"
+    category: "network_effect"
+
+    demographics:
+      age_range: [22, 40]
+      gender_distribution:
+        female: 0.55
+        male: 0.42
+        non_binary: 0.03
+      education_distribution:
+        bachelors: 0.20
+        masters: 0.50
+        phd: 0.30
+
+    behavioral:
+      engagement_pattern: "methodical_supportive"
+      action_tendency: [0.7, 0.9]
+      anxiety_level: [0.3, 0.6]
+      tech_comfort: [0.75, 0.95]  # Tech-savvy
+      documentation_comfort: [0.6, 0.85]
+      ai_attitude: ["enthusiastic", "pragmatic"]
+      device_preference: ["desktop", "mobile", "mixed"]
+
+    attributes:
+      # Relationship to instructor
+      supervising_instructor_id: null  # Will be linked to master_educator
+      permission_level: "editor"  # Can refine and add to knowledge base
+      collaboration_frequency: ["daily", "weekly"]
+
+      # Teaching load
+      student_interaction_volume: [20, 100]  # Questions handled per week
+      sections_taught: [1, 4]
+      students_per_section: [15, 50]
+
+      # Usage patterns
+      primary_activities:
+        - "answer_student_questions"
+        - "refine_knowledge_atoms"
+        - "identify_gap_patterns"
+        - "create_supplementary_materials"
+      knowledge_base_contribution: [5, 30]  # New atoms added per month
+
+      # Career stage
+      ta_experience_years: [0, 5]
+      career_goal: ["teaching_career", "research_career", "industry", "mixed"]
+      learning_from_instructor: true  # Using as professional development
+
+      # Efficiency gains
+      time_savings_per_week: [2, 10]  # Hours saved by using knowledge base
+      repeat_question_handling: [0.6, 0.9]  # % of questions answered via knowledge base
+
+    pain_points:
+      - "same_questions_repeatedly"
+      - "unclear_instructor_expectations"
+      - "limited_access_to_instructor"
+      - "scaling_support_difficulty"
+      - "building_teaching_skills"
+
+    motivations:
+      - "reduce_repetitive_work"
+      - "help_students_effectively"
+      - "learn_from_instructor"
+      - "build_teaching_portfolio"
+      - "contribute_to_knowledge_base"
+
+    completion_thresholds:
+      discovery: [0.8, 0.95]
+      onboarding: [0.7, 0.9]
+      active_use: [0.8, 0.95]  # Very high during semester
+      mature_use: [0.6, 0.8]

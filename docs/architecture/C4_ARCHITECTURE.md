@@ -485,11 +485,12 @@ graph TB
 - [ADR-0005: Persona-Based E2E Testing Framework](decisions/0005-e2e-testing-framework-persona-based.md)
 - [ADR-0006: Semantic Similarity Rating Integration](decisions/0006-semantic-similarity-rating-integration.md)
 - [ADR-0007: Real LLM Integration](decisions/0007-real-llm-integration.md)
+- [ADR-0008: Private Language Network Effect Personas](decisions/0008-private-language-network-personas.md)
 - [README.md](../../README.md)
 - [DECISION_REGISTRY.md](DECISION_REGISTRY.md)
 - [E2E Testing README](../../src/tests/e2e/README.md)
 
 ---
 
-**Last Updated:** 2025-10-15
+**Last Updated:** 2025-10-16
 **Maintainer:** Stephen Szermer

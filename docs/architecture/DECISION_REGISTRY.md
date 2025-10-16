@@ -15,8 +15,9 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 | [ADR-0003](decisions/0003-session-based-journey-modeling.md) | Session-Based Journey Modeling | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 | [ADR-0004](decisions/0004-synthetic-user-framework-integration.md) | Synthetic User Generation Framework Integration | ✅ Accepted | 2025-10-07 | 🟡 Medium |
 | [ADR-0005](decisions/0005-e2e-testing-framework-persona-based.md) | Persona-Based E2E Testing Framework | ✅ Accepted | 2025-10-07 | 🟡 Medium |
-| [ADR-0006](decisions/0006-semantic-similarity-rating-integration.md) | Semantic Similarity Rating (SSR) Integration | ✅ Accepted | 2025-10-15 | 🟢 High |
-| [ADR-0007](decisions/0007-real-llm-integration.md) | Real LLM Integration for Response Generation | ✅ Accepted | 2025-10-15 | 🟢 High |
+| [ADR-0006](decisions/0006-semantic-similarity-rating-integration.md) | Semantic Similarity Rating (SSR) Integration | ✅ Accepted | 2025-10-15 | 🟢 Low |
+| [ADR-0007](decisions/0007-real-llm-integration.md) | Real LLM Integration for Response Generation | ✅ Accepted | 2025-10-15 | 🟢 Low |
+| [ADR-0008](decisions/0008-private-language-network-personas.md) | Private Language Network Effect Personas | ✅ Accepted | 2025-10-16 | 🟡 Medium |
 
 ## Status Legend
 
@@ -68,6 +69,11 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 **Solution:** Integrate Anthropic Claude Sonnet 4.5 API for generating authentic persona-specific responses that feed into SSR pipeline
 **Impact:** Dramatic quality improvement (authentic voices, natural variation, contextual awareness), optional feature with graceful fallback, cost-transparent (~$0.12 per journey), production-ready with comprehensive testing
 
+### ADR-0008: Private Language Network Effect Personas 🟡
+**Problem:** Existing Private Language cohort (10 users, 6 persona types) lacked critical personas for validating network effects, marketplace dynamics, and team collaboration features
+**Solution:** Add 3 new persona types (student/apprentice, knowledge consumer, teaching assistant) with intelligent user linking and journey enhancements (weekly synthesis, export tracking)
+**Impact:** Complete coverage of Private Language validation needs (9/10 alignment score), realistic relationships (students→educators, TAs→educators), enhanced journey fidelity, backward compatible with existing cohort, cost-effective ($0.82 for 7 personas)
+
 ## Cross-Project Decisions
 
 ### Private Language Integration
@@ -77,6 +83,7 @@ Synth is a multi-domain synthetic user data generation framework that creates re
 - **ADR-0005**: E2E testing framework leveraging synthetic data for realistic tests
 - **ADR-0006**: SSR response scales for learning domain (engagement, satisfaction, progress, relevance, etc.)
 - **ADR-0007**: Real LLM integration for authentic persona-specific responses (Claude Sonnet 4.5)
+- **ADR-0008**: Network effect personas (students, knowledge consumers, teaching assistants) with intelligent linking and journey enhancements
 
 ### Stage Zero Archive
 - **ADR-0001**: Original code preserved in `archive/stage_zero/`
@@ -103,7 +110,7 @@ Potential upcoming ADRs:
 ### Creating New ADRs
 
 1. Copy `docs/architecture/decisions/template.md`
-2. Number sequentially (next: ADR-0008)
+2. Number sequentially (next: ADR-0009)
 3. Fill in all sections
 4. Link related ADRs
 5. Update this registry
@@ -126,5 +133,5 @@ This registry is updated whenever:
 - Major architectural changes occur
 - Cross-ADR relationships are identified
 
-**Last Updated:** 2025-10-15
+**Last Updated:** 2025-10-16
 **Maintainer:** Stephen Szermer

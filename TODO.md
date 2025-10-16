@@ -162,6 +162,21 @@
 
 ## Completed ✅
 
+### v2.5 Release (2025-10-16)
+- [x] Network Effect Personas for Private Language validation
+- [x] Student/apprentice persona (Jordan) - student-facing UI validation
+- [x] Knowledge consumer persona (Alex) - marketplace & pay-per-query model
+- [x] Teaching assistant persona (Maya) - team collaboration & permissions
+- [x] Intelligent user linking (students→educators, TAs→educators)
+- [x] Smart educator selection algorithm (engagement + teaching load + experience)
+- [x] Journey enhancements: weekly synthesis steps
+- [x] Journey enhancements: export event tracking
+- [x] generate_network_personas.py script (649 lines)
+- [x] PRIVATE_LANGUAGE_ALIGNMENT_REPORT.md (600+ lines, 9/10 alignment score)
+- [x] ADR-0008: Private Language Network Effect Personas
+- [x] Enhanced personas.yaml with 3 new persona types (240 lines)
+- [x] Updated DECISION_REGISTRY, RECENT_CHANGES, and C4_ARCHITECTURE
+
 ### v2.4 Release (2025-10-15)
 - [x] Real LLM integration with Claude Sonnet 4.5
 - [x] LLMResponseGenerator for authentic persona-specific responses
@@ -235,5 +250,5 @@
 - 🟡 Medium - Important but not urgent
 - 🟢 Low - Nice to have
 
-**Last Updated:** 2025-10-15
+**Last Updated:** 2025-10-16
 **Maintainer:** Stephen Szermer

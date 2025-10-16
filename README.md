@@ -541,6 +541,7 @@ test('First capture session', async ({ page, betaTester }) => {
   - [ADR-0005: Persona-Based E2E Testing Framework](docs/architecture/decisions/0005-e2e-testing-framework-persona-based.md)
   - [ADR-0006: Semantic Similarity Rating Integration](docs/architecture/decisions/0006-semantic-similarity-rating-integration.md)
   - [ADR-0007: Real LLM Integration](docs/architecture/decisions/0007-real-llm-integration.md)
+  - [ADR-0008: Private Language Network Effect Personas](docs/architecture/decisions/0008-private-language-network-personas.md)
 
 ### Adding Features
 
